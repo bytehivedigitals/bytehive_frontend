@@ -1,15 +1,16 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Index from "./pages/index";
+import CurvedNavbar from "./components/Navbar/CurvedNavbar";
+import Home from "./pages/home";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Index />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <CurvedNavbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 
