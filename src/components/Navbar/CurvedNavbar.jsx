@@ -14,7 +14,7 @@ const CurvedNavbar = () => {
         </Navbar.Brand>
 
         {/* Mobile Toggle */}
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggle" />
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto nav-items">

@@ -8,7 +8,7 @@
   padding: 10px 20px;
   transition: all 0.3s ease;
   top: 20px;
-  height: 120px;
+  height: 100px;
 }
 
 /* Logo */
@@ -21,15 +21,16 @@
 .nav-items {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 80px;
 }
 
 .nav-items a {
   color: #000000;
   font-size: 1rem;
   font-weight: 500;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   transition: color 0.5ms ease;
+  font-weight: 50;
 }
 
 .nav-items a:hover {
@@ -72,8 +73,12 @@
   }
 
   .logo img {
-    height: 100px;
-    margin-left: 30px;
+    height: 150px;
+    margin-left: 20px;
+    margin-top: -30px;
+  }
+  .toggle{
+    margin-top: -30px;
   }
 
   .nav-items {
@@ -87,5 +92,6 @@
   .get-in-touch {
     padding: 5px 10px;
     font-size: 0.8rem;
+
   }
 }
