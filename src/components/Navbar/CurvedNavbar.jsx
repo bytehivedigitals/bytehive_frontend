@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./CurvedNavbar.css";
+import logo from '../../assets/name.png'
 
 const CurvedNavbar = () => {
   return (
@@ -9,7 +10,7 @@ const CurvedNavbar = () => {
       <Container>
         {/* Logo */}
         <Navbar.Brand as={Link} to="/" className="logo">
-          <img src="/logo.png" alt="Logo" />
+          <img src={logo} alt="Logo" />
         </Navbar.Brand>
 
         {/* Mobile Toggle */}
