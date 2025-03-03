@@ -1,0 +1,114 @@
+/* Base styles */
+.main-approch {
+    height: 250px;
+    background-color: #3A6ECF;
+    margin-top: 30px;
+    border-radius: 40px;
+}
+.approch-txt {
+    text-align: end;
+    padding-top: 30px;
+    padding-right: 80px;
+}
+.approch-txt h1 {
+    font-size: 36px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+.approch-txt h2 {
+    font-size: 24px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+.main-approch p {
+    width: 20%;
+    margin-left: 100px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .main-approch {
+        height: 220px;
+    }
+    .approch-txt {
+        padding-right: 60px;
+    }
+    .approch-txt h1 {
+        font-size: 32px;
+    }
+    .approch-txt h2 {
+        font-size: 22px;
+    }
+    .main-approch p {
+        width: 30%;
+        margin-left: 80px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-approch {
+        height: 200px;
+    }
+    .approch-txt {
+        padding-right: 40px;
+    }
+    .approch-txt h1 {
+        font-size: 28px;
+    }
+    .approch-txt h2 {
+        font-size: 20px;
+    }
+    .main-approch p {
+        width: 40%;
+        margin-left: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-approch {
+        height: 180px;
+    }
+    .approch-txt {
+        padding-right: 20px;
+        text-align: center;
+        padding-top: 20px;
+    }
+    .approch-txt h1 {
+        font-size: 24px;
+    }
+    .approch-txt h2 {
+        font-size: 18px;
+    }
+    .main-approch p {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-approch {
+        height: 160px;
+        margin-top: 20px;
+    }
+    .approch-txt {
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+    .approch-txt h1 {
+        font-size: 20px;
+    }
+    .approch-txt h2 {
+        font-size: 16px;
+    }
+    .main-approch p {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+    }
+}
