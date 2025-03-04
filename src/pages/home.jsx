@@ -10,8 +10,9 @@ const Home = () => {
     <div>
       <CurvedNavbar />
       <Landing />
-      <Service />
       <Story />
+      <Service />
+
       <Approch />
     </div>
   );

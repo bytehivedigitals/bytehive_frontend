@@ -51,7 +51,12 @@
 }
 
 .right-side {
-    padding: 0;
+    width: 45%;
+    height: 80%;
+    margin-left: 50px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 0%;
     overflow: hidden;
     position: relative;
     transition: background-image 0.5s ease;
@@ -71,8 +76,8 @@
 
 .service-block {
     background-color: #FFFFFF;
-    height: auto;
-    border-radius: 20px;
+    height: calc(96% / 3);
+    border-radius: 49px;
     margin-bottom: 16px;
     padding: 20px;
     cursor: pointer;
@@ -88,24 +93,25 @@
 }
 
 .service-block.expanded {
-    height: auto;
+    height: 350px;
+    border-radius: 30px;
     background: linear-gradient(170deg, #43cea2, #185a9d);
     color: white;
 }
 
 .service-block h3 {
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: bolder;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .service-block.expanded h3 {
-    font-size: 1.8rem;
+    font-size: 30px;
     color: rgb(98, 20, 20);
 }
 
 .service-description {
-    font-size: 1rem;
+    font-size: 20px;
     font-weight: bold;
     color: inherit;
     margin-top: 20px;
@@ -145,5 +151,30 @@
     .service-img {
         margin-top: -60px;
         margin-left: -335px;
+    }
+}
+@media (max-width: 480px) {
+    .right-side{
+        width: 100%;
+        margin-left: 0;
+    }
+    .left-text h1 {
+        font-size: 2rem;
+    }
+
+    .left-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .left-side p {
+        font-size: 0.8rem;
+    }
+
+    .service-block h3 {
+        font-size: 1rem;
+    }
+
+    .service-description {
+        font-size: 0.8rem;
     }
 }
