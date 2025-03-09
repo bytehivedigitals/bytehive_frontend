@@ -3,6 +3,7 @@
 .landingPage {
   width: 100%;
   height: auto;
+  background : linear-gradient(96.77deg, rgb(255, 255, 255) 0%, rgb(232, 161, 188) 130%);
 }
 
 .animated-Logo {
@@ -14,19 +15,20 @@
 
 .text {
   text-align: end;
-  margin-right: 10%;
+  margin-right: 5%;
   margin-top: -30%;
+  color: #3A6ECF;
 }
 
 .text h1 {
-  font-size: 150px;
+  font-size: 130px;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
   margin-top: -400px;
 }
 
 .text h2 {
-  font-size: 180px;
+  font-size: 130px;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
   margin-top: -20px;
@@ -34,7 +36,7 @@
 }
 
 .text h3 {
-  font-size: 160px;
+  font-size: 130px;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
   margin-top: -15px;
@@ -44,9 +46,11 @@
 .paragraph {
   width: 50%;
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 400;
   margin-top: -60px;
+  margin-bottom: 5px;
   margin-left: 80px;
+  color: #564496
 }
 
 /* Responsive Styles */
