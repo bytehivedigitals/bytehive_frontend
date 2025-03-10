@@ -4,6 +4,7 @@ import Landing from "../components/Landingpage/Landing";
 import Service from "../components/ServicesPage/Service";
 import Story from "../components/OurStory/Story";
 import Approch from "../components/Approch/Approch";
+import Footer from "../components/footer/footer";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Service />
 
       <Approch />
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,223 @@
+/* Import Poppins Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* General Footer Styles */
+.footer-container {
+  background: linear-gradient(213.73deg, #3a6ecf 23.69%, #113984 96.09%);
+  color: #ffffff; /* White text */
+  padding: 50px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-top {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.footer-top h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.footer-top p {
+  font-size: 1.1rem;
+  color: #bbbbbb;
+  margin-bottom: 30px;
+}
+
+.footer-top-button {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 18px 40px;
+  border: 2px solid #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.footer-top-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  transform: scale(1.05);
+}
+
+.footer-top-button:active {
+  background-color: #ffffff;
+  color: #00b0ff;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.footer-column {
+  width: 22%;
+  margin-bottom: 30px;
+}
+
+.footer-column h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+  padding-left: 40px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding-left: 40px;
+}
+
+.footer-column ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #bbbbbb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #00b0ff;
+}
+
+/* Centering Logo, Copyright, and Social Icons */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  padding: 20px 0;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-logo-img {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.footer-bottom p {
+  color: #bbbbbb;
+  font-size: 0.9rem;
+  margin: 10px 0;
+  position: relative;
+  top: 105px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-link {
+  color: #ffffff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #00b0ff;
+}
+
+/* Medium to Large Devices */
+@media (max-width: 768px) {
+  .footer-columns {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .footer-column {
+    width: 48%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .footer-logo-img {
+    width: 130px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-links {
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+/* Small Devices */
+@media (max-width: 480px) {
+  .footer-top h2 {
+    font-size: 1.8rem;
+  }
+
+  .footer-top p {
+    font-size: 1rem;
+  }
+
+  .footer-top-button {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+
+  .footer-column h3 {
+    font-size: 1.1rem;
+  }
+
+  .footer-column ul li {
+    font-size: 0.9rem;
+  }
+
+  .social-link {
+    font-size: 1.3rem;
+  }
+
+  .footer-logo-img {
+    width: 120px;
+  }
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .footer-column {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+}
