@@ -1,38 +1,39 @@
 .story-main {
-    height: 800px;
-    background-color: #564496;
-    border-radius: 40px;
-    padding: 20px;
-    box-sizing: border-box;
+  height: 800px;
+  background-color: #564496;
+  border-radius: 40px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .story-txt {
-    text-align: end;
-    padding-top: 60px;
-    padding-right: 100px;
-    font-family: 'Poppins', sans-serif;
-    color: white;
+  text-align: end;
+  padding-top: 60px;
+  padding-right: 100px;
+  font-family: "Poppins", sans-serif;
+  color: white;
 }
 
 .story-txt h1 {
-    font-size: 68px;
-    font-weight: 600;
-    color: white;
+  font-size: 68px;
+  font-weight: 600;
+  color: white;
 }
 
 .story-txt h2 {
-    font-size: 48px;
-    font-weight: 600;
-    color: white;
+  font-size: 48px;
+  font-weight: 600;
+  color: white;
 }
 
 .story-main p {
-    width: 35%;
-    margin-left: 100px;
-    margin-top: 230px;
-    font-size: 20px;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
+  width: 35%;
+  margin-left: 100px;
+  margin-top: 230px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: white;
 }
 
 /* .story-cards {
@@ -47,86 +48,86 @@
 
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
-    .story-main {
-        height: auto;
-    }
+  .story-main {
+    height: auto;
+  }
 
-    .story-txt {
-        padding-right: 50px;
-        text-align: center;
-    }
+  .story-txt {
+    padding-right: 50px;
+    text-align: center;
+  }
 
-    .story-txt h1 {
-        font-size: 48px;
-    }
+  .story-txt h1 {
+    font-size: 48px;
+  }
 
-    .story-txt h2 {
-        font-size: 36px;
-    }
+  .story-txt h2 {
+    font-size: 36px;
+  }
 
-    .story-main p {
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 20px;
-        font-size: 18px;
-    }
+  .story-main p {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: 18px;
+  }
 
-    .story-cards {
-        width: 70%;
-        height: auto;
-        margin-top: 20px;
-    }
+  .story-cards {
+    width: 70%;
+    height: auto;
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 768px) {
-    .story-txt {
-        padding-top: 30px;
-        padding-right: 20px;
-        text-align: center;
-    }
+  .story-txt {
+    padding-top: 30px;
+    padding-right: 20px;
+    text-align: center;
+  }
 
-    .story-txt h1 {
-        font-size: 36px;
-    }
+  .story-txt h1 {
+    font-size: 36px;
+  }
 
-    .story-txt h2 {
-        font-size: 24px;
-    }
+  .story-txt h2 {
+    font-size: 24px;
+  }
 
-    .story-main p {
-        width: 80%;
-        font-size: 16px;
-    }
+  .story-main p {
+    width: 80%;
+    font-size: 16px;
+  }
 
-    .story-cards {
-        width: 90%;
-        height: auto;
-    }
+  .story-cards {
+    width: 90%;
+    height: auto;
+  }
 }
 
 @media (max-width: 480px) {
-    .story-txt {
-        padding-top: 20px;
-        padding-right: 10px;
-        text-align: center;
-    }
+  .story-txt {
+    padding-top: 20px;
+    padding-right: 10px;
+    text-align: center;
+  }
 
-    .story-txt h1 {
-        font-size: 24px;
-    }
+  .story-txt h1 {
+    font-size: 24px;
+  }
 
-    .story-txt h2 {
-        font-size: 18px;
-    }
+  .story-txt h2 {
+    font-size: 18px;
+  }
 
-    .story-main p {
-        width: 90%;
-        font-size: 14px;
-    }
+  .story-main p {
+    width: 90%;
+    font-size: 14px;
+  }
 
-    .story-cards {
-        width: 100%;
-        height: auto;
-    }
+  .story-cards {
+    width: 100%;
+    height: auto;
+  }
 }

@@ -15,7 +15,7 @@
 }
 
 .footer-top h2 {
-  font-size: 2.2rem;
+  font-size: 3.5rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: #ffffff;
@@ -42,8 +42,7 @@
 
 .footer-top-button:hover {
   background-color: #ffffff;
-  color: #000000;
-  border: 2px solid #000000;
+  color: #3a6ecf;
   transform: scale(1.05);
 }
 
