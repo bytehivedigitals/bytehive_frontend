@@ -73,6 +73,7 @@ function Service() {
                   {service.title.split(" ").length > 2 && <br />}
                   {service.title.split(" ").slice(2).join(" ")}
                 </h3>
+                {index !== activeIndex && <p className='service-caption'>Short Caption On Services</p>}
                 {index === activeIndex && <p className='service-description'>{service.description}</p>}
               </div>
             ))}
