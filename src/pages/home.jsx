@@ -5,7 +5,7 @@ import Service from "../components/ServicesPage/Service";
 import Story from "../components/OurStory/Story";
 import Approch from "../components/Approch/Approch";
 import Footer from "../components/footer/footer";
-
+import ScrollingBanner from "../components/marquee/marquee";
 const Home = () => {
   return (
     <div>
@@ -13,9 +13,9 @@ const Home = () => {
       <Landing />
       <Story />
       <Service />
-
       <Approch />
       <Footer />
+      <ScrollingBanner />
     </div>
   );
 };

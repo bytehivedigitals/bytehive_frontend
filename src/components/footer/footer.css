@@ -3,10 +3,19 @@
 
 /* General Footer Styles */
 .footer-container {
-  background: linear-gradient(213.73deg, #3a6ecf 23.69%, #113984 96.09%);
-  color: #ffffff; /* White text */
+  background: linear-gradient(
+      213.73deg,
+      rgba(24, 65, 148, 0.95) 23.69%,
+      rgba(10, 40, 90, 0.95) 96.09%
+    ),
+    url("../../assets/foterimage2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
   padding: 50px 0;
   font-family: "Poppins", sans-serif;
+  filter: contrast(1) brightness(0.8); /* Increase contrast & brightness */
 }
 
 .footer-top {
@@ -17,14 +26,13 @@
 .footer-top h2 {
   font-size: 3.5rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
   color: #ffffff;
-  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Stronger contrast */
 }
 
 .footer-top p {
   font-size: 1.1rem;
-  color: #bbbbbb;
+  color: #dddddd; /* Slightly brighter than before */
   margin-bottom: 30px;
 }
 
@@ -37,20 +45,21 @@
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .footer-top-button:hover {
   background-color: #ffffff;
-  color: #3a6ecf;
+  color: #1e4ea3;
   transform: scale(1.05);
 }
 
 .footer-top-button:active {
   background-color: #ffffff;
-  color: #00b0ff;
+  color: #007aff;
 }
 
+/* Footer Main Section */
 .footer-main {
   display: flex;
   justify-content: space-between;
@@ -71,10 +80,11 @@
 }
 
 .footer-column h3 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 15px;
   color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
   padding-left: 40px;
 }
 
@@ -89,16 +99,17 @@
 }
 
 .footer-column ul li a {
-  color: #bbbbbb;
+  color: #eeeeee;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .footer-column ul li a:hover {
-  color: #00b0ff;
+  color: #00c3ff;
+  font-weight: 600;
 }
 
-/* Centering Logo, Copyright, and Social Icons */
+/* Footer Bottom */
 .footer-bottom {
   display: flex;
   flex-direction: column;
@@ -119,13 +130,14 @@
 }
 
 .footer-bottom p {
-  color: #bbbbbb;
-  font-size: 0.9rem;
+  color: #dddddd;
+  font-size: 0.95rem;
   margin: 10px 0;
   position: relative;
   top: 105px;
 }
 
+/* Social Icons */
 .social-links {
   display: flex;
   justify-content: center;
@@ -134,15 +146,16 @@
 
 .social-link {
   color: #ffffff;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+  font-size: 1.7rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .social-link:hover {
-  color: #00b0ff;
+  color: #00b8ff;
+  transform: scale(1.1);
 }
 
-/* Medium to Large Devices */
+/* Responsive Design */
 @media (max-width: 768px) {
   .footer-columns {
     flex-direction: row;
@@ -173,7 +186,6 @@
   }
 }
 
-/* Small Devices */
 @media (max-width: 480px) {
   .footer-top h2 {
     font-size: 1.8rem;
@@ -189,7 +201,7 @@
   }
 
   .footer-column h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .footer-column ul li {
