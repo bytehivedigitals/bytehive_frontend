@@ -8,7 +8,7 @@ import Footer from "../components/footer/footer";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ background: '#f5f5f5'}}>
       <CurvedNavbar />
       <Landing />
       <Story />

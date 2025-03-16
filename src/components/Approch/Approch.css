@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-between;
     overflow-y: hidden;
+    margin-bottom: 0.5%;
 }
 
 .approch-txt {
@@ -59,40 +60,49 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
-    padding: 20px;
+    padding: 0;
     transition: transform 0.3s ease;
+    overflow-y: hidden;
 }
 
-.card h2 {
-    margin-top: 0;
+.card-number {
+    background: rgb(236, 187, 65);
+    text-align: center;
+    width: 9%;
+    border-radius: 5px;
+    margin-top: -1.5%;
+    margin-left: 3%;
+    padding: 2% 0%;
+    font-size: 18px;
+    font-weight: 500;
 }
 
-.card p {
-    margin: 10px 0;
+.card-image img{
+    width: 70%;
+    height: 65%;
+    margin: 0 15%;
+    margin-top: -3%;
+    background: darkgoldenrod;
 }
 
-/* Initial positioning of cards */
-.card:nth-child(1) {
-    top: 0;
-  }
-  
-  .card:nth-child(2) {
-    top: 10%; /* Adjust to show a glimpse of the second card */
-  }
-  
-  .card:nth-child(3) {
-    top: 40%; /* Adjust to show a glimpse of the third card */
-  }
-  
-  .card:nth-child(4) {
-    top: 60%; /* Adjust to show a glimpse of the fourth card */
-  }
+.card-content {
+    margin-top: -20%;
+    margin-left: 3%;
+}
+
+.card-content h2 {
+    font-family: sans-serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.card-content p {
+    font-family: sans-serif;
+    font-size: 1.1rem;
+}
 
 /* Responsive styles */
 @media (max-width: 1200px) {
-    .main-approch {
-        height: 220px;
-    }
     .approch-txt {
         padding-right: 60px;
     }
@@ -109,9 +119,6 @@
 }
 
 @media (max-width: 992px) {
-    .main-approch {
-        height: 200px;
-    }
     .approch-txt {
         padding-right: 40px;
     }
@@ -128,9 +135,6 @@
 }
 
 @media (max-width: 768px) {
-    .main-approch {
-        height: 180px;
-    }
     .approch-txt {
         padding-right: 20px;
         text-align: center;
@@ -151,10 +155,6 @@
 }
 
 @media (max-width: 576px) {
-    .main-approch {
-        height: 160px;
-        margin-top: 20px;
-    }
     .approch-txt {
         padding-right: 10px;
         padding-top: 10px;

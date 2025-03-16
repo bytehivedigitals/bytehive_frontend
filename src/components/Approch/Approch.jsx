@@ -1,11 +1,57 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './Approch.css'
+import img from '../../assets/name.png'
 
 const Approch = () => {
   const cards = useRef([]);
   const cardStackRef = useRef(null);
   const [stackedIndex, setStackedIndex] = useState(0);
   const isScrollingRef = useRef(false);
+
+  const cardData = [
+    { 
+      id: 1, 
+      title: 'Discover', 
+      description: 'Understand client goals, challenges, and market trends through initial consultations and research.', 
+      image: img
+    },
+    { 
+      id: 2, 
+      title: 'Plan', 
+      description: 'Define objectives, gather requirements, and create a strategic roadmap with a detailed proposal.', 
+      image: img
+    },
+    { 
+      id: 3, 
+      title: 'Design', 
+      description: 'Develop wireframes, prototypes, and branding elements, refining based on client feedback.', 
+      image: img 
+    },
+    { 
+      id: 4, 
+      title: 'Develop', 
+      description: 'Implement technical solutions through iterative development and regular client check-ins.', 
+      image: img 
+    },
+    { 
+      id: 5, 
+      title: 'Test & Optimize', 
+      description: 'Conduct thorough testing, fix bugs, and optimize for performance and security.', 
+      image: img
+    },
+    { 
+      id: 6, 
+      title: 'Launch & Deploy', 
+      description: 'Deploy the final product, provide training, and assist with marketing and SEO strategies.', 
+      image: img 
+    },
+    { 
+      id: 7, 
+      title: 'Support & Grow', 
+      description: 'Offer ongoing maintenance, scaling, and partnership for long-term client success.', 
+      image: img
+    }
+  ];
 
   useEffect(() => {
     const cardStack = cardStackRef.current;
@@ -32,8 +78,11 @@ const Approch = () => {
         }
           
         if (nextCard) {
-          nextCard.style.top = stackedIndex + 2 == 3 ? '-130%' : '-60%';
+          const stackedIndexValue = stackedIndex >= 3 ? stackedIndex + 1.2 : stackedIndex + 1;
+          const topValue = stackedIndexValue == 3 ? 380 : 370;
+          nextCard.style.top = `${-(stackedIndexValue * topValue)}px`;
         }
+
       } else if (delta < 0 && stackedIndex > 0) {
         // Scroll up: unstack the previous card
         isScrollingRef.current = true;
@@ -41,13 +90,17 @@ const Approch = () => {
 
         const currentCard = cards.current[stackedIndex];
         const previousCard = cards.current[stackedIndex - 1];
-
-        if (currentCard) {
-          currentCard.style.top = stackedIndex == 1 ? '70%' : '0';
+        const nextCard = cards.current[stackedIndex + 1];
+                
+        if (currentCard && previousCard) {
+          previousCard.style.top = '0';
+          currentCard.style.top = '0';
+          currentCard.style.transform = previousCard.style.transform;
         }
-      
-        if (previousCard) {
-          previousCard.style.top = stackedIndex - 1 === 0 ? '0' : '70%';
+
+        if (nextCard) {
+          nextCard.style.transform = 'translateY(0)';
+          nextCard.style.top = '0';
         }
       }
 
@@ -68,16 +121,14 @@ const Approch = () => {
     cards.current.forEach((card, index) => {
       if (index <= stackedIndex) {
         // Stack the card
-        card.style.transform = `translateY(${-(index * 100)}%)`;
-      } else {
-        // Unstack the card
-        card.style.transform = 'translateY(0)';
+        card.style.transform = `translateY(${-(index * 103)}%)`;
       }
     });
   }, [stackedIndex]);
 
   return (
     <div className='main-approch'>
+
       <div className='left-section'>
         <div className='approch-txt'>
           <h1>OUR EXCELLENT</h1>
@@ -88,25 +139,22 @@ const Approch = () => {
 
       <div className='right-section'>
         <div className="card-stack" ref={cardStackRef}>
-          <div className="card" ref={el => cards.current[0] = el}>
-            <h2>01</h2>
-            <p>Auto-join</p>
-            <p>Consultation & needs analysis</p>
-          </div>
-          <div className="card" ref={el => cards.current[1] = el}>
-            <h2>02</h2>
-            <p>Overseas Transfer</p>
-            <p>Choose Country: USA</p>
-          </div>
-          <div className="card" ref={el => cards.current[2] = el}>
-            <h2>03</h2>
-            <p>Design & development</p>
-          </div>
-          <div className="card" ref={el => cards.current[3] = el}>
-            <h2>04</h2>
-            <p>Deployment & ongoing support</p>
-          </div>
+          {cardData.map((card, index) => (
+            <div key={card.id} className="card" ref={el => cards.current[index] = el}>
+              <div className="card-number">
+                {index + 1}
+              </div>
+              <div className="card-image">
+                <img src={card.image} alt={`Card ${card.title}`} />
+              </div>
+              <div className="card-content">
+                <h2>{card.title}</h2>
+                <p>{card.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
+
       </div>
     </div>
   );

@@ -90,7 +90,7 @@
   background: #564496;
 }
 
-.service-block:hover h3 {
+.service-block:hover h3, .service-block:hover .service-caption {
   color: white;
 }
 
@@ -115,7 +115,7 @@
 }
 
 .service-description {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   color: inherit;
   margin-top: 20px;
@@ -257,6 +257,10 @@
     color: inherit;
     margin-top: 18px;
     transition: opacity 0.3s ease-in-out;
+  }
+
+  .service-block .service-caption {
+    display: none;
   }
 }
 
