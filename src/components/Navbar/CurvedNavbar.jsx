@@ -1,8 +1,21 @@
 import React, { useState } from "react";
-import { Navbar, Nav, Container, Offcanvas, Button } from "react-bootstrap";
-import { GiHamburgerMenu } from "react-icons/gi"; // Modern Menu Icon
-import "./CurvedNavbar.css"; // Import custom styles
-import logo from "../../assets/name.png"; // Import your logo image
+import {
+  Navbar,
+  Nav,
+  Container,
+  Offcanvas,
+  Button,
+  Form,
+} from "react-bootstrap";
+import { GiHamburgerMenu } from "react-icons/gi";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import "./CurvedNavbar.css";
+import logo from "../../assets/name.png";
 
 const CustomNavbar = () => {
   const [show, setShow] = useState(false);
@@ -12,12 +25,10 @@ const CustomNavbar = () => {
       {/* Fixed Top Navbar */}
       <Navbar expand="lg" className="custom-navbar fixed-top">
         <Container>
-          {/* Logo */}
           <Navbar.Brand href="#">
             <img src={logo} alt="Brand Logo" className="navbar-logo" />
           </Navbar.Brand>
 
-          {/* Modern Menu Icon - Visible only on smaller screens */}
           <div className="menu-icon d-lg-none" onClick={() => setShow(true)}>
             <GiHamburgerMenu />
           </div>
@@ -39,7 +50,6 @@ const CustomNavbar = () => {
               <Nav.Link href="#blogs" className="nav-item">
                 Blogs
               </Nav.Link>
-              {/* Contact Button */}
               <Nav.Link href="#contact">
                 <Button className="contact-btn">Contact</Button>
               </Nav.Link>
@@ -48,60 +58,59 @@ const CustomNavbar = () => {
         </Container>
       </Navbar>
 
-      {/* Offcanvas Menu for Mobile */}
+      {/* Offcanvas Mobile Menu (Left Side) */}
       <Offcanvas
         show={show}
         onHide={() => setShow(false)}
-        placement="end"
+        placement="start"
         className="custom-offcanvas"
       >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Menu</Offcanvas.Title>
         </Offcanvas.Header>
+
         <Offcanvas.Body>
+          {/* Search Bar */}
+          <Form className="search-bar">
+            <Form.Control type="text" placeholder="Search..." />
+          </Form>
+
+          {/* Navigation Links */}
           <Nav className="flex-column">
-            <Nav.Link
-              href="#home"
-              className="nav-item mobile-nav-item"
-              onClick={() => setShow(false)}
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link
-              href="#about"
-              className="nav-item mobile-nav-item"
-              onClick={() => setShow(false)}
-            >
-              About
-            </Nav.Link>
-            <Nav.Link
-              href="#services"
-              className="nav-item mobile-nav-item"
-              onClick={() => setShow(false)}
-            >
-              Services
-            </Nav.Link>
-            <Nav.Link
-              href="#works"
-              className="nav-item mobile-nav-item"
-              onClick={() => setShow(false)}
-            >
-              Works
-            </Nav.Link>
-            <Nav.Link
-              href="#blogs"
-              className="nav-item mobile-nav-item"
-              onClick={() => setShow(false)}
-            >
-              Blogs
-            </Nav.Link>
-            {/* Contact Button in Mobile */}
+            {["Home", "About", "Services", "Works", "Blogs"].map(
+              (item, index) => (
+                <Nav.Link
+                  key={index}
+                  href={`#${item.toLowerCase()}`}
+                  className="nav-item mobile-nav-item"
+                  onClick={() => setShow(false)}
+                >
+                  {item}
+                </Nav.Link>
+              )
+            )}
             <Nav.Link href="#contact" onClick={() => setShow(false)}>
               <Button className="contact-btn mobile-contact-btn">
                 Contact
               </Button>
             </Nav.Link>
           </Nav>
+
+          {/* Social Media Icons */}
+          <div className="social-icons">
+            <a href="#" className="social-icon">
+              <FaFacebookF />
+            </a>
+            <a href="#" className="social-icon">
+              <FaInstagram />
+            </a>
+            <a href="#" className="social-icon">
+              <FaTwitter />
+            </a>
+            <a href="#" className="social-icon">
+              <FaLinkedinIn />
+            </a>
+          </div>
         </Offcanvas.Body>
       </Offcanvas>
     </>
