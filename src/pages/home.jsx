@@ -8,7 +8,7 @@ import Footer from "../components/footer/footer";
 import ScrollingBanner from "../components/marquee/marquee";
 const Home = () => {
   return (
-    <div style={{ background: '#f5f5f5'}}>
+    <div style={{ background: '#f5f5f5', width: '100vw'}}>
       <CurvedNavbar />
       <Landing />
       <Story />
