@@ -7,7 +7,7 @@ import {
   Button,
   Form,
 } from "react-bootstrap";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { RiMenu2Line } from "react-icons/ri"; // Updated menu icon
 import {
   FaFacebookF,
   FaInstagram,
@@ -30,7 +30,7 @@ const CustomNavbar = () => {
           </Navbar.Brand>
 
           <div className="menu-icon d-lg-none" onClick={() => setShow(true)}>
-            <GiHamburgerMenu />
+            <RiMenu2Line /> {/* Updated menu icon */}
           </div>
 
           <Navbar.Collapse className="justify-content-end d-none d-lg-flex">
