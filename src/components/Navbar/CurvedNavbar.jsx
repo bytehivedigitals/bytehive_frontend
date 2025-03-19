@@ -66,7 +66,7 @@ const CustomNavbar = () => {
         className="custom-offcanvas"
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Menu</Offcanvas.Title>
+          <Offcanvas.Title>ByteHive</Offcanvas.Title>
         </Offcanvas.Header>
 
         <Offcanvas.Body>
