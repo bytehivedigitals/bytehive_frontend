@@ -154,14 +154,33 @@ body,
 }
 
 /* 🔹 Search Bar */
-.mobile-search {
+/* 🔹 Search Bar */
+.search-bar {
   width: 100%;
-  padding: 8px;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
+}
+
+.search-bar .form-control {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  font-size: 16px;
   outline: none;
+}
+
+.search-bar .search-icon {
+  background: #3a6ecf;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.search-bar .search-icon:hover {
+  background: #c92f3e;
 }
 
 /* 🔹 Mobile Nav Items */

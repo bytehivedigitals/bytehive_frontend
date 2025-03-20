@@ -6,6 +6,7 @@ import {
   Offcanvas,
   Button,
   Form,
+  InputGroup,
 } from "react-bootstrap";
 import { RiMenu2Line } from "react-icons/ri";
 import {
@@ -13,6 +14,7 @@ import {
   FaInstagram,
   FaTwitter,
   FaLinkedinIn,
+  FaSearch,
 } from "react-icons/fa";
 import "./CurvedNavbar.css";
 import logo from "../../assets/name.png";
@@ -21,18 +23,16 @@ import logo1 from "../../assets/name__1_-removebg-preview.png";
 const CustomNavbar = () => {
   const [show, setShow] = useState(false);
 
-  // Function to handle smooth scrolling
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
-      setShow(false); // Close mobile menu after clicking
+      setShow(false);
     }
   };
 
   return (
     <>
-      {/* Fixed Top Navbar */}
       <Navbar expand="lg" className="custom-navbar fixed-top">
         <Container>
           <Navbar.Brand href="#">
@@ -45,30 +45,15 @@ const CustomNavbar = () => {
 
           <Navbar.Collapse className="justify-content-end d-none d-lg-flex">
             <Nav className="nav-items">
-              <Nav.Link
-                onClick={() => scrollToSection("home")}
-                className="nav-item"
-              >
-                Home
-              </Nav.Link>
-              <Nav.Link
-                onClick={() => scrollToSection("about")}
-                className="nav-item"
-              >
-                About
-              </Nav.Link>
-              <Nav.Link
-                onClick={() => scrollToSection("services")}
-                className="nav-item"
-              >
-                Services
-              </Nav.Link>
-              <Nav.Link
-                onClick={() => scrollToSection("works")}
-                className="nav-item"
-              >
-                Works
-              </Nav.Link>
+              {["Home", "About", "Services", "Works"].map((item, index) => (
+                <Nav.Link
+                  key={index}
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  className="nav-item"
+                >
+                  {item}
+                </Nav.Link>
+              ))}
               <Nav.Link href="#blogs" className="nav-item">
                 Blogs
               </Nav.Link>
@@ -94,10 +79,13 @@ const CustomNavbar = () => {
         </Offcanvas.Header>
 
         <Offcanvas.Body>
-          {/* Search Bar */}
-          <Form className="search-bar">
+          {/* Search Bar with Icon */}
+          <InputGroup className="search-bar">
             <Form.Control type="text" placeholder="Search..." />
-          </Form>
+            <InputGroup.Text className="search-icon">
+              <FaSearch />
+            </InputGroup.Text>
+          </InputGroup>
 
           {/* Navigation Links */}
           <Nav className="flex-column">
