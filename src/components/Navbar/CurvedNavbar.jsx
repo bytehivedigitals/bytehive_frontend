@@ -16,6 +16,7 @@ import {
 } from "react-icons/fa";
 import "./CurvedNavbar.css";
 import logo from "../../assets/name.png";
+import logo1 from "../../assets/name__1_-removebg-preview.png";
 
 const CustomNavbar = () => {
   const [show, setShow] = useState(false);
@@ -87,7 +88,9 @@ const CustomNavbar = () => {
         className="custom-offcanvas"
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>ByteHive</Offcanvas.Title>
+          <Offcanvas.Title>
+            <img src={logo1} alt="Brand Logo" className="offcanvas-logo" />
+          </Offcanvas.Title>
         </Offcanvas.Header>
 
         <Offcanvas.Body>

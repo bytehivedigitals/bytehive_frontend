@@ -3,36 +3,50 @@
   white-space: nowrap;
   position: relative;
   width: 100%;
-  background: url("../../assets/footer-glassisom.png") no-repeat center;
-  background-size: cover;
   padding: 12px 0;
   display: flex;
   align-items: center;
+
+  /* Glassmorphism Effect with Visible Background */
+  background: rgba(255, 255, 255, 0.15); /* Light transparent background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  /* Background Image */
+  background: url("../../assets/footer-glassisom.png") no-repeat center;
+  background-size: cover;
 }
 
 .scrolling-banner {
   display: flex;
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .scrolling-content {
   display: flex;
   gap: 24px;
-  animation: marquee 10s linear infinite;
   color: #f8fafc;
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 600;
   text-transform: uppercase;
   width: max-content;
+  animation: marquee 10s linear infinite;
+}
+
+.scrolling-content span {
+  white-space: nowrap;
 }
 
 @keyframes marquee {
   from {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 

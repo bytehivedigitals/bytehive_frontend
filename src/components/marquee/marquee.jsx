@@ -7,9 +7,13 @@ const ScrollingBanner = () => {
     <div className="scrolling-banner-wrapper">
       <div className="scrolling-banner">
         <div className="scrolling-content">
-          <span>Byte Hive - Innovating the Future &nbsp; ● &nbsp;</span>
-          <span>Byte Hive - Innovating the Future &nbsp; ● &nbsp;</span>
-          <span>Byte Hive - Innovating the Future &nbsp; ● &nbsp;</span>
+          {/* Duplicating content for seamless effect */}
+          <span>Byte Hive - Let's Make It Great! &nbsp; ● &nbsp;</span>
+          <span>Byte Hive - Let's Make It Great! &nbsp; ● &nbsp;</span>
+          <span>Byte Hive - Let's Make It Great!&nbsp; ● &nbsp;</span>
+          <span>Byte Hive - Let's Make It Great!&nbsp; ● &nbsp;</span>
+          <span>Byte Hive - Let's Make It Great!&nbsp; ● &nbsp;</span>
+          <span>Byte Hive - Let's Make It Great! &nbsp; ● &nbsp;</span>
         </div>
       </div>
     </div>

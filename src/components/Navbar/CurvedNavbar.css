@@ -258,3 +258,7 @@ body,
     width: 100%;
   }
 }
+.offcanvas-logo {
+  max-height: 25px; /* Adjust height as needed */
+  width: auto;
+}
