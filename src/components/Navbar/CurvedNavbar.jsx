@@ -7,7 +7,7 @@ import {
   Button,
   Form,
 } from "react-bootstrap";
-import { RiMenu2Line } from "react-icons/ri"; // Updated menu icon
+import { RiMenu2Line } from "react-icons/ri";
 import {
   FaFacebookF,
   FaInstagram,
@@ -20,6 +20,15 @@ import logo from "../../assets/name.png";
 const CustomNavbar = () => {
   const [show, setShow] = useState(false);
 
+  // Function to handle smooth scrolling
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      setShow(false); // Close mobile menu after clicking
+    }
+  };
+
   return (
     <>
       {/* Fixed Top Navbar */}
@@ -30,21 +39,33 @@ const CustomNavbar = () => {
           </Navbar.Brand>
 
           <div className="menu-icon d-lg-none" onClick={() => setShow(true)}>
-            <RiMenu2Line /> {/* Updated menu icon */}
+            <RiMenu2Line />
           </div>
 
           <Navbar.Collapse className="justify-content-end d-none d-lg-flex">
             <Nav className="nav-items">
-              <Nav.Link href="#home" className="nav-item">
+              <Nav.Link
+                onClick={() => scrollToSection("home")}
+                className="nav-item"
+              >
                 Home
               </Nav.Link>
-              <Nav.Link href="#about" className="nav-item">
+              <Nav.Link
+                onClick={() => scrollToSection("about")}
+                className="nav-item"
+              >
                 About
               </Nav.Link>
-              <Nav.Link href="#services" className="nav-item">
+              <Nav.Link
+                onClick={() => scrollToSection("services")}
+                className="nav-item"
+              >
                 Services
               </Nav.Link>
-              <Nav.Link href="#works" className="nav-item">
+              <Nav.Link
+                onClick={() => scrollToSection("works")}
+                className="nav-item"
+              >
                 Works
               </Nav.Link>
               <Nav.Link href="#blogs" className="nav-item">
@@ -58,7 +79,7 @@ const CustomNavbar = () => {
         </Container>
       </Navbar>
 
-      {/* Offcanvas Mobile Menu (Left Side) */}
+      {/* Offcanvas Mobile Menu */}
       <Offcanvas
         show={show}
         onHide={() => setShow(false)}
@@ -77,19 +98,16 @@ const CustomNavbar = () => {
 
           {/* Navigation Links */}
           <Nav className="flex-column">
-            {["Home", "About", "Services", "Works", "Blogs"].map(
-              (item, index) => (
-                <Nav.Link
-                  key={index}
-                  href={`#${item.toLowerCase()}`}
-                  className="nav-item mobile-nav-item"
-                  onClick={() => setShow(false)}
-                >
-                  {item}
-                </Nav.Link>
-              )
-            )}
-            <Nav.Link href="#contact" onClick={() => setShow(false)}>
+            {["Home", "About", "Services", "Works"].map((item, index) => (
+              <Nav.Link
+                key={index}
+                className="nav-item mobile-nav-item"
+                onClick={() => scrollToSection(item.toLowerCase())}
+              >
+                {item}
+              </Nav.Link>
+            ))}
+            <Nav.Link href="#contact">
               <Button className="contact-btn mobile-contact-btn">
                 Contact
               </Button>

@@ -6,14 +6,23 @@ import Story from "../components/OurStory/Story";
 import Approch from "../components/Approch/Approch";
 import Footer from "../components/footer/footer";
 import ScrollingBanner from "../components/marquee/marquee";
+
 const Home = () => {
   return (
-    <div style={{ background: '#f5f5f5', width: '100vw'}}>
+    <div style={{ background: "#f5f5f5", width: "100vw" }}>
       <CurvedNavbar />
-      <Landing />
-      <Story />
-      <Service />
-      <Approch />
+      <div id="home">
+        <Landing />
+      </div>
+      <div id="about">
+        <Story />
+      </div>
+      <div id="services">
+        <Service />
+      </div>
+      <div id="works">
+        <Approch />
+      </div>
       <Footer />
       <ScrollingBanner />
     </div>
