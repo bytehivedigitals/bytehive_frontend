@@ -1,49 +1,37 @@
 import React from "react";
-import "./footer.css";
-import logo from "../../assets/name_white.png";
 import {
-  FaPhone,
-  FaEnvelope,
-  FaWhatsapp,
-  FaFacebook,
+  FaFacebookF,
   FaTwitter,
+  FaLinkedinIn,
   FaInstagram,
-  FaLinkedin,
-  FaArrowRight,
+  FaYoutube,
 } from "react-icons/fa";
+import logo from "../../assets/name__1_-removebg-preview.png"; // Import your logo
+import "./footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer-container">
-      <div className="footer-top">
-        <div className="footer-top-content">
-          <h2>Ready to get started?</h2>
-          <p>
-            Let’s create something amazing together. Reach out for a quote
-            today!
-          </p>
-          <button className="footer-top-button">
-            Request a Quote <FaArrowRight />
-          </button>
-        </div>
-      </div>
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-grid">
+          {/* Company Section with Logo */}
+          <div className="footer-item footer-logo">
+            <img src={logo} alt="ByteHive LLP Logo" className="logo-image" />
+            <p>Let's Make It Great!</p>
+          </div>
 
-      <div className="footer-main">
-        <div className="footer-columns">
-          <div className="footer-column">
-            <h3>Company</h3>
+          {/* Quick Links */}
+          <div className="footer-item">
+            <h4>Quick Links</h4>
             <ul>
               <li>
                 <a href="#">About Us</a>
               </li>
               <li>
-                <a href="#">Our Work</a>
+                <a href="#">Services</a>
               </li>
               <li>
-                <a href="#">Team</a>
-              </li>
-              <li>
-                <a href="#">Careers</a>
+                <a href="#">Portfolio</a>
               </li>
               <li>
                 <a href="#">Contact</a>
@@ -51,91 +39,57 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-column">
-            <h3>Services</h3>
+          {/* Services */}
+          <div className="footer-item">
+            <h4>Services</h4>
             <ul>
               <li>
-                <a href="#">Web Design</a>
+                <a href="#">Web Development</a>
               </li>
               <li>
-                <a href="#">Branding</a>
+                <a href="#">Mobile App Development</a>
               </li>
               <li>
-                <a href="#">E-commerce</a>
+                <a href="#">Branding & Design</a>
               </li>
               <li>
-                <a href="#">SEO</a>
-              </li>
-              <li>
-                <a href="#">Marketing</a>
+                <a href="#">SEO & Marketing</a>
               </li>
             </ul>
           </div>
 
-          <div className="footer-column">
-            <h3>Resources</h3>
-            <ul>
-              <li>
-                <a href="#">Blog</a>
-              </li>
-              <li>
-                <a href="#">Case Studies</a>
-              </li>
-              <li>
-                <a href="#">Webinars</a>
-              </li>
-              <li>
-                <a href="#">Whitepapers</a>
-              </li>
-              <li>
-                <a href="#">Downloads</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="footer-column">
-            <h3>Contact</h3>
-            <ul>
-              <li>
-                Phone: <a href="tel:+123456789">+1 234 567 89</a>
-              </li>
-              <li>
-                Email: <a href="mailto:info@example.com">info@example.com</a>
-              </li>
-              <li>
-                Whatsapp:{" "}
-                <a
-                  href="https://wa.me/123456789"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  +1 234 567 89
-                </a>
-              </li>
-            </ul>
+          {/* Contact Info */}
+          <div className="footer-item">
+            <h4>Contact Us</h4>
+            <p>Email: info@bytehive.in</p>
+            <p>Phone: +1 234 567 890</p>
           </div>
         </div>
-      </div>
 
-      <div className="footer-bottom">
-        <div className="footer-logo">
-          <img src={logo} alt="Logo" className="footer-logo-img" />
-          <p>© {new Date().getFullYear()} ByteHive LLP. All rights reserved.</p>
+        {/* Social Media Icons */}
+        <div className="footer-social">
+          <a href="#">
+            <FaFacebookF />
+          </a>
+          <a href="#">
+            <FaTwitter />
+          </a>
+          <a href="#">
+            <FaLinkedinIn />
+          </a>
+          <a href="#">
+            <FaInstagram />
+          </a>
+          <a href="#">
+            <FaYoutube />
+          </a>
         </div>
 
-        <div className="social-links">
-          <a href="#" className="social-link">
-            <FaFacebook size={24} />
-          </a>
-          <a href="#" className="social-link">
-            <FaTwitter size={24} />
-          </a>
-          <a href="#" className="social-link">
-            <FaInstagram size={24} />
-          </a>
-          <a href="#" className="social-link">
-            <FaLinkedin size={24} />
-          </a>
+        {/* Bottom Section */}
+        <div className="footer-bottom">
+          <p>© 2025 ByteHive LLP. All Rights Reserved.</p>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
         </div>
       </div>
     </footer>
