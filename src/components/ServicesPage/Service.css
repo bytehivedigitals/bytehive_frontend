@@ -79,7 +79,7 @@
   margin-bottom: 16px;
   padding: 25px;
   cursor: pointer;
-  transition: height 0.5s ease, box-shadow 0.3s ease;
+  transition: height 0.5s ease, box-shadow 0.3s ease, left 0.5s ease, transform 0.5s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   scroll-snap-align: start;
@@ -100,6 +100,7 @@
   padding-left: 0%;
   background: #3a6ecf;
   color: white;
+  transform: translateY(0);
 }
 
 .service-block h3 {
@@ -126,21 +127,12 @@
 }
 
 .service-caption {
-  display: inline;
-  text-align: end;
   float: right;
   font-size: 15px;
   font-weight: bold;
   color: #564496;
   margin-top: 10%;
   margin-right: 3%;
-}
-
-.service-bg-img {
-  margin-top: 2%;
-  width: 50vw;
-  height: 26vh;
-  opacity: 0.5;
 }
 
 @media (max-width: 1024px) {
@@ -167,6 +159,10 @@
   .service-img {
     width: 85%;
     margin-top: -7%;
+  }
+
+  .service-caption {
+    margin-top: 13%;
   }
 }
 
@@ -204,6 +200,14 @@
 
   .service-block.expanded {
     height: fit-content;
+  }
+
+  .service-block.expanded  h3 {
+    font-size: 28px;
+  }
+
+  .service-description {
+    font-size: 17px;
   }
 }
 
@@ -256,12 +260,12 @@
     scroll-snap-type: x mandatory;
     display: flex;
     gap: 16px;
-    padding: 10px;
+    padding: 0 10px;
   }
 
   .service-block {
     background-color: #ffffff;
-    height: 65%;
+    height: 70%;
     min-width: calc(96% / 2);
     border-radius: 20px;
     margin-top: 40px;
@@ -280,7 +284,7 @@
   }
 
   .service-block h3 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bolder;
     margin-bottom: 30px;
   }
@@ -313,6 +317,10 @@
     margin-left: -6%;
   }
 
+  .left-side {
+    height: 62%;
+  }
+
   .left-side h1 {
     font-size: 2rem;
   }
@@ -324,5 +332,47 @@
   .left-side p {
     font-size: 1.1rem;
     margin-left: 45%;
+  }
+
+  .service-block {
+    min-width: fit-content;
+    height: 70%;
+  }
+
+  .service-block h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .service-block.expanded {
+    padding: 0;
+    min-width: fit-content;
+  }
+}
+
+@media (max-width: 365px) {
+  .left-side {
+    height: 65%;
+  }
+  .left-text {
+    padding-top: 0%;
+    margin-top: 16%;
+    padding-right: 0;
+  }
+
+  .left-side h1 {
+    float: right;
+    margin-left: 40%;
+  }
+
+  .left-side p {
+    margin-left: 0;
+    margin-top: 10%;
+  }
+
+  .service-img {
+    width: 58%;
+    margin-left: -5%;
+    margin-top: -189%;
   }
 }
