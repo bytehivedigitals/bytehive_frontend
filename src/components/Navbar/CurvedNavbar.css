@@ -15,8 +15,8 @@ body,
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   height: 80px;
-  width: 95%;
-  max-width: 1400px;
+  width: 100vw;
+  max-width: 1700px;
   margin: 20px auto;
   padding: 0 25px;
   display: flex;
@@ -35,7 +35,6 @@ body,
   background: rgba(255, 255, 255, 0.25);
 }
 
-/* 🔹 Logo Styling */
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -49,27 +48,26 @@ body,
   left: 20px;
 }
 
-/* 🔹 Navbar Items */
 .nav-items {
   display: flex;
   align-items: center;
-  gap: 45px;
-  margin-left: auto;
-  justify-content: flex-end;
-  padding-right: 20px;
+  gap: 70px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 0;
 }
 
-/* Navbar Links */
 .nav-item {
-  font-size: 18px;
-  font-weight: 500;
-  color: black !important; /* 🔹 Changed color to black */
+  font-size: 20px;
+  font-weight: 1000;
+  color: black !important;
   transition: color 0.3s, transform 0.2s ease-in-out;
   position: relative;
   gap: 40px;
 }
 
-/* Underline Hover Effect */
 .nav-item::after {
   content: "";
   position: absolute;
@@ -108,7 +106,6 @@ body,
   transform: scale(1.05);
 }
 
-/* 🔹 Mobile Menu Icon */
 .menu-icon {
   display: none;
   font-size: 32px;
@@ -121,13 +118,13 @@ body,
   color: #c92f3e;
 }
 
-/* 🔹 Mobile Offcanvas Menu with Glass Effect */
+/* 🔹 Mobile Offcanvas Menu */
 .custom-offcanvas {
   width: 280px !important;
-  background: rgba(255, 255, 255, 0.2); /* 🔹 Glass effect background */
-  backdrop-filter: blur(12px); /* 🔹 Blur effect */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  color: black !important; /* 🔹 Changed text color to black */
+  color: black !important;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -145,7 +142,7 @@ body,
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* 🔹 Aligns items to the left */
+  align-items: flex-start;
   background: linear-gradient(
     96.77deg,
     rgb(255, 255, 255) 0%,
@@ -153,8 +150,6 @@ body,
   );
 }
 
-/* 🔹 Search Bar */
-/* 🔹 Search Bar */
 .search-bar {
   width: 100%;
   display: flex;
@@ -183,22 +178,20 @@ body,
   background: #c92f3e;
 }
 
-/* 🔹 Mobile Nav Items */
 .mobile-nav-item {
   font-size: 18px;
   font-weight: 500;
-  color: black !important; /* 🔹 Changed text color to black */
-  text-align: left; /* 🔹 Align text to the left */
+  color: black !important;
+  text-align: left;
   margin-bottom: 15px;
   transition: color 0.3s ease-in-out;
-  padding-left: 10px; /* 🔹 Add some padding for better spacing */
+  padding-left: 10px;
 }
 
 .mobile-nav-item:hover {
   color: #c92f3e !important;
 }
 
-/* 🔹 Mobile Contact Button */
 .mobile-contact-btn {
   background-color: #ffd700;
   color: black !important;
@@ -212,7 +205,6 @@ body,
   color: white;
 }
 
-/* 🔹 Social Media Icons */
 .social-icons {
   display: flex;
   gap: 15px;
@@ -221,7 +213,7 @@ body,
 
 .social-icons a {
   font-size: 24px;
-  color: black !important; /* 🔹 Changed to black */
+  color: black !important;
   transition: color 0.3s ease-in-out;
 }
 
@@ -229,13 +221,13 @@ body,
   color: #c92f3e !important;
 }
 
-/* 🔹 Responsive Design */
 @media (max-width: 991px) {
   .custom-navbar {
     flex-direction: column;
     height: auto;
     padding: 12px;
     align-items: center;
+    width: 100%; /* Ensure full width on smaller screens */
   }
 
   .navbar-logo {
@@ -258,7 +250,6 @@ body,
   }
 }
 
-/* 🔹 Small Screens (Mobile View) */
 @media (max-width: 600px) {
   .custom-navbar {
     width: 100%;
@@ -277,7 +268,8 @@ body,
     width: 100%;
   }
 }
+
 .offcanvas-logo {
-  max-height: 25px; /* Adjust height as needed */
+  max-height: 25px;
   width: auto;
 }
