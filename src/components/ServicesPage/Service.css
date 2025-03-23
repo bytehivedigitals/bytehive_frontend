@@ -98,9 +98,12 @@
   border-radius: 30px;
   padding: 25px;
   padding-left: 0%;
-  background: #3a6ecf;
   color: white;
   transform: translateY(0);
+  background-image: url('../../assets/serviceblock-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .service-block h3 {
@@ -112,13 +115,14 @@
 }
 
 .service-block.expanded h3 {
-  font-size: 30px;
+  font-size: 32px;
   color: white;
   margin-left: 25px;
+  margin-top: 3%;
 }
 
 .service-description {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   color: inherit;
   margin-top: 20px;
@@ -215,9 +219,14 @@
   .servicePage {
     flex-direction: column;
     width: 100vw;
-    height: 80vh;
+    min-height: 80vh;
     margin-top: 3%;
     overflow-x: hidden;
+    transition: min-height 0.5s ease;
+  }
+
+  .servicePage.expanded {
+    min-height: fit-content;
   }
 
   .left-side,
@@ -234,8 +243,13 @@
     margin-left: 0;
   }
 
+  .right-side.expanded {
+    min-height: fit-content;
+    margin-top: -5%;
+  }
+
   .left-text {
-    padding-top: 0%;
+    padding-top: 4%;
   }
 
   .left-text h1,
@@ -265,7 +279,7 @@
 
   .service-block {
     background-color: #ffffff;
-    height: 70%;
+    height: 65%;  
     min-width: calc(96% / 2);
     border-radius: 20px;
     margin-top: 40px;
@@ -281,6 +295,7 @@
     min-width: 60%;
     border-radius: 20px;
     padding: 10px;
+    transition: height 0.5s ease;
   }
 
   .service-block h3 {
@@ -304,10 +319,6 @@
 
   .service-block .service-caption {
     display: none;
-  }
-
-  .right-side.expanded {
-    height: 70vh;
   }
 }
 
@@ -336,7 +347,6 @@
 
   .service-block {
     min-width: fit-content;
-    height: 70%;
   }
 
   .service-block h3 {
@@ -345,8 +355,13 @@
   }
 
   .service-block.expanded {
-    padding: 0;
+    padding: 0.8rem;
     min-width: fit-content;
+  }
+
+  .right-side.expanded .service-block:not(.expanded) {
+    height: 55%;
+    transition: height 0.5s ease;
   }
 }
 
