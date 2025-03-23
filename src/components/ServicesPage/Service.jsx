@@ -36,13 +36,38 @@ const services = [
 
 function Service() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const cardsContainerRef = useRef(null);
+  const cardRefs = useRef([]);
 
   const handleCardClick = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    const isExpanding = activeIndex !== index;
+    setActiveIndex(isExpanding ? index : null);
+
+    // setTimeout(() => {
+    //   const cardElement = cardRefs.current[index];
+    //   if (cardElement && cardsContainerRef.current) {
+    //     if (isExpanding) {
+    //         // Scroll to center the expanded card
+    //         const containerHeight = cardsContainerRef.current.clientHeight;
+    //         const cardHeight = cardElement.clientHeight;
+    //         const scrollTop = cardElement.offsetTop - (containerHeight - cardHeight) / 2;
+    //         cardsContainerRef.current.scrollTo({
+    //           top: scrollTop,
+    //           behavior: 'smooth',
+    //         });
+    //       } else {
+    //         // Scroll back to the original position (top of the card)
+    //         cardsContainerRef.current.scrollTo({
+    //           top: cardElement.offsetTop,
+    //           behavior: 'smooth',
+    //         });
+    //       }
+    //     }
+    //   }, 10);
   };
 
   return (
-    <div className='servicePage'>
+    <div className={`servicePage ${activeIndex !== null ? 'expanded' : ''}`}>
         <div className='left-side'>
           <div className='left-text'>
             <h1>EXPLORE OUR</h1>
@@ -52,11 +77,12 @@ function Service() {
           <img src={Anim} alt="" className='service-img' />
         </div>
         
-        <div className='right-side'>
-          <div className='cards-container'>
+        <div className={`right-side ${activeIndex !== null ? 'expanded' : ''}`}>
+          <div className='cards-container' ref={cardsContainerRef}>
             {services.map((service, index) => (
               <div
                 key={index}
+                ref={(el) => (cardRefs.current[index] = el)}
                 className={`service-block ${index === activeIndex ? 'expanded' : ''}`}
                 onClick={() => handleCardClick(index)}
               >
