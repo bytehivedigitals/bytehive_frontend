@@ -6,7 +6,7 @@ import {
   FaInstagram,
   FaYoutube,
 } from "react-icons/fa";
-import logo from "../../assets/name__1_-removebg-preview.png"; // Import your logo
+import logo from "../../assets/name_white1.png"; // Import your logo
 import "./footer.css";
 
 const Footer = () => {
