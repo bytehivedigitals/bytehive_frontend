@@ -6,7 +6,7 @@ import Story from "../components/OurStory/Story";
 import Approch from "../components/Approch/Approch";
 import Footer from "../components/footer/footer";
 import ScrollingBanner from "../components/marquee/marquee";
-
+import BlogSection from "../components/blogs/blog";
 const Home = () => {
   return (
     <div style={{ background: "#f5f5f5", width: "100vw" }}>
@@ -23,6 +23,7 @@ const Home = () => {
       <div id="works">
         <Approch />
       </div>
+      <BlogSection />
       <Footer />
       <ScrollingBanner />
     </div>
