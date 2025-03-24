@@ -1,9 +1,9 @@
 import React from "react";
 import "./blog.css";
 import image1 from "../../assets/React-BLOG-IMAGES-01-891x505.jpg";
-import image2 from "../../assets/React-BLOG-IMAGES-01-891x505.jpg";
-import image3 from "../../assets/React-BLOG-IMAGES-01-891x505.jpg";
-import image4 from "../../assets/React-BLOG-IMAGES-01-891x505.jpg"; // Added one more image
+import image2 from "../../assets/Magento-Community-vs-Enterprise.webp";
+import image3 from "../../assets/aivs.jpeg";
+import image4 from "../../assets/UI-Design-Trends-for-2025.png"; // Added one more image
 
 const blogs = [
   {
@@ -19,7 +19,7 @@ const blogs = [
     image: image2,
   },
   {
-    title: "WAC Gifts Its First Employee a Mercedes-Benz",
+    title: "Gen AI VS Agentic AI: what is the difference?",
     date: "February 10, 2023",
     readTime: "3 mins read",
     image: image3,
