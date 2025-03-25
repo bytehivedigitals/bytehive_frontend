@@ -3,8 +3,7 @@ import "./blog.css";
 import image1 from "../../assets/React-BLOG-IMAGES-01-891x505.jpg";
 import image2 from "../../assets/Magento-Community-vs-Enterprise.webp";
 import image3 from "../../assets/aivs.jpeg";
-import image4 from "../../assets/UI-Design-Trends-for-2025.png"; // Added one more image
-
+import image4 from "../../assets/UI-Design-Trends-for-2025.png";
 const blogs = [
   {
     title: "React Native vs Native: Which is Better for App Development?",
