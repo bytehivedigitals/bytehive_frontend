@@ -8,6 +8,7 @@ import {
   FaLinkedinIn,
   FaInstagram,
   FaYoutube,
+  FaCheckCircle
 } from "react-icons/fa";
 
 const FormWithBackground = () => {
@@ -18,7 +19,7 @@ const FormWithBackground = () => {
     response: "",
   });
 
-  const [show, setShow] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,15 +33,15 @@ const FormWithBackground = () => {
     e.preventDefault();
     emailjs
       .send(
-        "service_m73nvyq", // Replace with your EmailJS service ID
-        "template_k2982un", // Replace with your EmailJS template ID
-        { ...formData, reply_to: formData.email }, // Add reply_to field for auto-reply
-        "tijD6H-1i6aLa5rld" // Replace with your EmailJS user ID
+        "service_m73nvyq",
+        "template_k2982un",
+        { ...formData, reply_to: formData.email },
+        "tijD6H-1i6aLa5rld"
       )
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          setShow(true); // Show the success popup
+          setShowSuccess(true); // Show the success popup
         },
         (err) => {
           console.log("FAILED...", err);
@@ -56,13 +57,13 @@ const FormWithBackground = () => {
     });
   };
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => setShowSuccess(false);
 
   return (
     <div className="form-container">
       <BootstrapForm onSubmit={handleSubmit} className="form-content">
         <h1 className="form-h1">
-          Got ideas? We've got the skills. Let's team up.
+          Got ideas? We've got the skills. Let's team up.
         </h1>
         <br />
         <br />
@@ -112,19 +113,21 @@ const FormWithBackground = () => {
         <br />
         <button type="submit">Send Message</button>
       </BootstrapForm>
-       <div className="popup">
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Success</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Your message has been sent successfully! Our team will contact you soon....</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+
+      {/* Custom Success Popup */}
+      {showSuccess && (
+  <div className="success-popup-overlay">
+    <div className="success-popup">
+      <div className="success-icon">
+        <div className="circle"></div>
+        <div className="checkmark"></div>
       </div>
+      <h3>Success!</h3>
+      <p>Your response has been sent successfully! Our team will contact you soon...</p>
+      <button onClick={handleClose}>OK</button>
+    </div>
+  </div>
+      )}
     </div>
   );
 };

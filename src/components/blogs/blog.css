@@ -88,12 +88,10 @@
   font-size: 14px;
   cursor: pointer;
   transition: background 0.3s ease;
-  text-decoration: none;
 }
 
 .read-more:hover {
   background: #0d6efd;
-  color: #fff;
 }
 
 /* Explore button */
