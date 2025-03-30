@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Form/Form.css";
-import { Form as BootstrapForm } from "react-bootstrap";
+import { Form as BootstrapForm, Modal, Button } from "react-bootstrap";
 import emailjs from "emailjs-com";
 import {
   FaFacebookF,
@@ -18,6 +18,8 @@ const FormWithBackground = () => {
     response: "",
   });
 
+  const [show, setShow] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -32,12 +34,13 @@ const FormWithBackground = () => {
       .send(
         "service_m73nvyq", // Replace with your EmailJS service ID
         "template_k2982un", // Replace with your EmailJS template ID
-        formData,
+        { ...formData, reply_to: formData.email }, // Add reply_to field for auto-reply
         "tijD6H-1i6aLa5rld" // Replace with your EmailJS user ID
       )
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
+          setShow(true); // Show the success popup
         },
         (err) => {
           console.log("FAILED...", err);
@@ -52,6 +55,8 @@ const FormWithBackground = () => {
       response: "",
     });
   };
+
+  const handleClose = () => setShow(false);
 
   return (
     <div className="form-container">
@@ -107,25 +112,19 @@ const FormWithBackground = () => {
         <br />
         <button type="submit">Send Message</button>
       </BootstrapForm>
-
-      {/* <div className="form-social">
-          <a href="#">
-            <FaFacebookF />
-          </a>
-          <a href="#">
-            <FaTwitter />
-          </a>
-          <a href="#">
-            <FaLinkedinIn />
-          </a>
-          <a href="#">
-            <FaInstagram />
-          </a>
-          <a href="#">
-            <FaYoutube />
-          </a>
-        </div>
- */}
+       <div className="popup">
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Success</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Your message has been sent successfully! Our team will contact you soon....</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      </div>
     </div>
   );
 };

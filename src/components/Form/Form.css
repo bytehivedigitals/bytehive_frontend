@@ -24,6 +24,25 @@
   .form-h1{
     color: white;
   }
+
+  .form-social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .form-social a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #000;
+  }
+  
+  .modal-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
   
   .form-content div {
     margin-bottom: 15px;

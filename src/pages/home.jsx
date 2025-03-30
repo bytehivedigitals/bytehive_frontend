@@ -8,10 +8,11 @@ import Footer from "../components/footer/footer";
 import ScrollingBanner from "../components/marquee/marquee";
 import BlogSection from "../components/blogs/blog";
 import FormWithBackground from "../components/Form/Form";
-import { Layout } from "lucide-react";
+// import ChatBot from "../components/ChatBot/ChatBot";
 const Home = () => {
   return (
     <div style={{ background: "#f5f5f5", width: "100vw" }}>
+      {/* <ChatBot /> */}
       <CurvedNavbar />
       <div id="home">
         <Landing />
