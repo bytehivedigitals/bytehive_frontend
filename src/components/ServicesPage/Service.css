@@ -100,10 +100,6 @@
   padding-left: 0%;
   color: white;
   transform: translateY(0);
-  background-image: url('../../assets/serviceblock-bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .service-block h3 {
