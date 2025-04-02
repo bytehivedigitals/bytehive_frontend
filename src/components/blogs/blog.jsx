@@ -29,7 +29,7 @@ const blogs = [
     date: "February 10, 2023",
     readTime: "3 mins read",
     image: image3,
-    link: "https://eicta.iitk.ac.in/knowledge-hub/artificial-intelligence/agentic-ai-vs-generative-ai/#:~:text=Agentic%20AI%3A%20It%20focuses%20on,text%2C%20graphics%2C%20and%20music.",
+    link: "https://eicta.iitk.ac.in/knowledge-hub/artificial-intelligence/agentic-ai-vs-generative-ai/",
   },
   {
     title: "Top UI/UX Trends in 2025: What You Need to Know",
@@ -57,7 +57,7 @@ const blogs = [
     date: "March 1, 2025",
     readTime: "7 mins read",
     image: image7,
-    link: "https://www.ramotion.com/blog/what-is-web-3-0/#:~:text=Web%203.0%20represents%20a%20paradigm,with%20online%20applications%20and%20services.",
+    link: "https://www.ramotion.com/blog/what-is-web-3-0/",
   },
   {
     title: "Cybersecurity in 2025: Threats and Best Practices",
@@ -79,7 +79,17 @@ const BlogSection = () => {
 
   return (
     <section className="blog-section">
-      <h2 className="section-title">Latest Insights</h2>
+      {/* Header with Left-aligned Paragraph and Right-aligned Heading */}
+      <div className="blog-header">
+        <p className="blog-description">
+          Stay updated with the latest insights on technology, AI, web
+          development, and more. Explore our expert articles and stay ahead in
+          the digital world.
+        </p>
+        <h2 className="section-title">PRESS INSIGHTS</h2>
+      </div>
+
+      {/* Blog Grid */}
       <div className="blog-grid">
         {blogs.slice(0, visibleBlogs).map((blog, index) => (
           <div key={index} className="blog-card">
@@ -101,6 +111,8 @@ const BlogSection = () => {
           </div>
         ))}
       </div>
+
+      {/* Explore Button */}
       <div className="explore-btn-container">
         <button className="explore-btn" onClick={toggleExpand}>
           {expanded ? "Show Less ↑" : "Explore all insights →"}

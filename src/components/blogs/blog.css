@@ -2,17 +2,33 @@
 .blog-section {
   width: 100%;
   padding: 60px 5%;
-  background: #0d6efd;
-  border-radius: 30px;
+  background-color: #dbdde9 !important;
 }
 
-/* Left-aligned title */
+/* Flex container for heading and paragraph */
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* Align section title (heading) to the right */
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #fff;
-  text-align: left;
-  margin-bottom: 40px;
+  color: #0057ff !important;
+  text-align: right;
+  flex: 1;
+}
+
+/* Style for the new paragraph on the left */
+.blog-description {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #0057ff !important;
+  max-width: 50%;
+  flex: 1;
 }
 
 /* Blog grid layout */
@@ -26,6 +42,17 @@
 @media (max-width: 1200px) {
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .blog-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .section-title {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .blog-description {
+    max-width: 100%;
   }
 }
 
@@ -60,13 +87,13 @@
 /* Blog content */
 .blog-content {
   padding: 20px;
-  color: #fff;
+  color: #0057ff !important;
 }
 
 /* Blog metadata */
 .blog-meta {
   font-size: 14px;
-  color: #ddd;
+  color: #0057ff !important;
   display: block;
   margin-bottom: 8px;
 }
@@ -81,7 +108,7 @@
 /* Read more button */
 .read-more {
   background: #fff;
-  color: black;
+  color: #0057ff !important;
   border: none;
   padding: 10px 15px;
   border-radius: 6px;
@@ -93,7 +120,7 @@
 
 .read-more:hover {
   background: #0d6efd;
-  color: #fff;
+  color: #fff !important;
 }
 
 /* Explore button */
@@ -101,20 +128,6 @@
   margin-top: 40px;
   text-align: left;
 }
-
 .explore-btn {
-  background: #fff;
-  color: #113984;
-  padding: 12px 24px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.explore-btn:hover {
-  background: #0d6efd;
-  color: #fff;
+  color: #0057ff !important;
 }
