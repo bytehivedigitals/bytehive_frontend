@@ -13,7 +13,6 @@ const Home = () => {
   return (
     <div style={{ background: "#f5f5f5", width: "100vw" }}>
       {/* <ChatBot /> */}
-      <CurvedNavbar />
       <div id="home">
         <Landing />
       </div>
