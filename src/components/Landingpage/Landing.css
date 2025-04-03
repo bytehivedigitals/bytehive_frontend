@@ -3,11 +3,7 @@
 .landingPage {
   width: 100%;
   height: auto;
-  background: linear-gradient(
-    96.77deg,
-    rgb(255, 255, 255) 0%,
-    rgb(232, 161, 188) 130%
-  );
+  background: #dbdde9;
 }
 
 .animated-Logo {

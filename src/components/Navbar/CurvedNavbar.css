@@ -1,18 +1,221 @@
-.navbar {
-  background-color: #dbdde9 !important;
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Left - Logo */
+.custom-logo {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 15px;
+  transform: translateY(10px);
   color: #0057ff;
 }
+.custom-logo-1 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 20px;
+  transform: translateY(10px);
+  color: #fff;
+}
 
-.navbar-nav .nav-link {
+/* Center - Navigation Links */
+.custom-nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.custom-nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  transition: opacity 0.3s ease-in-out;
+  margin-top: 20px;
+  transform: translateY(10px);
+}
+
+.custom-nav-links li {
+  font-size: 25px;
+}
+
+.custom-nav-links a {
+  text-decoration: none;
+  color: #0057ff;
   font-weight: 500;
-  color: #0057ff !important; /* Blue color */
-  margin: 0 10px;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.navbar-nav .nav-link:hover {
+.custom-nav-links a:hover {
+  color: #ff6600;
+  transform: scale(1.1);
+}
+
+/* Right Side - Contact & Menu */
+.custom-right-side {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: flex-end;
+  width: 200px;
+  text-decoration: underline #0057ff;
+  margin-top: 20px;
+  transform: translateY(10px);
+}
+
+.custom-contact-link,
+.custom-menu-text {
+  font-size: 25px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #0057ff;
+  cursor: pointer;
+}
+
+.custom-contact-link:hover,
+.custom-menu-text:hover {
   text-decoration: underline;
 }
 
-.active-link {
+/* Scroll Behavior */
+.custom-scrolled {
+  background-color: transparent;
+}
+
+/* Hide Navigation Links on Scroll */
+.custom-scrolled .custom-nav-links {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Fullscreen Menu */
+.custom-fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0057ff;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  z-index: 100;
+  animation: fadeIn 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.custom-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  right: 40px;
+}
+
+.custom-menu-header .custom-close-btn {
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
   text-decoration: underline;
+}
+
+.custom-menu-items {
+  list-style: none;
+  text-align: left;
+  overflow-y: hidden;
+  max-height: 80vh;
+}
+
+.custom-menu-items li {
+  font-size: 8vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.custom-menu-items li:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.custom-menu-index {
+  font-size: 2vw;
+  margin-right: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease-in-out;
+}
+
+/* Apply hover effect to both the menu item and its index */
+.custom-menu-items li:hover .custom-menu-index {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Auto-Scrolling Effect */
+.custom-menu-items:hover {
+  animation: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide nav links and contact on mobile */
+@media (max-width: 768px) {
+  .custom-nav-links,
+  .custom-contact-link {
+    display: none;
+  }
+
+  .custom-right-side {
+    width: auto;
+  }
+}
+
+/* Ensure menu covers full screen on mobile */
+@media (max-width: 768px) {
+  .custom-fullscreen-menu {
+    background: #0057ff;
+    color: white;
+    padding: 20px;
+  }
+
+  .custom-menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .custom-menu-items li {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .custom-menu-items li:last-child {
+    border-bottom: none;
+  }
 }

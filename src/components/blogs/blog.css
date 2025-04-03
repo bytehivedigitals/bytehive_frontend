@@ -64,7 +64,7 @@
 
 /* Blog card design */
 .blog-card {
-  background: rgba(255, 255, 255, 0.1);
+  background-color: #0057ff !important;
   border-radius: 12px;
   overflow: hidden;
   text-align: left;
@@ -87,7 +87,7 @@
 /* Blog content */
 .blog-content {
   padding: 20px;
-  color: #0057ff !important;
+  color: #dbdde9 !important;
 }
 
 /* Blog metadata */

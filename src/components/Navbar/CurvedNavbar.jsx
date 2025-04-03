@@ -1,65 +1,108 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./CurvedNavbar.css"; // Custom styles
+import React, { useState, useEffect } from "react";
+import "./CurvedNavbar.css";
 
-const Navbar = () => {
+const CustomNavbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      const interval = setInterval(() => {
+        if (scrolling) {
+          const menu = document.querySelector(".custom-menu-items");
+          if (menu) {
+            menu.scrollBy({ top: 1, behavior: "smooth" });
+          }
+        }
+      }, 50);
+
+      return () => clearInterval(interval);
+    }
+  }, [isMenuOpen, scrolling]);
+
+  const handleNavClick = (id) => {
+    setIsMenuOpen(false);
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
-      <div className="container-fluid">
-        <a className="navbar-brand text-primary fw-bold" href="#">
-          ByteHive.
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div
-          className="collapse navbar-collapse justify-content-center"
-          id="navbarNav"
-        >
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link text-primary" href="#">
-                What We Do
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-primary" href="#">
-                Work
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-primary" href="#">
-                About
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-primary" href="#">
-                About
-              </a>
-            </li>
-            <li className="nav-item d-lg-none">
-              <a className="nav-link text-primary active-link" href="#">
-                Contact
-              </a>
-            </li>
+    <>
+      <nav className={`custom-navbar ${isScrolled ? "custom-scrolled" : ""}`}>
+        <div className="custom-logo">ByteHive</div>
+
+        <div className="custom-nav-center">
+          <ul className={`custom-nav-links ${isScrolled ? "hidden" : ""}`}>
+            {["What We Do", "Work", "Method", "Learn", "About"].map((id) => (
+              <li key={id}>
+                <a href={`#${id}`} onClick={() => handleNavClick(id)}>
+                  {id.replace("-", " ")}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
-        <div className="d-none d-lg-flex">
-          <a className="nav-link text-primary active-link" href="#">
+
+        <div className="custom-right-side">
+          <a
+            href="#contact"
+            className="custom-contact-link"
+            onClick={() => handleNavClick("contact")}
+          >
             Contact
           </a>
+          {isScrolled && (
+            <span
+              className="custom-menu-text"
+              onClick={() => setIsMenuOpen(true)}
+            >
+              Menu
+            </span>
+          )}
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {isMenuOpen && (
+        <div
+          className="custom-fullscreen-menu"
+          onMouseEnter={() => setScrolling(false)}
+          onMouseLeave={() => setScrolling(true)}
+        >
+          <div className="custom-menu-header">
+            <div className="custom-logo-1">ByteHive</div>
+            <span
+              className="custom-close-btn"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Close
+            </span>
+          </div>
+          <ul className="custom-menu-items">
+            {["what-we-do", "work", "method", "learn", "about"].map(
+              (id, index) => (
+                <li key={id} onClick={() => handleNavClick(id)}>
+                  <span className="custom-menu-index">(0{index + 1})</span>{" "}
+                  {id.replace("-", " ")}
+                </li>
+              )
+            )}
+          </ul>
+        </div>
+      )}
+    </>
   );
 };
 
-export default Navbar;
+export default CustomNavbar;
