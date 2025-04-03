@@ -1,19 +1,25 @@
+/* Infinite scrolling heading styles */
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .rotating-heading-container {
   width: 100%;
-  /* overflow: hidden; */
   position: relative;
-  height: 9rem; /* Match your font-size */
+  height: 14rem;
+  overflow: hidden;
+  background-color: #dbdde9;
 }
 
 .rotating-heading {
   position: absolute;
   white-space: nowrap;
-  animation: scrollRightToLeft 10s linear infinite;
+  animation: scrollRightToLeft 15s linear infinite;
   font-size: 9rem;
-  margin-top: 20px;
-  /* Add space between words */
-  word-spacing: 5rem; /* Adjust this value as needed */
+  margin-top: 50px;
+  word-spacing: 5rem;
   color: #2B40F5;
+  will-change: transform;
 }
 
 @keyframes scrollRightToLeft {
@@ -21,7 +27,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-30%); /* Move by half of the content width */
+    transform: translateX(-50%);
   }
 }
 
@@ -29,8 +35,8 @@
   /* background-color: aqua; */
   width: 55%;
   font-size: 3rem;
-  margin-top: 350px;
-  margin-left:800px;
+  margin-top: 100px;
+  margin-left:850px;
   color: #2B40F5;
 }
 .form-p p{
@@ -41,19 +47,18 @@
   font-size: 3rem;
   color: #2B40F5;
   margin-bottom: 5rem;
-  margin-top: 100px;
+  margin-top: 70px;
 }
 
 hr{
   border: 2px solid #0a22f7;
-  margin: 5rem 0;
+  margin: 7rem 0;
 }
 /* Form styles */
 .contact-container {
   max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
-
   background-color: #dbdde9;
 }
 
@@ -88,7 +93,7 @@ hr{
   padding: 0.7rem;
   border: 1.5px solid #2113e4;
   border-radius: 8px;
-  font-size: 2.5rem;
+  font-size: 2rem;
   transition: border-color 0.3s;
   border-radius: 30px;
   background-color: transparent;
@@ -115,7 +120,7 @@ hr{
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s;
-  margin-top: rem;
+  margin-top: -40px;
   width: 20%;
 }
 
@@ -147,6 +152,11 @@ hr{
 }
 
 /* Responsive design */
+@media (max-width: 1200px) {
+  .contact-container {
+    width: 100%;
+  }
+
 @media (max-width: 768px) {
   .contact-container {
     padding: 1rem;
@@ -160,4 +170,5 @@ hr{
     flex-direction: column;
     gap: 1.5rem;
   }
+}
 }

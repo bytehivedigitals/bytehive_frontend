@@ -19,6 +19,7 @@
 .story-video video {
   width: 100%;
   height: auto;
+  margin-top: 200px;
   justify-content: center;
   transform-origin: center center;
   transition: transform 0.1s ease-out;
@@ -64,14 +65,14 @@
 }
 .story-h3 h3 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: -50px;
 }
 /* Add these to your Story.css */
 .story-video {
   position: relative;
   width: 100%;
   max-width: 800px;
-  margin: 0px auto; /* Center horizontally */
+  margin: -20px auto; /* Center horizontally */
   display: flex;
   justify-content: center; /* Center child (video) */
 }
@@ -87,11 +88,11 @@
   /* Updated small video container size */
   display: inline-block;
   width: 700px; /* Reduced from 100px */
-  height: 45px; /* Reduced from 60px (maintain aspect ratio) */
+  height: 60px; /* Reduced from 60px (maintain aspect ratio) */
   position: relative;
   overflow: hidden;
   vertical-align: middle;
-  margin: 0 px;
+  margin:-30px;
 }
 
 @media (max-width: 1200px) {

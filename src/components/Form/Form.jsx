@@ -56,14 +56,35 @@ const Form = () => {
   };
 
   return (
-    <div className="contact-container">
-      <h1 className="rotating-heading">CONTACT CONTACT CONTACT</h1>
-
-      <p className='form-p'>Use the contact form below to share your
+    <div id="main">
+      <div>
+        <div>
+          <div>
+            <div className="overflow-hidden">
+              <div>
+                <div>
+                  <div>
+                    {/* First child div */}
+                    <div></div>
+                    
+                    {/* Second child div - This is where your heading goes */}
+                    <div className="rotating-heading-container">
+                      <div className="rotating-heading">
+                        CONTACT CONTACT CONTACT CONTACT CONTACT CONTACT
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Rest of your form content */}
+            <div className="contact-container">
+              <p className="form-p">Use the contact form below to share your
 project. For press, media, or careers, scroll down
 to email us.</p>
-      <h2 className='form-h2'>project inquiry form</h2>
-      <hr/>
+              <h2 className="form-h2">project inquiry form</h2>
+              <hr />
 
       {submitStatus === 'success' && (
         <div className="success-message">
@@ -159,6 +180,10 @@ to email us.</p>
           {isSubmitting ? 'Sending...' : 'Submit'}
         </button>
       </form>
+      </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
