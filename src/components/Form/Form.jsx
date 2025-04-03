@@ -1,135 +1,166 @@
-import React, { useState } from "react";
-import "../Form/Form.css";
-import { Form as BootstrapForm, Modal, Button } from "react-bootstrap";
-import emailjs from "emailjs-com";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
-  FaInstagram,
-  FaYoutube,
-  FaCheckCircle
-} from "react-icons/fa";
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import './Form.css';
 
-const FormWithBackground = () => {
+const Form = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    number: "",
-    response: "",
+    firstName: '',
+    lastName: '',
+    companyName: '',
+    companyEmail: '',
+    companyWebsite: '',
+    projectDetails: ''
   });
-
-  const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs
-      .send(
-        "service_m73nvyq",
-        "template_k2982un",
-        { ...formData, reply_to: formData.email },
-        "tijD6H-1i6aLa5rld"
-      )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-          setShowSuccess(true); // Show the success popup
-        },
-        (err) => {
-          console.log("FAILED...", err);
-        }
-      );
+    setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    console.log("Form data submitted:", formData);
-    setFormData({
-      name: "",
-      email: "",
-      number: "",
-      response: "",
+    // Initialize EmailJS with your User ID
+    emailjs.init('YOUR_USER_ID');
+
+    emailjs.send(
+      'YOUR_SERVICE_ID',     // Service ID
+      'YOUR_TEMPLATE_ID',    // Template ID
+      formData               // Form data
+    )
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      setSubmitStatus('success');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        companyName: '',
+        companyEmail: '',
+        companyWebsite: '',
+        projectDetails: ''
+      });
+    }, (error) => {
+      console.log('FAILED...', error);
+      setSubmitStatus('error');
+    })
+    .finally(() => {
+      setIsSubmitting(false);
     });
   };
 
-  const handleClose = () => setShowSuccess(false);
-
   return (
-    <div className="form-container">
-      <BootstrapForm onSubmit={handleSubmit} className="form-content">
-        <h1 className="form-h1">
-          Got ideas? We've got the skills. Let's team up.
-        </h1>
-        <br />
-        <br />
-        <div>
-          <label htmlFor="name">Name:</label>
+    <div className="contact-container">
+      <h1 className="rotating-heading">CONTACT CONTACT CONTACT</h1>
+
+      <p className='form-p'>Use the contact form below to share your
+project. For press, media, or careers, scroll down
+to email us.</p>
+      <h2 className='form-h2'>project inquiry form</h2>
+      <hr/>
+
+      {submitStatus === 'success' && (
+        <div className="success-message">
+          Thank you! Your submission has been received.
+        </div>
+      )}
+      {submitStatus === 'error' && (
+        <div className="error-message">
+          Oops! Something went wrong. Please try again.
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit} className="contact-form">
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="firstName">First Name*</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="lastName">Last Name*</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </div>
+        
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="companyName">Company Name</label>
+            <input
+              type="text"
+              id="companyName"
+              name="companyName"
+              value={formData.companyName}
+              onChange={handleChange}
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="companyEmail">Company Email*</label>
+            <input
+              type="email"
+              id="companyEmail"
+              name="companyEmail"
+              value={formData.companyEmail}
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="companyWebsite">Company Website</label>
           <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
+            type="url"
+            id="companyWebsite"
+            name="companyWebsite"
+            value={formData.companyWebsite}
             onChange={handleChange}
-            required
           />
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="number">Number:</label>
-          <input
-            type="tel"
-            id="number"
-            name="number"
-            value={formData.number}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="response">Response:</label>
+        
+        <div className="form-group">
+          <label htmlFor="projectDetails">Tell us about the project (scope, timeline, budget):*</label>
           <textarea
-            id="response"
-            name="response"
-            value={formData.response}
+            id="projectDetails"
+            name="projectDetails"
+            value={formData.projectDetails}
             onChange={handleChange}
+            rows="5"
             required
           ></textarea>
         </div>
-        <br />
-        <button type="submit">Send Message</button>
-      </BootstrapForm>
-
-      {/* Custom Success Popup */}
-      {showSuccess && (
-  <div className="success-popup-overlay">
-    <div className="success-popup">
-      <div className="success-icon">
-        <div className="circle"></div>
-        <div className="checkmark"></div>
-      </div>
-      <h3>Success!</h3>
-      <p>Your response has been sent successfully! Our team will contact you soon...</p>
-      <button onClick={handleClose}>OK</button>
-    </div>
-  </div>
-      )}
+        
+        <button 
+          type="submit" 
+          className="submit-button"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Sending...' : 'Submit'}
+        </button>
+      </form>
     </div>
   );
 };
 
-export default FormWithBackground;
+export default Form;

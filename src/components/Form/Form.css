@@ -1,289 +1,163 @@
-.form-container {
-    background-image: url('../../assets/sv7.png'); /* Replace with the path to your image */
-    background-size: cover;
-    background-position: center;
-    height: 828px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 30px;
-    margin-top: 10px;
-  }
-  
-  .form-content {
-    width: 550px;
-    height: 80%;
-    margin-left: -800px;
-    margin-top: 50px;
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    padding: 20px;
-    border-radius: 10px;
-    /* box-shadow: 0 4px 8px rgba(238, 235, 235, 0.196); */
-  }
-  .form-h1{
-    color: white;
-  }
-
-/* Success Popup Styles */
-/* Success Popup Styles */
-.success-popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  animation: fadeIn 0.3s ease-out;
+.rotating-heading-container {
+  width: 100%;
+  /* overflow: hidden; */
+  position: relative;
+  height: 9rem; /* Match your font-size */
 }
 
-.success-popup {
+.rotating-heading {
+  position: absolute;
+  white-space: nowrap;
+  animation: scrollRightToLeft 10s linear infinite;
+  font-size: 9rem;
+  margin-top: 20px;
+  /* Add space between words */
+  word-spacing: 5rem; /* Adjust this value as needed */
+  color: #2B40F5;
+}
+
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-30%); /* Move by half of the content width */
+  }
+}
+
+.form-p{
+  /* background-color: aqua; */
+  width: 55%;
+  font-size: 3rem;
+  margin-top: 350px;
+  margin-left:800px;
+  color: #2B40F5;
+}
+.form-p p{
+  color: #2B40F5;
+}
+
+.form-h2{
+  font-size: 3rem;
+  color: #2B40F5;
+  margin-bottom: 5rem;
+  margin-top: 100px;
+}
+
+hr{
+  border: 2px solid #0a22f7;
+  margin: 5rem 0;
+}
+/* Form styles */
+.contact-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+
   background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 400px;
-  width: 90%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.success-icon {
-  margin-bottom: 20px;
-  position: relative;
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 25px;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 }
 
-.success-icon .circle {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: #4CAF50;
-  opacity: 0.1;
+.form-row {
+  display: flex;
+  gap: 1.5rem;
 }
 
-.success-icon .checkmark {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.form-row .form-group {
+  flex: 1;
 }
 
-.success-icon .checkmark::after {
-  content: '';
-  position: absolute;
-  left: 45px;
-  top: 10px;
-  width: 25px;
-  height: 50px;
-  border-right: 4px solid #4CAF50;
-  border-bottom: 4px solid #4CAF50;
-  transform: rotate(45deg);
-  transform-origin: left top;
-  animation: drawCheckmark 0.8s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.success-popup h3 {
-  color: #4CAF50;
-  margin-bottom: 15px;
-  animation: fadeInUp 0.5s ease-out 0.3s both;
+.form-group label {
+  font-weight: 600;
+  color: #2B40F5;
 }
 
-.success-popup p {
-  margin-bottom: 20px;
-  color: #333;
-  animation: fadeInUp 0.5s ease-out 0.4s both;
+.form-group input,
+.form-group textarea {
+  padding: 0.7rem;
+  border: 1.5px solid #2113e4;
+  border-radius: 8px;
+  font-size: 2.5rem;
+  transition: border-color 0.3s;
+  border-radius: 30px;
+  background-color: transparent;
+  color: black;
 }
 
-.success-popup button {
-  background-color: #4CAF50;
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
+  background-color: #2B40F5;
   color: white;
+  padding: 1rem 1.5rem;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 4px;
+  font-size: 1rem;
   cursor: pointer;
-  font-size: 16px;
   transition: all 0.3s;
-  animation: fadeInUp 0.5s ease-out 0.5s both;
+  margin-top: rem;
+  width: 20%;
 }
 
-.success-popup button:hover {
-  background-color: #45a049;
+.submit-button:hover {
+  background-color: #3859ec;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
 }
 
-@keyframes popIn {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
 }
 
-@keyframes drawCheckmark {
-  0% {
-    height: 0;
-    width: 0;
-    border-right-width: 0;
-    border-bottom-width: 0;
-  }
-  50% {
-    height: 50px;
-    width: 0;
-    border-right-width: 0;
-    border-bottom-width: 4px;
-  }
-  100% {
-    height: 50px;
-    width: 25px;
-    border-right-width: 4px;
-    border-bottom-width: 4px;
-  }
+.submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.form-content div {
-    margin-bottom: 15px;
-    
-  }
-
-  
-  .form-content label {
-    display: block;
-    margin-bottom: 5px;
-    margin-left: 20px;
-    color: white;
-  }
-  
-  .form-content input,
-  .form-content textarea {
-    width: 80%;
-    padding: 10px;
-    border-bottom: 2px solid #edf2f7;
-    border-top: hidden;
-    border-right: hidden;
-    border-left: hidden; 
-
-        /* border-radius: 30px; */
-    background-color: transparent;
-    margin-left: 20px;
-  }
-  .form-content input:focus {
-    border-bottom: 2px solid #3893ed; /* Or your preferred focus color */
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    outline: none;
-  }
-  .form-content textarea:focus {
-    border-bottom: 2px solid #8564f2; /* Keeps only bottom border */
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    outline: none; /* Important for removing default focus styles */
-  }
-  .form-content button {
-    display: block;
-    width: 60%;
-    padding: 10px;
-    margin-left: 20px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 99);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-  }
-  
-  .form-content button:hover {
-    background-color: #057eff;
-    color: #ffffff;
-    /* color: #d4d1d1; */
-  }
-  
 /* Responsive design */
-@media screen and (max-width: 1200px) {
-  .form-content{
-    width: 450px;
-    height: 80%;
-    margin-left: -300px;
-    margin-top: 50px;
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    padding: 20px;
-    border-radius: 10px;
-    /* box-shadow: 0 4px 8px rgba(238, 235, 235, 0.196); */
-  }
-}
 @media (max-width: 768px) {
-  .form-content{
-    width: 350px;
-    height: 80%;
-    margin-left: -100px;
-    margin-top: 50px;
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    padding: 20px;
-    border-radius: 10px;
-    /* box-shadow: 0 4px 8px rgba(238, 235, 235, 0.196); */
+  .contact-container {
+    padding: 1rem;
   }
-  .form-content button {
-    display: block;
-    width: 60%;
-    padding: 10px;
-    margin-left: 20px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 99);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
+  
+  .rotating-heading {
+    font-size: 2.2rem;
   }
-}
-@media (max-width: 768px) {
-  .form-content{
-    width: 350px;
-    height: 80%;
-    margin-left: -00px;
-    margin-top: 50px;
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    padding: 20px;
-    border-radius: 10px;
-    /* box-shadow: 0 4px 8px rgba(238, 235, 235, 0.196); */
-  }
-  .form-content button {
-    display: block;
-    width: 60%;
-    padding: 10px;
-    margin-left: 20px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 99);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
+  
+  .form-row {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
