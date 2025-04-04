@@ -1,12 +1,12 @@
 /* Base styles */
 .main-approch {
     height: 100vh;
-    background-color: #564496;
+    background-color: #dbdde9;
     border-radius: 30px;
     display: flex;
     justify-content: space-between;
     overflow-y: hidden;
-    margin-bottom: 0.5%;
+
 }
 
 .approch-txt {
@@ -17,13 +17,13 @@
 
 .approch-txt h1 {
     font-size: 60px;
-    color: #fff;
+    color: #2B40F5;
     font-family: 'Poppins', sans-serif;
 }
 
 .approch-txt h2 {
     font-size: 50px;
-    color: #fff;
+    color: #2B40F5;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -37,7 +37,7 @@
     margin-left: 5%;
     margin-top: 5%;
     font-size: 18px;
-    color: #fff;
+    color: #2B40F5;
 }
   
 .right-section {

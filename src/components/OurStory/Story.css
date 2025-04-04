@@ -97,26 +97,25 @@
 
 @media (max-width: 1200px) {
   .story-video {
-    max-width: 45rem;
+    max-width: 40rem;
   }
 }
 
 @media (max-width: 992px) {
   .story-video {
     max-width: 40rem;
-    margin-top: 8rem;
+    margin-top: -3rem;
   }
   
   .story-h1 h1 {
     font-size: clamp(3rem, 8vw, 8rem);
-    margin-top: 40rem;
+    margin-top: 60rem;
   }
 }
 
 @media (max-width: 768px) {
   .story-video {
     max-width: 35rem;
-    margin-top: 6rem;
   }
   
   .dot-headings {
@@ -133,12 +132,13 @@
   .story-video {
     width: 70%;
     max-width: 30rem;
-    margin-top: 4rem;
+    /* margin-left: rem; */
+    margin-top: -2rem;
   }
   
   .story-h1 h1 {
-    font-size: clamp(2rem, 6vw, 6rem);
-    margin-top: 30rem;
+    font-size: clamp(2rem, 6vw, rem);
+    margin-top: 70rem;
   }
   
   .story-h3 h3 {
