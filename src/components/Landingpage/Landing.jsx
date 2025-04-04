@@ -9,7 +9,7 @@ function Landing() {
       {/* Headings with arrow */}
       <div className="headings-container">
         <div className="headings">
-          <h1>LET'S</h1>
+          <h1>*LET'S</h1>
           <h2>MAKE IT</h2>
           <h3>GREAT</h3>
           <div className="down-arrow-container">

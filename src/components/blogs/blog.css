@@ -17,7 +17,7 @@
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #0057ff !important;
+  color: #2b40f5 !important;
   text-align: right;
   flex: 1;
 }
@@ -26,7 +26,7 @@
 .blog-description {
   font-size: 1.1rem;
   font-weight: 400;
-  color: #0057ff !important;
+  color: #2b40f5 !important;
   max-width: 50%;
   flex: 1;
 }
@@ -64,7 +64,7 @@
 
 /* Blog card design */
 .blog-card {
-  background-color: #0057ff !important;
+  background-color: #2b40f5 !important;
   border-radius: 12px;
   overflow: hidden;
   text-align: left;
@@ -93,7 +93,7 @@
 /* Blog metadata */
 .blog-meta {
   font-size: 14px;
-  color: #0057ff !important;
+  color: #2b40f5 !important;
   display: block;
   margin-bottom: 8px;
 }
@@ -108,7 +108,7 @@
 /* Read more button */
 .read-more {
   background: #fff;
-  color: #0057ff !important;
+  color: #2b40f5 !important;
   border: none;
   padding: 10px 15px;
   border-radius: 6px;
@@ -129,6 +129,6 @@
   text-align: left;
 }
 .explore-btn {
-  color: #0057ff !important;
+  color: #2b40f5 !important;
   background-color: #dbdde9 !important;
 }

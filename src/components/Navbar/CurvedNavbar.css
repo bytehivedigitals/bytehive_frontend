@@ -48,15 +48,32 @@
 }
 
 .custom-nav-links a {
+  position: relative;
   text-decoration: none;
-  color: #0057ff;
+  color: #2b40f5;
   font-weight: 500;
   transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
+.custom-nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #2b40f5;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
 .custom-nav-links a:hover {
-  color: #ff6600;
+  color: #2b40f5;
   transform: scale(1.1);
+}
+
+.custom-nav-links a:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 /* Right Side - Contact & Menu */
