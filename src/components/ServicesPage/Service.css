@@ -1,14 +1,16 @@
+/* Import Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
+/* General Styles */
 .servicePage {
   width: 100%;
   height: 90vh;
-  background-color: #f5f5f5;
+  background-color: #dbdde9;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   padding: 10px;
+  flex-direction: row;
 }
 
 .left-side {
@@ -27,14 +29,17 @@
   font-family: "Poppins", sans-serif;
 }
 
+.left-text h1,
+.left-text h2 {
+  color: #ffffff;
+}
+
 .left-text h1 {
   font-size: 3.5rem;
-  color: #ffffff;
 }
 
 .left-text h2 {
   font-size: 3rem;
-  color: #ffffff;
 }
 
 .left-side p {
@@ -64,57 +69,52 @@
   height: 100%;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
-  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .cards-container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+  display: none;
 }
 
 .service-block {
-  background-color: #ffffff;
+  background-color: #dbdde9;
   height: calc(96% / 3);
   border-radius: 49px;
   margin-bottom: 16px;
   padding: 25px;
   cursor: pointer;
-  transition: height 0.5s ease, box-shadow 0.3s ease, left 0.5s ease, transform 0.5s ease;
+  transition: 0.5s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  scroll-snap-align: start;
+  border: 1px solid #2b40f5;
+  position: relative;
 }
 
+/* Updated Hover Effect */
 .service-block:hover {
-  background: #564496;
+  background: #2b40f5 !important;
+  color: #ffffff !important;
 }
 
-.service-block:hover h3, .service-block:hover .service-caption {
-  color: white;
+.service-block h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3a6ecf;
+  margin-bottom: 30px;
+}
+
+/* Updated Hover Effect for Text */
+.service-block:hover h3,
+.service-block:hover .service-description,
+.service-block:hover .service-caption {
+  color: #ffffff !important;
 }
 
 .service-block.expanded {
   height: 350px;
   border-radius: 30px;
   padding: 25px;
-  padding-left: 0%;
   color: white;
-  transform: translateY(0);
-}
-
-.service-block h3 {
-  font-size: 24px;
-  font-weight: bolder;
-  margin-bottom: 30px;
-  gap: 10px;
-  color: #3a6ecf;
-}
-
-.service-block.expanded h3 {
-  font-size: 32px;
-  color: white;
-  margin-left: 25px;
-  margin-top: 3%;
 }
 
 .service-description {
@@ -122,8 +122,6 @@
   font-weight: bold;
   color: inherit;
   margin-top: 20px;
-  margin-left: 25px;
-  transition: opacity 0.3s ease-in-out;
 }
 
 .service-caption {
@@ -132,189 +130,71 @@
   font-weight: bold;
   color: #564496;
   margin-top: 10%;
-  margin-right: 3%;
 }
 
-@media (max-width: 1024px) {
-  .left-side {
-    width: 48%;
-  }
-
-  .right-side {
-    width: 52%;
-  }
-
-  .left-text h1 {
-    font-size: 3rem;
-  }
-
-  .left-text h2 {
-    font-size: 2.5rem;
-  }
-
-  .left-side p {
-    margin-top: 8%;
-  }
-
-  .service-img {
-    width: 85%;
-    margin-top: -7%;
-  }
-
-  .service-caption {
-    margin-top: 13%;
-  }
+/* Arrow Icon Styling */
+.arrow-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
-@media (max-width: 824px) {
-  .service-img {
-    margin-top: -16%;
-  }
-
-  .left-side p {
-    margin-top: 5%;
-  }
+.arrow-icon {
+  width: 24px;
+  height: 24px;
+  stroke: #3a6ecf;
+  transition: transform 0.3s ease-in-out;
 }
 
+/* Updated Hover Effect for Arrow */
+.service-block:hover .arrow-icon {
+  stroke: white;
+  transform: rotate(45deg);
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .left-side {
     padding: 12px;
   }
-
-  .right-side {  
+  .right-side {
     margin-left: 4%;
   }
-
   .left-text h1 {
     font-size: 2.5rem;
   }
-
   .left-text h2 {
     font-size: 2.2rem;
-  }
-
-  .service-img {
-    width: 90%;
-    margin-top: -7%
-  }
-
-  .service-block.expanded {
-    height: fit-content;
-  }
-
-  .service-block.expanded  h3 {
-    font-size: 28px;
-  }
-
-  .service-description {
-    font-size: 17px;
   }
 }
 
 @media (max-width: 580px) {
   .servicePage {
     flex-direction: column;
-    width: 100vw;
     min-height: 80vh;
-    margin-top: 3%;
-    overflow-x: hidden;
-    transition: min-height 0.5s ease;
   }
-
-  .servicePage.expanded {
-    min-height: fit-content;
-  }
-
   .left-side,
   .right-side {
     width: 98%;
   }
-
   .left-side {
     height: 58%;
   }
-
   .right-side {
     height: 42%;
     margin-left: 0;
   }
-
-  .right-side.expanded {
-    min-height: fit-content;
-    margin-top: -5%;
-  }
-
-  .left-text {
-    padding-top: 4%;
-  }
-
-  .left-text h1,
-  .left-text h2 {
-    margin-top: 0;
-  }
-
-  .left-side p {
-    margin-top: 2%;
-    margin-left: 42%;
-  }
-
-  .service-img {
-    width: 51%;
-    margin-top: -81%;
-    margin-left: -4%;
-  }
-
   .cards-container {
     width: 100%;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
     display: flex;
     gap: 16px;
     padding: 0 10px;
   }
-
   .service-block {
-    background-color: #ffffff;
-    height: 65%;  
-    min-width: calc(96% / 2);
+    min-width: 50%;
     border-radius: 20px;
-    margin-top: 40px;
     padding: 25px 15px;
-  }
-
-  .service-block:hover {
-    background: #564496;
-    color: white;
-  }
-
-  .service-block.expanded {
-    min-width: 60%;
-    border-radius: 20px;
-    padding: 10px;
-    transition: height 0.5s ease;
-  }
-
-  .service-block h3 {
-    font-size: 22px;
-    font-weight: bolder;
-    margin-bottom: 30px;
-  }
-
-  .service-block.expanded h3 {
-    font-size: 25px;
-    margin-top: 5px;
-  }
-
-  .service-description {
-    font-size: 15px;
-    font-weight: bold;
-    color: inherit;
-    margin-top: 18px;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  .service-block .service-caption {
-    display: none;
   }
 }
 
@@ -323,41 +203,17 @@
     width: 55%;
     margin-left: -6%;
   }
-
   .left-side {
     height: 62%;
   }
-
-  .left-side h1 {
+  .left-text h1 {
     font-size: 2rem;
   }
-
-  .left-side h2 {
+  .left-text h2 {
     font-size: 1.5rem;
   }
-
-  .left-side p {
-    font-size: 1.1rem;
-    margin-left: 45%;
-  }
-
   .service-block {
     min-width: fit-content;
-  }
-
-  .service-block h3 {
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  .service-block.expanded {
-    padding: 0.8rem;
-    min-width: fit-content;
-  }
-
-  .right-side.expanded .service-block:not(.expanded) {
-    height: 55%;
-    transition: height 0.5s ease;
   }
 }
 
@@ -368,19 +224,11 @@
   .left-text {
     padding-top: 0%;
     margin-top: 16%;
-    padding-right: 0;
   }
-
-  .left-side h1 {
+  .left-text h1 {
     float: right;
     margin-left: 40%;
   }
-
-  .left-side p {
-    margin-left: 0;
-    margin-top: 10%;
-  }
-
   .service-img {
     width: 58%;
     margin-left: -5%;
