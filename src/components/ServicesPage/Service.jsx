@@ -98,7 +98,7 @@ function Service() {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.9,
+        duration: 0.8,
         ease: "easeOut"
       }
     }
@@ -110,7 +110,7 @@ function Service() {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 1.2,
+        duration: 0.8,
         ease: "easeOut",
         staggerChildren: 0.1
       }
