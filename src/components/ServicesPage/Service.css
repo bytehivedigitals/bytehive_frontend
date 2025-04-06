@@ -81,18 +81,21 @@
 .service-block {
   background-color: #dbdde9;
   height: calc(96% / 3);
-  border-radius: 49px;
-  margin-bottom: 16px;
+  border-radius: 39px;
+  margin-bottom: 13px;
   padding: 25px;
   cursor: pointer;
   transition: 0.5s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid #2b40f5;
   position: relative;
+  transform-origin: center;
+  will-change: transform;
+  transform: scale(1);
 }
 
 /* Updated Hover Effect */
-.service-block:hover {
+.service-block:hover:not(.service-block.expanded) {
   background: #2b40f5 !important;
   color: #ffffff !important;
 }
@@ -113,8 +116,12 @@
 
 .service-block.expanded {
   height: 350px;
-  border-radius: 30px;
+  border-radius: 45px;
   padding: 25px;
+  color: white;
+}
+
+.service-block.expanded h3 {
   color: white;
 }
 
@@ -133,24 +140,30 @@
   margin-top: 10%;
 }
 
-/* Arrow Icon Styling */
-.arrow-container {
-  position: absolute;
-  top: 15px;
-  right: 15px;
+.left-side, .right-side, .service-block {
+  will-change: transform, opacity;
 }
 
-.arrow-icon {
+.dropdown-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   width: 24px;
   height: 24px;
-  stroke: #3a6ecf;
-  transition: transform 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3a6ecf;
+  transform-origin: center;
 }
 
-/* Updated Hover Effect for Arrow */
-.service-block:hover .arrow-icon {
-  stroke: white;
-  transform: rotate(45deg);
+.service-block.expanded .dropdown-icon {
+  color: white;
+}
+
+.service-block:hover .dropdown-icon {
+  color: white;
+  transform: scale(1.1);
 }
 
 /* Responsive Styles */
@@ -167,12 +180,25 @@
   .left-text h2 {
     font-size: 2.2rem;
   }
+  .service-block {
+    margin-bottom: 12px;
+  }
+  .service-caption {
+    margin-top: 15%;
+  }
+  .service-img {
+    width: 85%;
+    margin-top: -10%;
+  }
 }
 
 @media (max-width: 580px) {
   .servicePage {
     flex-direction: column;
     min-height: 80vh;
+  }
+  .servicePage.expanded {
+    min-height: fit-content;
   }
   .left-side,
   .right-side {
@@ -185,6 +211,10 @@
     height: 42%;
     margin-left: 0;
   }
+  .right-side.expanded {
+    min-height: fit-content;
+    margin-top: -5%;
+  }
   .cards-container {
     width: 100%;
     overflow-x: auto;
@@ -195,7 +225,34 @@
   .service-block {
     min-width: 50%;
     border-radius: 20px;
-    padding: 25px 15px;
+    padding: 25px 18px;
+    margin-top: 8%;
+    height: 65%;
+  }
+  .service-block.expanded {
+    min-width: 63%;
+    border-radius: 20px;
+    padding: 15px;
+    transition: height 0.5s ease;
+  }
+  .left-text {
+    padding-top: 4%;
+  }
+  .left-text h1,
+  .left-text h2 {
+    margin-top: 0;
+  }
+  .left-side p {
+    margin-top: 2%;
+    margin-left: 42%;
+  }
+  .service-img {
+    width: 51%;
+    margin-top: -81%;
+    margin-left: -4%;
+  }
+  .service-block .service-caption {
+    display: none;
   }
 }
 
@@ -213,9 +270,26 @@
   .left-text h2 {
     font-size: 1.5rem;
   }
+  .left-side p {
+    font-size: 1.1rem;
+    margin-left: 45%;
+  }
   .service-block {
     min-width: fit-content;
     margin-top: 100px;
+  }
+  .service-block h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .service-block.expanded {
+    padding: 0.8rem;
+    min-width: 75%;
+    min-height: fit-content;
+  }
+  .right-side.expanded .service-block:not(.expanded) {
+    height: 55%;
+    transition: height 0.5s ease;
   }
 }
 
@@ -226,14 +300,27 @@
   .left-text {
     padding-top: 0%;
     margin-top: 16%;
+    padding-right: 0;
   }
   .left-text h1 {
     float: right;
     margin-left: 40%;
   }
+  .left-side p {
+    margin-left: 0;
+    margin-top: 10%;
+  }
   .service-img {
     width: 58%;
     margin-left: -5%;
     margin-top: -189%;
+  }
+  .service-block.expanded {
+    padding: 0.8rem;
+    min-width: 88%;
+    min-height: fit-content;
+  }
+  .service-block h3 {
+    margin-top: 3%;
   }
 }

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import "./Service.css";
 import Anim from "../../assets/service-anim.gif";
 import bgImage1 from "../../assets/serviceblock-bg-1.png";
@@ -59,9 +61,82 @@ function Service() {
     setActiveIndex(activeIndex !== index ? index : null);
   };
 
+  // Animation controls for left and right sections
+  const leftControls = useAnimation();
+  const rightControls = useAnimation();
+  
+  // Intersection Observer hooks
+  const [leftRef, leftInView] = useInView({
+    threshold: 0.1,
+    triggerOnce: false
+  });
+  
+  const [rightRef, rightInView] = useInView({
+    threshold: 0.1,
+    triggerOnce: false
+  });
+
+  // Animate when in view
+  React.useEffect(() => {
+    if (leftInView) {
+      leftControls.start("visible");
+    } else {
+      leftControls.start("hidden");
+    }
+    
+    if (rightInView) {
+      rightControls.start("visible");
+    } else {
+      rightControls.start("hidden");
+    }
+  }, [leftControls, rightControls, leftInView, rightInView]);
+
+  // Animation variants
+  const leftVariants = {
+    hidden: { x: -100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.9,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const rightVariants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        ease: "easeOut",
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6
+      }
+    }
+  };
+
   return (
     <div className={`servicePage ${activeIndex !== null ? "expanded" : ""}`}>
-      <div className="left-side">
+      <motion.div 
+        className="left-side"
+        ref={leftRef}
+        initial="hidden"
+        animate={leftControls}
+        variants={leftVariants}
+      >
         <div className="left-text">
           <h1>EXPLORE OUR</h1>
           <h2>SERVICES</h2>
@@ -71,13 +146,27 @@ function Service() {
           secure, scalable, and tailored IT solutions to help your business
           thrive in the digital era. Let’s build the future together!
         </p>
-        <img src={Anim} alt="Service Animation" className="service-img" />
-      </div>
+        {/* <img src={Anim} alt="Service Animation" className="service-img" /> */}
+        <motion.img 
+          src={Anim} 
+          alt="Service Animation" 
+          className="service-img"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={leftInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        />
+      </motion.div>
 
-      <div className={`right-side ${activeIndex !== null ? "expanded" : ""}`}>
+      <motion.div 
+        className={`right-side ${activeIndex !== null ? "expanded" : ""}`}
+        ref={rightRef}
+        initial="hidden"
+        animate={rightControls}
+        variants={rightVariants}
+      >
         <div className="cards-container">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
               className={`service-block ${
                 index === activeIndex ? "expanded" : ""
@@ -93,25 +182,33 @@ function Service() {
                     }
                   : {}
               }
+              variants={cardVariants}
+              whileHover={index !== activeIndex ? { 
+                scaleY: 1.03,
+                transformOrigin: "center bottom",
+              } : {}}
             >
-              {/* Diagonal Arrow Icon (↗) */}
-              <div className="arrow-container">
+              {/* Dropdown Chevron Icon */}
+              <motion.div 
+                className="dropdown-icon"
+                animate={{
+                  rotate: index === activeIndex ? 180 : 0
+                }}
+                transition={{ duration: 0.3 }}
+              >
                 <svg
-                  className="arrow-icon"
                   width="20"
                   height="20"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#3a6ecf"
-                  strokeWidth="2"
+                  stroke="currentColor"
+                  strokeWidth="3"  /* Thicker stroke */
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <line x1="5" y1="19" x2="19" y2="5"></line>
-                  <polyline points="9 5 19 5 19 15"></polyline>
+                  <path d="M6 9l6 6 6-6" />
                 </svg>
-              </div>
-
+              </motion.div>
               <h3>
                 {service.title.split(" ").slice(0, 2).join(" ")}
                 {service.title.split(" ").length > 2 && <br />}
@@ -123,10 +220,10 @@ function Service() {
               {index === activeIndex && (
                 <p className="service-description">{service.description}</p>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
