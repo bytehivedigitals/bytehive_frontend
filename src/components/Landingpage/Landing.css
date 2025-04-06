@@ -135,6 +135,31 @@
 }
 
 /* Responsive adjustments */
+
+@media (max-width: 1200px) {
+  .headings-container {
+    margin-top: 10vh;
+  }
+
+  .headings h1,
+  .headings h2,
+  .headings h3 {
+    font-size: 8vw;
+  }
+
+  .down-arrow {
+    font-size: 50px;
+    height: 70px;
+    width: 50px;
+  }
+
+  .content-section {
+    align-items: center; /* Center on smaller screens */
+  }
+  
+}
+
+
 @media (max-width: 768px) {
   .headings-container {
     margin-top: 15vh;

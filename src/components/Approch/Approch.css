@@ -2,7 +2,6 @@
 .main-approch {
     height: 100vh;
     background-color: #dbdde9;
-    border-radius: 30px;
     display: flex;
     justify-content: space-between;
     overflow-y: hidden;
