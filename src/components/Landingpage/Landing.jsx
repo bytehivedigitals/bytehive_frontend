@@ -6,36 +6,40 @@ import bgVideo from "../../assets/blue_logo2.mp4";
 function Landing() {
   return (
     <div className="landingPage">
-      {/* Desktop background video */}
-      <video autoPlay muted loop className="background-video desktop-video">
+      {/* Background Video - hidden on mobile via CSS */}
+      <video autoPlay muted loop className="background-video">
         <source src={bgVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
       {/* Overlay */}
-      <div className="video-overlay desktop-video"></div>
+      <div className="video-overlay"></div>
 
-      {/* Mobile video section */}
-      <div className="mobile-video-container">
-        <video autoPlay muted loop className="mobile-video">
-          <source src={bgVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      {/* Content */}
+      {/* Foreground content */}
       <div className="landing-content">
+        {/* Headings */}
         <div className="headings-container">
           <div className="headings">
             <h1>*LET'S</h1>
             <h2>MAKE IT</h2>
             <h3>GREAT</h3>
+
+            {/* Arrow */}
             <div className="down-arrow-container">
               <FaArrowDown className="down-arrow" />
             </div>
           </div>
+
+          {/* Mobile-only video shown below arrow */}
+          <div className="mobile-video">
+            <video autoPlay muted loop>
+              <source src={bgVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
 
+        {/* Paragraph & Scroll */}
         <div className="content-section">
           <div className="paragraph-container">
             <p className="main-paragraph">

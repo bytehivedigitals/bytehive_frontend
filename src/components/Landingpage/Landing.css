@@ -8,7 +8,6 @@
   background-color: #dbdde9;
 }
 
-/* Desktop video */
 .background-video {
   position: absolute;
   top: 0;
@@ -25,8 +24,6 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(255, 255, 255, 0);
-  z-index: 0;
 }
 
 .landing-content {
@@ -37,7 +34,7 @@
   flex-direction: column;
 }
 
-/* Headings */
+/* Headings section */
 .headings-container {
   display: flex;
   flex-direction: column;
@@ -75,7 +72,7 @@
   margin-bottom: 20px;
 }
 
-/* Arrow */
+/* Arrow styling */
 .down-arrow-container {
   width: 100%;
   display: flex;
@@ -90,6 +87,19 @@
   animation: bounce 2s infinite;
   height: 80px;
   width: 60px;
+  margin-left: 0;
+}
+
+/* Mobile video container */
+.mobile-video {
+  display: none;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.mobile-video video {
+  width: 100%;
+  object-fit: contain;
 }
 
 /* Content section */
@@ -100,7 +110,7 @@
   margin-top: 40px;
 }
 
-/* Paragraph */
+/* Paragraph container */
 .paragraph-container {
   max-width: 800px;
   padding: 0 20px;
@@ -146,18 +156,7 @@
   }
 }
 
-/* Mobile video container - hidden by default */
-.mobile-video-container {
-  display: none;
-}
-
-.mobile-video {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Responsive styles */
+/* Responsive */
 @media (max-width: 1200px) {
   .headings-container {
     margin-top: 10vh;
@@ -181,23 +180,16 @@
 }
 
 @media (max-width: 768px) {
-  .background-video,
-  .video-overlay {
+  .background-video {
     display: none;
   }
 
-  .mobile-video-container {
+  .mobile-video {
     display: block;
-    width: 100%;
-    margin-top: 0;
-  }
-
-  .landing-content {
-    padding: 20px;
   }
 
   .headings-container {
-    margin-top: 20px;
+    margin-top: 15vh;
     align-items: left;
   }
 
@@ -213,6 +205,32 @@
   }
 
   .down-arrow {
+    font-size: 50px;
+    height: 70px;
+    width: 50px;
+  }
+
+  .content-section {
+    align-items: left;
+  }
+
+  .paragraph-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-content {
+    padding: 20px;
+  }
+
+  .headings h1,
+  .headings h2,
+  .headings h3 {
+    font-size: 15vw;
+  }
+
+  .down-arrow {
     font-size: 40px;
     height: 60px;
     width: 40px;
@@ -220,27 +238,6 @@
 
   .main-paragraph {
     font-size: 14px;
-    text-align: center;
-  }
-
-  .content-section {
-    align-items: center;
-  }
-
-  .paragraph-container {
-    width: 90%;
-  }
-
-  .scroll-container {
-    margin-right: 0;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .headings h1,
-  .headings h2,
-  .headings h3 {
-    font-size: 15vw;
+    text-align: left;
   }
 }
