@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./CurvedNavbar.css";
+import logoImage from "../../assets/blogo.png"; // Replace with your logo path
 
 const CustomNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,14 +35,19 @@ const CustomNavbar = () => {
     setIsMenuOpen(false);
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -80; // Height of navbar
+      const y =
+        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
   return (
     <>
       <nav className={`custom-navbar ${isScrolled ? "custom-scrolled" : ""}`}>
-        <div className="custom-logo">ByteHive</div>
+        <div className="custom-logo">
+          <img src={logoImage} alt="Logo" className="custom-logo-img" />
+        </div>
 
         <div className="custom-nav-center">
           <ul className={`custom-nav-links ${isScrolled ? "hidden" : ""}`}>
