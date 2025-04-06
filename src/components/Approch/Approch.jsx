@@ -135,10 +135,9 @@ const Approch = () => {
         card.style.top = "0";
       } else if (idx === stackedIndex + 1) {
         // Next card
-        const stackedIndexValue = stackedIndex >= 3 ? stackedIndex * 0.95 : stackedIndex;
-        const topValue = stackedIndex >= 3 ? 30 : 40;
+        const topValue = stackedIndex >= 2 ? 30 : 35;
         card.style.transform = "translateY(0)";
-        card.style.top = `${-stackedIndexValue * (100 - topValue)}%`;
+        card.style.top = `${-stackedIndex * (100 - topValue)}%`;
       } else {
         // Future cards (hidden)
         card.style.transform = "translateY(0)";
@@ -179,87 +178,88 @@ const Approch = () => {
 
     <div className="main-approch">
       <div className="left-section">
+        <h5>Think big with us.</h5>
+        {isMobile ? (
+            <div className="mobile-carousel-container">
+              <div className="mobile-carousel">
+                <button 
+                  className="nav-button left" 
+                  onClick={handlePrevious}
+                  disabled={currentCardIndex === 0}
+                  aria-label="Previous card"
+                >
+                  <FaArrowLeft size={35} />
+                </button>
+                
+                <div className="card-stack-mobile">
+                  {cardData.map((card, index) => (
+                    <div
+                      key={card.id}
+                      className={`mobile-card ${index === currentCardIndex ? 'active' : ''}`}
+                      style={{
+                        transform: `translateX(${(index - currentCardIndex) * 100}%)`,
+                        opacity: index === currentCardIndex ? 1 : 0
+                      }}
+                    >
+                      <div className="card-number">{index + 1}</div>
+                      <div className="card-image">
+                        <img src={card.image} alt={card.title} />
+                      </div>
+                      <div className="card-content">
+                        <h2>{card.title}</h2>
+                        <p>{card.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <button 
+                  className="nav-button right" 
+                  onClick={handleNext}
+                  disabled={currentCardIndex === cardData.length - 1}
+                  aria-label="Next card"
+                >
+                  <FaArrowRight size={35} />
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="card-stack" ref={cardStackRef}>
+              {cardData.map((card, index) => (
+                <div
+                  key={card.id}
+                  className={`card ${index <= stackedIndex ? 'stacked' : ''}`}
+                  ref={(el) => (cardsRef.current[index] = el)}
+                  style={{
+                    zIndex: index,
+                    transform: index <= stackedIndex 
+                      ? `translateY(${-(index * 80)}%)` 
+                      : 'translateY(0)'
+                  }}
+                >
+                  <div className="card-number">{index + 1}</div>
+                  <div className="card-image">
+                    <img src={card.image} alt={`Card ${card.title}`} />
+                  </div>
+                  <div className="card-content">
+                    <h2>{card.title}</h2>
+                    <p>{card.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+      </div>
+
+      <div className="right-section">
         <div className="approch-txt">
-          <h1>OUR EXCELLENT</h1>
-          <h2>APPROACH</h2>
+            <h1>OUR EXCELLENT</h1>
+            <h2>APPROACH</h2>
         </div>
         <p>
           Short intro on who we are and what we do. Key values and mission
           statement. Showcase past projects, case studies.
         </p>
-      </div>
-
-      <div className="right-section">
-        {isMobile ? (
-          <div className="mobile-carousel-container">
-            <div className="mobile-carousel">
-              <button 
-                className="nav-button left" 
-                onClick={handlePrevious}
-                disabled={currentCardIndex === 0}
-                aria-label="Previous card"
-              >
-                <FaArrowLeft size={35} />
-              </button>
-              
-              <div className="card-stack-mobile">
-                {cardData.map((card, index) => (
-                  <div
-                    key={card.id}
-                    className={`mobile-card ${index === currentCardIndex ? 'active' : ''}`}
-                    style={{
-                      transform: `translateX(${(index - currentCardIndex) * 100}%)`,
-                      opacity: index === currentCardIndex ? 1 : 0
-                    }}
-                  >
-                    <div className="card-number">{index + 1}</div>
-                    <div className="card-image">
-                      <img src={card.image} alt={card.title} />
-                    </div>
-                    <div className="card-content">
-                      <h2>{card.title}</h2>
-                      <p>{card.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <button 
-                className="nav-button right" 
-                onClick={handleNext}
-                disabled={currentCardIndex === cardData.length - 1}
-                aria-label="Next card"
-              >
-                <FaArrowRight size={35} />
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div className="card-stack" ref={cardStackRef}>
-            {cardData.map((card, index) => (
-              <div
-                key={card.id}
-                className={`card ${index <= stackedIndex ? 'stacked' : ''}`}
-                ref={(el) => (cardsRef.current[index] = el)}
-                style={{
-                  zIndex: index,
-                  transform: index <= stackedIndex 
-                    ? `translateY(${-(index * 80)}%)` 
-                    : 'translateY(0)'
-                }}
-              >
-                <div className="card-number">{index + 1}</div>
-                <div className="card-image">
-                  <img src={card.image} alt={`Card ${card.title}`} />
-                </div>
-                <div className="card-content">
-                  <h2>{card.title}</h2>
-                  <p>{card.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );

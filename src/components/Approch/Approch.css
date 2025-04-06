@@ -1,109 +1,123 @@
 /* Base styles */
 .main-approch {
-    height: 100vh;
-    background-color: #dbdde9;
-    display: flex;
-    justify-content: space-between;
-    overflow-y: hidden;
-
-}
-
-.approch-txt {
-    padding-top: 10%;
-    padding-left: 5%;
-    text-align: left;
-}
-
-.approch-txt h1 {
-    font-size: 60px;
-    color: #2B40F5;
-    font-family: 'Poppins', sans-serif;
-}
-
-.approch-txt h2 {
-    font-size: 50px;
-    color: #2B40F5;
-    font-family: 'Poppins', sans-serif;
+  height: 90vh;
+  background-color: #dbdde9;
+  display: flex;
+  justify-content: space-between;
+  overflow-y: hidden;
+  
 }
 
 .left-section {
-    width: 50%;
-    padding: 10%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.left-section p {
-    width: 80%;
-    margin-left: 5%;
-    margin-top: 5%;
-    font-size: 18px;
-    color: #2B40F5;
+.left-section h5 {
+  color: #2B40F5;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 24px;
+  margin-left: 20%;
+  margin-top: 8%;
 }
-  
+
 .right-section {
-    width: 50%;
+  width: 40%;
+  padding: 5%;
+  padding-top: 10%;
+  padding-left: 0%;
 }
-  
+
+.right-section p {
+  width: 80%;
+  margin-left: 5%;
+  margin-top: 5%;
+  font-size: 18px;
+  color: #2B40F5;
+}
+
+.approch-txt {
+  padding-top: 10%;
+  padding-left: 5%;
+  text-align: left;
+}
+
+.approch-txt h1 {
+  font-size: 60px;
+  color: #2B40F5;
+  font-family: 'Poppins', sans-serif;
+}
+
+.approch-txt h2 {
+  font-size: 50px;
+  color: #2B40F5;
+  font-family: 'Poppins', sans-serif;
+}
+
 .card-stack {
-    position: relative;
-    width: 75%;
-    height: 80%;
-    overflow-y: hidden;
-    margin-top: 10%;
-    perspective: 1000px; /* Adds depth to the stacking */
+  width: 70%;
+  height: 90%;
+  margin-left: 20%;
+  overflow-y: hidden;
 }
-  
+
 .card {
-    height: 65% !important;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
-    padding: 0;
-    transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-    overflow-y: hidden;
-    transform-origin: center top;
-    will-change: transform, z-index;
-    backface-visibility: hidden;
+  height: 68% !important;
+  background-color: #2B40F5 !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  padding: 0;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  overflow-y: hidden;
+  transform-origin: center top;
+  will-change: transform, z-index;
+  backface-visibility: hidden;
 }
 
 .card.stacked {
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   transform-style: preserve-3d;
 }
 
 .card-number {
-    background: rgb(236, 187, 65);
-    text-align: center;
-    width: 9%;
-    border-radius: 5px;
-    margin-top: -1.5%;
-    margin-left: 3%;
-    padding: 2% 0%;
-    font-size: 18px;
-    font-weight: 500;
+  background: #D9D9D9;
+  color: #2B40F5;
+  text-align: center;
+  width: 9%;
+  border-radius: 5px;
+  margin-top: -1.5%;
+  margin-left: 3%;
+  padding: 2% 0%;
+  font-size: 18px;
+  font-weight: 500;
 }
 
-.card-image img{
-    width: 70%;
-    height: 65%;
-    margin: 0 15%;
-    margin-top: -3%;
+.card-image img {
+  width: 65%;
+  height: 68%;
+  margin: 0 17%;
+  margin-top: -3%;
 }
 
 .card-content {
-    margin-top: -20%;
-    margin-left: 3%;
+  margin-top: -20%;
+  margin-left: 3%;
 }
 
 .card-content h2 {
-    font-family: sans-serif;
-    font-size: 1.7rem;
-    font-weight: bold;
+  font-family: sans-serif;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #D9D9D9;
 }
 
 .card-content p {
-    font-family: sans-serif;
-    font-size: 1.1rem;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  color: #D9D9D9;
 }
 
 .mobile-carousel-container {
@@ -136,7 +150,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: white;
+  background: #2B40F5;
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -188,11 +202,11 @@
 }
 
 @media (max-width: 1024px) {
-  .left-section {
+  .right-section {
     width: 45%;
   }
 
-  .right-section {
+  .left-section {
     width: 55%;
     margin-left: 5%;
   }
@@ -203,11 +217,11 @@
 }
 
 @media (max-width: 896px) {
-  .left-section {
+  .right-section {
     width: 45%;
   }
 
-  .right-section {
+  .left-section {
     width: 55%;
     margin-left: 5%;
   }
@@ -218,17 +232,17 @@
 }
 
 @media (max-width: 580px) {
-  .left-section {
-    width:35%;
+  .right-section {
+    width: 35%;
     padding: 0;
     padding-left: 7%;
     padding-top: 22%;
   }
 
-  .right-section {
+  .left-section {
     width: 65%;
   }
-  
+
   .card {
     transform: none !important;
     top: auto !important;
@@ -237,7 +251,7 @@
   .approch-txt {
     padding: 0%;
   }
-  
+
   .approch-txt h1 {
     font-size: 35px;
   }
@@ -246,7 +260,7 @@
     font-size: 32px;
   }
 
-  .left-section p {
+  .right-section p {
     width: 100%;
     margin-top: 10%;
   }
@@ -280,7 +294,7 @@
 }
 
 @media (max-width: 400px) {
-  .left-section {
+  .right-section {
     padding-left: 3%;
     padding-top: 42%;
   }
@@ -293,7 +307,7 @@
     font-size: 24px;
   }
 
-  .left-section p {
+  .right-section p {
     margin-top: 18%;
   }
 
