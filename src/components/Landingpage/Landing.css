@@ -3,13 +3,41 @@
 .landingPage {
   width: 100%;
   min-height: 100vh;
-  background: #dbdde9;
+  position: relative;
+  overflow: hidden;
+  background-color: #dbdde9;
+}
+
+/* Desktop video */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 390px;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  z-index: 0;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  z-index: 0;
+}
+
+.landing-content {
+  position: relative;
+  z-index: 1;
   padding: 40px;
   display: flex;
   flex-direction: column;
 }
 
-/* Headings section */
+/* Headings */
 .headings-container {
   display: flex;
   flex-direction: column;
@@ -47,7 +75,7 @@
   margin-bottom: 20px;
 }
 
-/* Arrow styling */
+/* Arrow */
 .down-arrow-container {
   width: 100%;
   display: flex;
@@ -62,33 +90,17 @@
   animation: bounce 2s infinite;
   height: 80px;
   width: 60px;
-  margin-left: 0;
-}
-
-/* GIF container */
-.gif-container {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-}
-
-.centered-gif {
-  max-width: 600px;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Content section */
 .content-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Align children to right */
+  align-items: flex-end;
   margin-top: 40px;
 }
 
-/* Paragraph container */
+/* Paragraph */
 .paragraph-container {
   max-width: 800px;
   padding: 0 20px;
@@ -100,12 +112,12 @@
   line-height: 1.6;
   color: #2b40f5;
   text-align: left;
-  margin-bottom: 20px; /* Reduced space before scroll */
+  margin-bottom: 20px;
 }
 
-/* Scroll text - right aligned */
+/* Scroll text */
 .scroll-container {
-  margin-right: 20px; /* Match paragraph padding */
+  margin-right: 20px;
 }
 
 .scroll-text {
@@ -134,8 +146,18 @@
   }
 }
 
-/* Responsive adjustments */
+/* Mobile video container - hidden by default */
+.mobile-video-container {
+  display: none;
+}
 
+.mobile-video {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive styles */
 @media (max-width: 1200px) {
   .headings-container {
     margin-top: 10vh;
@@ -154,47 +176,40 @@
   }
 
   .content-section {
-    align-items: center; /* Center on smaller screens */
+    align-items: center;
   }
-  
 }
 
-
 @media (max-width: 768px) {
+  .background-video,
+  .video-overlay {
+    display: none;
+  }
+
+  .mobile-video-container {
+    display: block;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .landing-content {
+    padding: 20px;
+  }
+
   .headings-container {
-    margin-top: 15vh;
+    margin-top: 20px;
+    align-items: left;
   }
 
   .headings h1,
   .headings h2,
   .headings h3 {
     font-size: 12vw;
+    text-align: left;
   }
 
-  .down-arrow {
-    font-size: 50px;
-    height: 70px;
-    width: 50px;
-  }
-
-  .content-section {
-    align-items: center; /* Center on smaller screens */
-  }
-
-  .paragraph-container {
-    width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .landingPage {
-    padding: 20px;
-  }
-
-  .headings h1,
-  .headings h2,
-  .headings h3 {
-    font-size: 15vw;
+  .down-arrow-container {
+    justify-content: left;
   }
 
   .down-arrow {
@@ -205,5 +220,27 @@
 
   .main-paragraph {
     font-size: 14px;
+    text-align: center;
+  }
+
+  .content-section {
+    align-items: center;
+  }
+
+  .paragraph-container {
+    width: 90%;
+  }
+
+  .scroll-container {
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .headings h1,
+  .headings h2,
+  .headings h3 {
+    font-size: 15vw;
   }
 }
