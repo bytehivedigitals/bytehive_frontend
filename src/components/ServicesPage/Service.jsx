@@ -187,8 +187,28 @@ function Service() {
                 scaleY: 1.03,
                 transformOrigin: "center bottom",
               } : {}}
-              whileTap={{ scale: 0.98 }}
             >
+              {/* Dropdown Chevron Icon */}
+              <motion.div 
+                className="dropdown-icon"
+                animate={{
+                  rotate: index === activeIndex ? 180 : 0
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"  /* Thicker stroke */
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </motion.div>
               <h3>
                 {service.title.split(" ").slice(0, 2).join(" ")}
                 {service.title.split(" ").length > 2 && <br />}

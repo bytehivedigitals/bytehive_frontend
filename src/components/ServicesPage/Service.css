@@ -90,6 +90,7 @@
   position: relative;
   transform-origin: center;
   will-change: transform;
+  transform: scale(1);
 }
 
 /* Updated Hover Effect */
@@ -117,7 +118,6 @@
   border-radius: 45px;
   padding: 25px;
   color: white;
-  animation: expandCard 0.2s ease forwards;
 }
 
 .service-block.expanded h3 {
@@ -143,16 +143,26 @@
   will-change: transform, opacity;
 }
 
-@keyframes expandCard {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.03);
-  }
-  100% {
-    transform: scale(1);
-  }
+.dropdown-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3a6ecf;
+  transform-origin: center;
+}
+
+.service-block.expanded .dropdown-icon {
+  color: white;
+}
+
+.service-block:hover .dropdown-icon {
+  color: white;
+  transform: scale(1.1);
 }
 
 /* Responsive Styles */
