@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import './Story.css';
-import viedoSource from '../../assets/oto final motion.mp4';
+import videoSource from '../../assets/oto final motion.mp4';
 
 function Story() {
   const videoRef = useRef(null);
@@ -20,6 +20,7 @@ function Story() {
       
       if (videoContainer && video && headings && storyMain && smallVid) {
         const viewportHeight = window.innerHeight;
+        const viewportWidth = window.innerWidth;
         const startOffset = 100; // When animation starts
         const scaleEndOffset = viewportHeight * 0.9; // When scaling up ends
         const moveStartOffset = scaleEndOffset; // When movement starts
@@ -29,13 +30,13 @@ function Story() {
         const scaleUpProgress = Math.min(1, Math.max(0, (scrollPosition - startOffset) / (scaleEndOffset - startOffset)));
         const moveProgress = Math.min(1, Math.max(0, (scrollPosition - moveStartOffset) / (finalPositionOffset - moveStartOffset)));
 
-              // Set transform-origin to center for smooth scaling from center
-      videoContainer.style.transformOrigin = 'center center';
+        // Set transform-origin to center for smooth scaling from center
+        videoContainer.style.transformOrigin = 'center center';
         
         // Stage 1: Video scaling up
         if (scrollPosition < scaleEndOffset) {
-          // Scale from 1 to 2.5
-          const scale = 1 + scaleUpProgress * 1.5;
+          // Scale from 1 to 1.5, ensuring it stays within the page width
+          const scale = 1 + scaleUpProgress * 0.5;
           video.style.transform = `scale(${scale})`;
           videoContainer.style.zIndex = '10';
           videoContainer.style.position = 'relative';
@@ -62,11 +63,11 @@ function Story() {
           
           // Calculate current position and scale with easing
           const easedProgress = easeOutCubic(moveProgress);
-          const currentScale = 2.5 - (2.3 * easedProgress); // Scale down from 2.5 to 0.2
+          const currentScale = 1.5 - (1.3 * easedProgress); // Scale down from 1.5 to 0.2
           
           // Calculate position (from center of viewport to small-vid position)
-          const startX = window.innerWidth / 1.5;
-          const startY = window.innerHeight / 1.5;
+          const startX = viewportWidth / 2;
+          const startY = viewportHeight / 2;
           const deltaX = smallVidCenterX - startX;
           const deltaY = smallVidCenterY - startY;
           
@@ -102,7 +103,7 @@ function Story() {
 
       <div className='story-video' ref={videoContainerRef}>
         <video ref={videoRef} autoPlay muted loop playsInline>
-          <source src={viedoSource} type="video/mp4" />
+          <source src={videoSource} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>

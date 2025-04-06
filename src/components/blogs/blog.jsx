@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./blog.css";
-import image1 from "../../assets/React-BLOG-IMAGES-01-891x505.jpg";
+import image1 from "../../assets/reactvsreactnative.jpeg";
 import image2 from "../../assets/Magento-Community-vs-Enterprise.webp";
 import image3 from "../../assets/aivs.jpeg";
 import image4 from "../../assets/UI-Design-Trends-for-2025.png";

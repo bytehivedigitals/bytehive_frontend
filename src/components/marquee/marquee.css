@@ -1,66 +1,61 @@
 .scrolling-banner-wrapper {
   overflow: hidden;
-  white-space: nowrap;
   position: relative;
   width: 100%;
   padding: 12px 0;
   display: flex;
   align-items: center;
 
-  /* Glassmorphism Effect with Visible Background */
-  background: rgba(255, 255, 255, 0.15); /* Light transparent background */
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
-  /* Background Image */
   background: url("../../assets/FTR2.jpg") no-repeat center;
   background-size: cover;
 }
 
 .scrolling-banner {
   display: flex;
+  white-space: nowrap;
   width: 100%;
   overflow: hidden;
   position: relative;
 }
 
 .scrolling-content {
-  display: flex;
+  display: inline-flex;
   gap: 24px;
   color: #f8fafc;
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 600;
   text-transform: uppercase;
-  width: max-content;
-  animation: marquee 10s linear infinite;
+
+  animation: scroll-left 20s linear infinite;
 }
 
-.scrolling-content span {
-  white-space: nowrap;
-}
-
-@keyframes marquee {
-  from {
+@keyframes scroll-left {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-50%);
   }
 }
 
+/* Responsive adjustments */
 @media (max-width: 1024px) {
   .scrolling-content {
     font-size: 1.2rem;
-    animation-duration: 12s;
+    animation-duration: 22s;
   }
 }
 
 @media (max-width: 768px) {
   .scrolling-content {
     font-size: 1rem;
-    animation-duration: 14s;
+    animation-duration: 24s;
     gap: 20px;
   }
 }
@@ -68,7 +63,7 @@
 @media (max-width: 576px) {
   .scrolling-content {
     font-size: 0.9rem;
-    animation-duration: 16s;
+    animation-duration: 26s;
     gap: 16px;
   }
 }
@@ -76,7 +71,7 @@
 @media (max-width: 400px) {
   .scrolling-content {
     font-size: 0.85rem;
-    animation-duration: 18s;
+    animation-duration: 28s;
     gap: 12px;
   }
 }

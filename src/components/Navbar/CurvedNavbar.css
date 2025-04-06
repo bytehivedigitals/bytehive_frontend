@@ -9,22 +9,39 @@
   justify-content: space-between;
   padding: 15px 30px;
   transition: all 0.3s ease-in-out;
+  z-index: 9999;
 }
 
-/* Left - Logo */
+/* Add padding to body or top container to prevent hiding content behind navbar */
+body {
+  padding-top: 0; /* Adjust to navbar height */
+  background-color: #dbdde9;
+}
+
 .custom-logo {
   font-size: 40px;
   font-weight: bold;
   margin-top: 15px;
   transform: translateY(10px);
-  color: #0057ff;
 }
+
+.custom-logo-img {
+  height: 100px;
+  object-fit: contain;
+  position: relative;
+  right: 45px;
+}
+
 .custom-logo-1 {
   font-size: 25px;
   font-weight: bold;
   margin-top: 20px;
   transform: translateY(10px);
-  color: #fff;
+}
+
+.custom-logo-1 img {
+  height: 100px;
+  object-fit: contain;
 }
 
 /* Center - Navigation Links */
@@ -44,14 +61,15 @@
 }
 
 .custom-nav-links li {
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: 800;
 }
 
 .custom-nav-links a {
   position: relative;
   text-decoration: none;
   color: #2b40f5;
-  font-weight: 500;
+  font-weight: 800;
   transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
@@ -104,7 +122,7 @@
 
 /* Scroll Behavior */
 .custom-scrolled {
-  background-color: transparent;
+  background: transparent;
 }
 
 /* Hide Navigation Links on Scroll */
@@ -126,7 +144,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 40px;
-  z-index: 100;
+  z-index: 10000;
   animation: fadeIn 0.5s ease-in-out;
   overflow: hidden;
 }
@@ -143,7 +161,7 @@
 
 .custom-menu-header .custom-close-btn {
   cursor: pointer;
-  font-size: 16px;
+  font-size: 25px;
   color: white;
   text-decoration: underline;
 }
@@ -178,12 +196,10 @@
   transition: color 0.3s ease-in-out;
 }
 
-/* Apply hover effect to both the menu item and its index */
 .custom-menu-items li:hover .custom-menu-index {
   color: rgba(255, 255, 255, 1);
 }
 
-/* Auto-Scrolling Effect */
 .custom-menu-items:hover {
   animation: none;
 }
@@ -199,7 +215,7 @@
   }
 }
 
-/* Hide nav links and contact on mobile */
+/* Responsive */
 @media (max-width: 768px) {
   .custom-nav-links,
   .custom-contact-link {
@@ -209,10 +225,7 @@
   .custom-right-side {
     width: auto;
   }
-}
 
-/* Ensure menu covers full screen on mobile */
-@media (max-width: 768px) {
   .custom-fullscreen-menu {
     background: #0057ff;
     color: white;
@@ -226,7 +239,7 @@
   }
 
   .custom-menu-items li {
-    font-size: 20px;
+    font-size: 75px;
     font-weight: bold;
     padding: 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
