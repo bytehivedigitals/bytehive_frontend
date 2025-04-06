@@ -24,7 +24,7 @@
 }
 
 .left-text {
-  text-align: right;
+  text-align: left;
   padding-top: 30px;
   padding-right: 3%;
   font-family: "Poppins", sans-serif;
@@ -46,7 +46,7 @@
 .left-side p {
   font-size: 1.2rem;
   margin-top: 6%;
-  text-align: right;
+  text-align: left;
   color: #ffffff;
   font-family: "Calibri";
 }
@@ -140,7 +140,9 @@
   margin-top: 10%;
 }
 
-.left-side, .right-side, .service-block {
+.left-side,
+.right-side,
+.service-block {
   will-change: transform, opacity;
 }
 

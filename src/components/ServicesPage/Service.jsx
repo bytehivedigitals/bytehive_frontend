@@ -64,16 +64,16 @@ function Service() {
   // Animation controls for left and right sections
   const leftControls = useAnimation();
   const rightControls = useAnimation();
-  
+
   // Intersection Observer hooks
   const [leftRef, leftInView] = useInView({
     threshold: 0.1,
-    triggerOnce: false
+    triggerOnce: false,
   });
-  
+
   const [rightRef, rightInView] = useInView({
     threshold: 0.1,
-    triggerOnce: false
+    triggerOnce: false,
   });
 
   // Animate when in view
@@ -83,7 +83,7 @@ function Service() {
     } else {
       leftControls.start("hidden");
     }
-    
+
     if (rightInView) {
       rightControls.start("visible");
     } else {
@@ -99,9 +99,9 @@ function Service() {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const rightVariants = {
@@ -112,9 +112,9 @@ function Service() {
       transition: {
         duration: 0.8,
         ease: "easeOut",
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const cardVariants = {
@@ -123,14 +123,14 @@ function Service() {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   return (
     <div className={`servicePage ${activeIndex !== null ? "expanded" : ""}`}>
-      <motion.div 
+      <motion.div
         className="left-side"
         ref={leftRef}
         initial="hidden"
@@ -142,22 +142,29 @@ function Service() {
           <h2>SERVICES</h2>
         </div>
         <p>
-          Welcome to BYTEHIVE, where technology meets innovation. We deliver
-          secure, scalable, and tailored IT solutions to help your business
-          thrive in the digital era. Let’s build the future together!
+          At ByteHive, we go beyond code — we engineer digital experiences that
+          solve real problems, spark growth, and set your brand apart. From
+          sleek websites to smart software, our services are designed to
+          transform your ideas into powerful solutions tailored to your goals.
+          Whether you're launching a startup, rebranding, or scaling operations,
+          our team delivers secure, scalable, and future-ready tech with a
+          creative edge.Let’s turn your vision into reality — one byte at a
+          time.
         </p>
         {/* <img src={Anim} alt="Service Animation" className="service-img" /> */}
-        <motion.img 
-          src={Anim} 
-          alt="Service Animation" 
+        <motion.img
+          src={Anim}
+          alt="Service Animation"
           className="service-img"
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={leftInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+          animate={
+            leftInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+          }
           transition={{ delay: 0.4, duration: 0.6 }}
         />
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className={`right-side ${activeIndex !== null ? "expanded" : ""}`}
         ref={rightRef}
         initial="hidden"
@@ -183,16 +190,20 @@ function Service() {
                   : {}
               }
               variants={cardVariants}
-              whileHover={index !== activeIndex ? { 
-                scaleY: 1.03,
-                transformOrigin: "center bottom",
-              } : {}}
+              whileHover={
+                index !== activeIndex
+                  ? {
+                      scaleY: 1.03,
+                      transformOrigin: "center bottom",
+                    }
+                  : {}
+              }
             >
               {/* Dropdown Chevron Icon */}
-              <motion.div 
+              <motion.div
                 className="dropdown-icon"
                 animate={{
-                  rotate: index === activeIndex ? 180 : 0
+                  rotate: index === activeIndex ? 180 : 0,
                 }}
                 transition={{ duration: 0.3 }}
               >
@@ -202,7 +213,7 @@ function Service() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="3"  /* Thicker stroke */
+                  strokeWidth="3" /* Thicker stroke */
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >

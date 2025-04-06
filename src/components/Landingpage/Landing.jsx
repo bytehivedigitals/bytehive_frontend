@@ -43,11 +43,14 @@ function Landing() {
         <div className="content-section">
           <div className="paragraph-container">
             <p className="main-paragraph">
-              "At the intersection of innovation and technology, we craft
-              solutions that not only meet today's challenges but shape
-              tomorrow's possibilities. Through collaboration, creativity, and
-              cutting-edge expertise, we're dedicated to building a digital
-              future that empowers businesses and transforms industries."
+              At ByteHive, we don’t just build websites and software — we craft
+              experiences that connect, engage, and inspire. We’re a passionate
+              collective of tech enthusiasts, designers, and strategists on a
+              mission to turn your ideas into intelligent digital solutions.
+              Whether you’re a startup shaping your first product or an
+              enterprise scaling to new heights, ByteHive is your creative tech
+              partner for web development, digital marketing, branding, UI/UX,
+              and beyond.
             </p>
           </div>
 

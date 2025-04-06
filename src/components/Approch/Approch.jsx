@@ -14,49 +14,49 @@ const cardData = [
     id: 1,
     title: "Discover",
     description:
-      "Understand client goals, challenges, and market trends through initial consultations and research.",
+      "We begin by immersing ourselves in your business—gaining a clear understanding of your objectives, pain points, and industry landscape through focused consultations and strategic research.",
     image: img,
   },
   {
     id: 2,
     title: "Plan",
     description:
-      "Define objectives, gather requirements, and create a strategic roadmap with a detailed proposal.",
+      "We translate insights into action by defining clear objectives, capturing comprehensive requirements, and crafting a strategic roadmap—accompanied by a transparent, results-driven proposal.",
     image: img1,
   },
   {
     id: 3,
     title: "Design",
     description:
-      "Develop wireframes, prototypes, and branding elements, refining based on client feedback.",
+      "We transform ideas into intuitive visuals by crafting wireframes, interactive prototypes, and cohesive branding elements—refining every detail through collaborative client feedback.",
     image: img2,
   },
   {
     id: 4,
     title: "Develop",
     description:
-      "Implement technical solutions through iterative development and regular client check-ins.",
+      "We bring designs to life through robust technical implementation, following agile methodologies with regular client collaboration to ensure alignment at every stage.",
     image: img3,
   },
   {
     id: 5,
     title: "Test & Optimize",
     description:
-      "Conduct thorough testing, fix bugs, and optimize for performance and security.",
+      "We ensure excellence through comprehensive quality assurance, resolving issues, and fine-tuning performance, security, and user experience across all platforms.",
     image: img4,
   },
   {
     id: 6,
     title: "Launch & Deploy",
     description:
-      "Deploy the final product, provide training, and assist with marketing and SEO strategies.",
+      "Seamlessly launch the final product across intended platforms, provide hands-on training and documentation, and support your go-to-market strategy with tailored marketing and SEO solutions.",
     image: img5,
   },
   {
     id: 7,
     title: "Support & Grow",
     description:
-      "Offer ongoing maintenance, scaling, and partnership for long-term client success.",
+      "Deliver continuous support through proactive maintenance, performance enhancements, and strategic scaling — fostering long-term partnerships and sustainable business growth.",
     image: img6,
   },
 ];
@@ -74,19 +74,19 @@ const Approch = () => {
     const handleResize = () => {
       const newIsMobile = window.innerWidth <= 580;
       setIsMobile(newIsMobile);
-      
+
       if (newIsMobile) {
         cardsRef.current.forEach((card, idx) => {
           if (!card) return;
-          card.style.transform = '';
-          card.style.top = '';
-          card.style.transition = '';
+          card.style.transform = "";
+          card.style.top = "";
+          card.style.transition = "";
         });
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Desktop scroll effect
@@ -117,16 +117,16 @@ const Approch = () => {
     if (isMobile) {
       cardsRef.current.forEach((card) => {
         if (!card) return;
-        card.style.transform = '';
-        card.style.top = '';
-        card.style.transition = '';
+        card.style.transform = "";
+        card.style.top = "";
+        card.style.transition = "";
       });
       return;
     }
 
     cardsRef.current.forEach((card, idx) => {
       if (!card) return;
-      
+
       card.style.transition = "transform 0.5s ease, top 0.5s ease";
 
       if (idx <= stackedIndex) {
@@ -148,117 +148,127 @@ const Approch = () => {
 
   const handleNext = () => {
     if (isMobile) {
-      setCurrentCardIndex(prev => 
+      setCurrentCardIndex((prev) =>
         prev < cardData.length - 1 ? prev + 1 : prev
       );
     } else {
       if (stackedIndex < cardsRef.current.length - 1) {
         isScrollingRef.current = true;
-        setStackedIndex(prev => prev + 1);
-        setTimeout(() => { isScrollingRef.current = false; }, 500);
+        setStackedIndex((prev) => prev + 1);
+        setTimeout(() => {
+          isScrollingRef.current = false;
+        }, 500);
       }
     }
   };
 
   const handlePrevious = () => {
     if (isMobile) {
-      setCurrentCardIndex(prev => 
-        prev > 0 ? prev - 1 : prev
-      );
+      setCurrentCardIndex((prev) => (prev > 0 ? prev - 1 : prev));
     } else {
       if (stackedIndex > 0) {
         isScrollingRef.current = true;
-        setStackedIndex(prev => prev - 1);
-        setTimeout(() => { isScrollingRef.current = false; }, 500);
+        setStackedIndex((prev) => prev - 1);
+        setTimeout(() => {
+          isScrollingRef.current = false;
+        }, 500);
       }
     }
   };
 
   return (
-
     <div className="main-approch">
       <div className="left-section">
         <h5>Think big with us.</h5>
         {isMobile ? (
-            <div className="mobile-carousel-container">
-              <div className="mobile-carousel">
-                <button 
-                  className="nav-button left" 
-                  onClick={handlePrevious}
-                  disabled={currentCardIndex === 0}
-                  aria-label="Previous card"
-                >
-                  <FaArrowLeft size={35} />
-                </button>
-                
-                <div className="card-stack-mobile">
-                  {cardData.map((card, index) => (
-                    <div
-                      key={card.id}
-                      className={`mobile-card ${index === currentCardIndex ? 'active' : ''}`}
-                      style={{
-                        transform: `translateX(${(index - currentCardIndex) * 100}%)`,
-                        opacity: index === currentCardIndex ? 1 : 0
-                      }}
-                    >
-                      <div className="card-number">{index + 1}</div>
-                      <div className="card-image">
-                        <img src={card.image} alt={card.title} />
-                      </div>
-                      <div className="card-content">
-                        <h2>{card.title}</h2>
-                        <p>{card.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+          <div className="mobile-carousel-container">
+            <div className="mobile-carousel">
+              <button
+                className="nav-button left"
+                onClick={handlePrevious}
+                disabled={currentCardIndex === 0}
+                aria-label="Previous card"
+              >
+                <FaArrowLeft size={35} />
+              </button>
 
-                <button 
-                  className="nav-button right" 
-                  onClick={handleNext}
-                  disabled={currentCardIndex === cardData.length - 1}
-                  aria-label="Next card"
-                >
-                  <FaArrowRight size={35} />
-                </button>
+              <div className="card-stack-mobile">
+                {cardData.map((card, index) => (
+                  <div
+                    key={card.id}
+                    className={`mobile-card ${
+                      index === currentCardIndex ? "active" : ""
+                    }`}
+                    style={{
+                      transform: `translateX(${
+                        (index - currentCardIndex) * 100
+                      }%)`,
+                      opacity: index === currentCardIndex ? 1 : 0,
+                    }}
+                  >
+                    <div className="card-number">{index + 1}</div>
+                    <div className="card-image">
+                      <img src={card.image} alt={card.title} />
+                    </div>
+                    <div className="card-content">
+                      <h2>{card.title}</h2>
+                      <p>{card.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
+
+              <button
+                className="nav-button right"
+                onClick={handleNext}
+                disabled={currentCardIndex === cardData.length - 1}
+                aria-label="Next card"
+              >
+                <FaArrowRight size={35} />
+              </button>
             </div>
-          ) : (
-            <div className="card-stack" ref={cardStackRef}>
-              {cardData.map((card, index) => (
-                <div
-                  key={card.id}
-                  className={`card ${index <= stackedIndex ? 'stacked' : ''}`}
-                  ref={(el) => (cardsRef.current[index] = el)}
-                  style={{
-                    zIndex: index,
-                    transform: index <= stackedIndex 
-                      ? `translateY(${-(index * 80)}%)` 
-                      : 'translateY(0)'
-                  }}
-                >
-                  <div className="card-number">{index + 1}</div>
-                  <div className="card-image">
-                    <img src={card.image} alt={`Card ${card.title}`} />
-                  </div>
-                  <div className="card-content">
-                    <h2>{card.title}</h2>
-                    <p>{card.description}</p>
-                  </div>
+          </div>
+        ) : (
+          <div className="card-stack" ref={cardStackRef}>
+            {cardData.map((card, index) => (
+              <div
+                key={card.id}
+                className={`card ${index <= stackedIndex ? "stacked" : ""}`}
+                ref={(el) => (cardsRef.current[index] = el)}
+                style={{
+                  zIndex: index,
+                  transform:
+                    index <= stackedIndex
+                      ? `translateY(${-(index * 80)}%)`
+                      : "translateY(0)",
+                }}
+              >
+                <div className="card-number">{index + 1}</div>
+                <div className="card-image">
+                  <img src={card.image} alt={`Card ${card.title}`} />
                 </div>
-              ))}
-            </div>
-          )}
+                <div className="card-content">
+                  <h2>{card.title}</h2>
+                  <p>{card.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="right-section">
         <div className="approch-txt">
-            <h1>OUR EXCELLENT</h1>
-            <h2>APPROACH</h2>
+          <h1>OUR EXCELLENT</h1>
+          <h2>APPROACH</h2>
         </div>
         <p>
-          Short intro on who we are and what we do. Key values and mission
-          statement. Showcase past projects, case studies.
+          Strategic. Creative. Impactful. At ByteHive, our approach is rooted in
+          deep collaboration, design thinking, and a relentless pursuit of
+          excellence. We don’t just deliver digital services — we become your
+          strategic partner in growth. By understanding your unique goals,
+          challenges, and audience, we craft tailored solutions that blend
+          innovation with functionality.
         </p>
       </div>
     </div>
