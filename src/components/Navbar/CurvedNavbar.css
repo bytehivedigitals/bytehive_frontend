@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: #dbdde9;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,6 +28,8 @@ body {
 .custom-logo-img {
   height: 100px;
   object-fit: contain;
+  position: relative;
+  right: 45px;
 }
 
 .custom-logo-1 {
