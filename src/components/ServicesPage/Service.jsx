@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./Service.css";
@@ -56,6 +56,18 @@ const services = [
 
 function Service() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 580);
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      const newIsMobile = window.innerWidth <= 580;
+      setIsMobile(newIsMobile);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleCardClick = (index) => {
     setActiveIndex(activeIndex !== index ? index : null);
@@ -129,112 +141,167 @@ function Service() {
   };
 
   return (
-    <div className={`servicePage ${activeIndex !== null ? "expanded" : ""}`}>
-      <motion.div
-        className="left-side"
-        ref={leftRef}
-        initial="hidden"
-        animate={leftControls}
-        variants={leftVariants}
-      >
-        <div className="left-text">
-          <h1>EXPLORE OUR</h1>
-          <h2>SERVICES</h2>
-        </div>
-        <p>
-          At ByteHive, we go beyond code — we engineer digital experiences that
-          solve real problems, spark growth, and set your brand apart. From
-          sleek websites to smart software, our services are designed to
-          transform your ideas into powerful solutions tailored to your goals.
-          Whether you're launching a startup, rebranding, or scaling operations,
-          our team delivers secure, scalable, and future-ready tech with a
-          creative edge.Let’s turn your vision into reality — one byte at a
-          time.
-        </p>
-        {/* <img src={Anim} alt="Service Animation" className="service-img" /> */}
-        <motion.img
-          src={Anim}
-          alt="Service Animation"
-          className="service-img"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={
-            leftInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
-          }
-          transition={{ delay: 0.4, duration: 0.6 }}
-        />
-      </motion.div>
-
-      <motion.div
-        className={`right-side ${activeIndex !== null ? "expanded" : ""}`}
-        ref={rightRef}
-        initial="hidden"
-        animate={rightControls}
-        variants={rightVariants}
-      >
-        <div className="cards-container">
-          {services.map((service, index) => (
+    <div className={`servicePage ${isMobile ? "mobile" : ""} ${activeIndex !== null ? "expanded" : ""}`}>
+      {isMobile ? (
+        // Mobile Layout
+        <div className="mobile-layout">
             <motion.div
-              key={index}
-              className={`service-block ${
-                index === activeIndex ? "expanded" : ""
-              }`}
-              onClick={() => handleCardClick(index)}
-              style={
-                index === activeIndex
-                  ? {
-                      backgroundImage: `url(${service.bgImage})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      backgroundRepeat: "no-repeat",
-                    }
-                  : {}
-              }
-              variants={cardVariants}
-              whileHover={
-                index !== activeIndex
-                  ? {
-                      scaleY: 1.03,
-                      transformOrigin: "center bottom",
-                    }
-                  : {}
-              }
+              className="mobile-top-section"
+              ref={leftRef}
+              initial="hidden"
+              animate={leftControls}
+              variants={leftVariants}
             >
-              {/* Dropdown Chevron Icon */}
-              <motion.div
-                className="dropdown-icon"
-                animate={{
-                  rotate: index === activeIndex ? 180 : 0,
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3" /* Thicker stroke */
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M6 9l6 6 6-6" />
-                </svg>
-              </motion.div>
-              <h3>
-                {service.title.split(" ").slice(0, 2).join(" ")}
-                {service.title.split(" ").length > 2 && <br />}
-                {service.title.split(" ").slice(2).join(" ")}
-              </h3>
-              {index !== activeIndex && (
-                <p className="service-caption">Short Caption On Services</p>
-              )}
-              {index === activeIndex && (
-                <p className="service-description">{service.description}</p>
-              )}
+              <div className="left-text">
+                <h1>EXPLORE OUR</h1>
+                <h2>SERVICES</h2>
+              </div>
+              <p>
+                At ByteHive, we craft digital solutions that drive impact. From modern websites to intelligent software, we turn ideas into secure, scalable, and creative tech experiences. Whether you're starting up, scaling, or rebranding — we’re here to bring your vision to life, one byte at a time.
+              </p>
+              <motion.img
+                src={Anim}
+                alt="Service Animation"
+                className="mobile-top-img"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={
+                  leftInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+                }
+                transition={{ delay: 0.4, duration: 0.6 }}
+              />
             </motion.div>
-          ))}
+          {/* Accordion Layout */}
+          <div className="mobile-accordion">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className={`accordion-card ${activeIndex === index ? "expanded" : ""}`}
+                onClick={() => handleCardClick(index)}
+                style={
+                  activeIndex === index
+                    ? {
+                        backgroundImage: `url(${service.bgImage})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                        color: "#fff",
+                      }
+                    : {}
+                }
+              >
+                <div className="accordion-header">
+                  <h3>{service.title}</h3>
+                  <span className={`arrow ${activeIndex === index ? "rotate" : ""}`}>
+                    ▼
+                  </span>
+                </div>
+
+                {activeIndex === index && (
+                  <p className="accordion-description">{service.description}</p>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-      </motion.div>
+      ) : (
+        // Desktop Layout
+        <>
+          <motion.div
+            className="left-side"
+            ref={leftRef}
+            initial="hidden"
+            animate={leftControls}
+            variants={leftVariants}
+          >
+            <div className="left-text">
+              <h1>EXPLORE OUR</h1>
+              <h2>SERVICES</h2>
+            </div>
+            <p>
+              At ByteHive, we craft digital solutions that drive impact. From modern websites to intelligent software, we turn ideas into secure, scalable, and creative tech experiences. Whether you're starting up, scaling, or rebranding — we’re here to bring your vision to life, one byte at a time.
+            </p>
+            <motion.img
+              src={Anim}
+              alt="Service Animation"
+              className="service-img"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={
+                leftInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+              }
+              transition={{ delay: 0.4, duration: 0.6 }}
+            />
+          </motion.div>
+  
+          <motion.div
+            className={`right-side ${activeIndex !== null ? "expanded" : ""}`}
+            ref={rightRef}
+            initial="hidden"
+            animate={rightControls}
+            variants={rightVariants}
+          >
+            <div className="cards-container">
+              {services.map((service, index) => (
+                <motion.div
+                  key={index}
+                  className={`service-block ${
+                    index === activeIndex ? "expanded" : ""
+                  }`}
+                  onClick={() => handleCardClick(index)}
+                  style={
+                    index === activeIndex
+                      ? {
+                          backgroundImage: `url(${service.bgImage})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          backgroundRepeat: "no-repeat",
+                        }
+                      : {}
+                  }
+                  variants={cardVariants}
+                  whileHover={
+                    index !== activeIndex
+                      ? {
+                          scaleY: 1.03,
+                          transformOrigin: "center bottom",
+                        }
+                      : {}
+                  }
+                >
+                  <motion.div
+                    className="dropdown-icon"
+                    animate={{ rotate: index === activeIndex ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </motion.div>
+                  <h3>
+                    {service.title.split(" ").slice(0, 2).join(" ")}
+                    {service.title.split(" ").length > 2 && <br />}
+                    {service.title.split(" ").slice(2).join(" ")}
+                  </h3>
+                  {index !== activeIndex && (
+                    <p className="service-caption">Short Caption On Services</p>
+                  )}
+                  {index === activeIndex && (
+                    <p className="service-description">{service.description}</p>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </>
+      )}
     </div>
   );
 }
