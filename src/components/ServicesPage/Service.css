@@ -12,6 +12,7 @@
   justify-content: center;
   padding: 10px;
   flex-direction: row;
+  overflow-x: hidden;
 }
 
 .left-side {
@@ -24,7 +25,7 @@
 }
 
 .left-text {
-  text-align: left;
+  text-align: right;
   padding-top: 30px;
   padding-right: 3%;
   font-family: "Poppins", sans-serif;
@@ -46,13 +47,13 @@
 .left-side p {
   font-size: 1.2rem;
   margin-top: 6%;
-  text-align: left;
+  text-align: right;
   color: #ffffff;
   font-family: "Calibri";
 }
 
 .service-img {
-  width: 78%;
+  width: 72%;
   margin-top: -16%;
   margin-left: -5%;
 }
@@ -166,6 +167,98 @@
 .service-block:hover .dropdown-icon {
   color: white;
   transform: scale(1.1);
+}
+
+/* Mobile layout styles */
+
+.servicePage.mobile{
+  height: fit-content !important;
+}
+
+.mobile-top-section {
+  height: 58%;
+  width: 98%;
+  margin: 2%;
+  background: linear-gradient(213.73deg, #3a6ecf 23.69%, #113984 96.09%);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2%;
+}
+
+.mobile-top-section p{
+  font-size: 1.2rem;
+  margin-top: 6%;
+  margin-left: 51%;
+  text-align: right;
+  color: #ffffff;
+  font-family: "Calibri";
+}
+
+.mobile-top-img {
+  width: 65%;
+  margin-top: -70%;
+  margin-left: -6%;
+}
+
+.mobile-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.accordion-card {
+  border: 2px solid #1e3a8a;
+  border-radius: 20px;
+  padding: 16px;
+  background-color: #f0f4ff;
+  color: #1e3a8a;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
+}
+
+.accordion-card:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+.accordion-card.expanded {
+  min-height: 300px;
+  color: white;
+  padding: 32px;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.accordion-description {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
 }
 
 /* Responsive Styles */

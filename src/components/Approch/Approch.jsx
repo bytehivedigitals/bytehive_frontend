@@ -263,12 +263,13 @@ const Approch = () => {
           <h2>APPROACH</h2>
         </div>
         <p>
-          Strategic. Creative. Impactful. At ByteHive, our approach is rooted in
+          {/* Strategic. Creative. Impactful. At ByteHive, our approach is rooted in
           deep collaboration, design thinking, and a relentless pursuit of
           excellence. We don’t just deliver digital services — we become your
           strategic partner in growth. By understanding your unique goals,
           challenges, and audience, we craft tailored solutions that blend
-          innovation with functionality.
+          innovation with functionality. */}
+          At ByteHive, we blend strategy, creativity, and collaboration to deliver impactful digital solutions. By understanding your goals and audience, we become your growth partner — crafting innovative, functional results that truly make a difference.
         </p>
       </div>
     </div>
