@@ -6,7 +6,7 @@
 .rotating-heading-container {
   width: 100%;
   position: relative;
-  height: 14rem;
+  height: 13.5rem;
   overflow: hidden;
   background-color: #dbdde9;
 }
@@ -34,9 +34,9 @@
 .form-p{
   /* background-color: aqua; */
   width: 55%;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-top: 100px;
-  margin-left:850px;
+  margin-left:750px;
   color: #2B40F5;
 }
 .form-p p{
@@ -52,7 +52,7 @@
 
 hr{
   border: 2px solid #0a22f7;
-  margin: 7rem 0;
+  margin: -4rem 0;
 }
 /* Form styles */
 .contact-container {
@@ -65,12 +65,13 @@ hr{
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 3rem;
+  margin-top: 100px;
 }
 
 .form-row {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .form-row .form-group {
@@ -80,7 +81,7 @@ hr{
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0rem;
 }
 
 .form-group label {
@@ -178,11 +179,11 @@ hr{
     width: 100%;
   }
   .form-p {
-    font-size: 2rem;
-    width: 80%;
+    font-size: 1.5rem;
+    width: 90%;
     margin-left: 0;
     margin-top: 40px;
-    margin-left: 200px;
+    margin-left: 150px;
   }
   .form-group input,
 .form-group textarea {
@@ -198,18 +199,33 @@ hr{
   }
 }
 
+@media(max-width: 992px) {
+  .contact-container {
+    width: 100%;
+  }
+  .form-p {
+    font-size: 1.5rem;
+    width: 90%;
+    margin-left: 0;
+    margin-top: -30px;
+  }
+  .form-group input,
+.form-group textarea {
+    font-size: 1.5rem;
+  }
+
 @media (max-width: 768px) {
   .contact-container {
-    padding: 1rem;
+    padding: rem;
   }
   
   .rotating-heading {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
   .form-p {
     font-size: 1.5rem;
     margin-left: 0;
-    margin-top: -10px;
+    margin-top: -30px;
   }
   
   .form-row {
@@ -219,5 +235,33 @@ hr{
   .submit-button {
     width: 40%;
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 414px) {
+  .contact-container {
+    padding: -2rem;
+  }
+  .form-p{
+    font-size: 1rem;
+    margin-left: 0;
+    margin-top: -30px;
+  }
+  .form-h2{
+    font-size: 2rem;
+    margin-top: 0px;
+  }
+  .form-group input,
+.form-group textarea {
+    font-size: 1.5rem;
+    padding: 2px;
+  }
+  .contact-form{
+    gap: 1.5rem;
+  }
+  .submit-button {
+    width: 40%;
+    font-size: 1rem;
+    margin-top: 10px;
   }
 }
