@@ -238,7 +238,7 @@ hr{
   }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 454px) {
   .contact-container {
     padding: -2rem;
   }
@@ -264,4 +264,5 @@ hr{
     font-size: 1rem;
     margin-top: 10px;
   }
+}
 }
