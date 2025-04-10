@@ -152,7 +152,7 @@ function Service() {
               animate={leftControls}
               variants={leftVariants}
             >
-              <div className="left-text">
+              <div className="mobile-top-text">
                 <h1>EXPLORE OUR</h1>
                 <h2>SERVICES</h2>
               </div>
@@ -262,7 +262,6 @@ function Service() {
                     index !== activeIndex
                       ? {
                           scaleY: 1.03,
-                          transformOrigin: "center bottom",
                         }
                       : {}
                   }
@@ -273,8 +272,8 @@ function Service() {
                     transition={{ duration: 0.3 }}
                   >
                     <svg
-                      width="20"
-                      height="20"
+                      width="22"
+                      height="22"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"

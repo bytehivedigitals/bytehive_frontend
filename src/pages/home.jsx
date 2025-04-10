@@ -11,7 +11,7 @@ import FormWithBackground from "../components/Form/Form";
 // import ChatBot from "../components/ChatBot/ChatBot";
 const Home = () => {
   return (
-    <div style={{ background: "#f5f5f5", width: "100vw" }}>
+    <div style={{ background: "#f5f5f5", width: "100vw", overflowX: "hidden" }}>
       {/* <ChatBot /> */}
       <CurvedNavbar />
       <div id="home">

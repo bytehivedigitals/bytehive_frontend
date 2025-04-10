@@ -11,8 +11,6 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  flex-direction: row;
-  overflow-x: hidden;
 }
 
 .left-side {
@@ -26,13 +24,14 @@
 
 .left-text {
   text-align: right;
-  padding-top: 30px;
-  padding-right: 3%;
+  padding-top: 3%;
   font-family: "Poppins", sans-serif;
 }
 
 .left-text h1,
-.left-text h2 {
+.left-text h2,
+.mobile-top-text h1,
+.mobile-top-text h2 {
   color: #ffffff;
 }
 
@@ -46,24 +45,24 @@
 
 .left-side p {
   font-size: 1.2rem;
-  margin-top: 6%;
+  margin-top: 5%;
   text-align: right;
   color: #ffffff;
   font-family: "Calibri";
 }
 
 .service-img {
-  width: 72%;
-  margin-top: -16%;
-  margin-left: -5%;
+  position: absolute;
+  width: 68%;
+  bottom: -2%;
+  left: -3%;
 }
 
 .right-side {
   width: 50%;
   height: 96%;
-  margin-left: 50px;
+  margin-left: 4%;
   overflow: hidden;
-  position: relative;
   transition: background-image 0.5s ease;
 }
 
@@ -83,7 +82,7 @@
   background-color: #dbdde9;
   height: calc(96% / 3);
   border-radius: 39px;
-  margin-bottom: 13px;
+  margin-bottom: 12px;
   padding: 25px;
   cursor: pointer;
   transition: 0.5s ease;
@@ -105,25 +104,26 @@
   font-size: 24px;
   font-weight: bold;
   color: #3a6ecf;
-  margin-bottom: 30px;
 }
 
 /* Updated Hover Effect for Text */
 .service-block:hover h3,
 .service-block:hover .service-description,
-.service-block:hover .service-caption {
+.service-block:hover .service-caption,
+.service-block.expanded h3,
+.service-block.expanded .dropdown-icon {
   color: #ffffff !important;
 }
 
 .service-block.expanded {
   height: 350px;
   border-radius: 45px;
-  padding: 25px;
+  padding-top: 8%;
   color: white;
 }
 
 .service-block.expanded h3 {
-  color: white;
+  font-size: 30px;
 }
 
 .service-description {
@@ -134,11 +134,12 @@
 }
 
 .service-caption {
-  float: right;
-  font-size: 15px;
+  position: absolute;
+  bottom: 2%;
+  right: 4%;
+  font-size: 16px;
   font-weight: bold;
   color: #564496;
-  margin-top: 10%;
 }
 
 .left-side,
@@ -151,17 +152,10 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   color: #3a6ecf;
-  transform-origin: center;
-}
-
-.service-block.expanded .dropdown-icon {
-  color: white;
 }
 
 .service-block:hover .dropdown-icon {
@@ -170,7 +164,6 @@
 }
 
 /* Mobile layout styles */
-
 .servicePage.mobile{
   height: fit-content !important;
 }
@@ -183,21 +176,36 @@
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 2%;
+  position: relative;
 }
 
-.mobile-top-section p{
+.mobile-top-text {
+  text-align: right;
+  padding: 3% 2% 0 0;
+}
+
+.mobile-top-text h1 {
+  font-size: 2.5rem;
+}
+
+.mobile-top-text h2 {
+  font-size: 2.2rem;
+}
+
+.mobile-top-section p {
   font-size: 1.2rem;
   margin-top: 6%;
-  margin-left: 51%;
+  margin-left: 47%;
   text-align: right;
   color: #ffffff;
   font-family: "Calibri";
 }
 
 .mobile-top-img {
-  width: 65%;
-  margin-top: -70%;
-  margin-left: -6%;
+  position: absolute;
+  width: 53%;
+  left: -3%;
+  bottom: -2%;
 }
 
 .mobile-accordion {
@@ -210,14 +218,12 @@
 .accordion-card {
   border: 2px solid #1e3a8a;
   border-radius: 20px;
-  padding: 16px;
+  padding: 3%;
   background-color: #f0f4ff;
   color: #1e3a8a;
   transition: all 0.3s ease;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  min-height: 120px;
+  min-height: 85px;
 }
 
 .accordion-card:hover {
@@ -225,49 +231,71 @@
   color: white;
 }
 
-.accordion-card.expanded {
-  min-height: 300px;
-  color: white;
-  padding: 32px;
-  background-size: cover;
-  background-position: center;
-  border: none;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
 .accordion-header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .accordion-header h3 {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 20px;
   margin: 0;
 }
 
+
+.accordion-card.expanded {
+  min-height: 300px;
+  padding: 7%;
+  border: none;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.accordion-card.expanded .accordion-header h3 {
+  font-size: 25px;
+}
+
 .accordion-description {
-  margin-top: 10px;
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 1.1rem;
+  margin-top: 8%;
 }
 
 .arrow {
+  position: absolute;
+  top: 1%;
+  right: 1%;
   transition: transform 0.3s ease;
 }
 
 .arrow.rotate {
+  position: absolute;
+  top: 1%;
+  right: -2%;
   transform: rotate(180deg);
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
-  .left-side {
-    padding: 12px;
+@media (max-width: 925px) {
+  .service-img{
+    width: 75%;
   }
-  .right-side {
-    margin-left: 4%;
+  .left-text{
+    padding-top: 0;
+  }
+  .left-text h1 {
+    font-size: 3rem;
+  }
+  .left-text h2 {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 815px) {
+  .service-img {
+    width: 85%
+  }
+  .left-text {
+    padding-top: 3%;
   }
   .left-text h1 {
     font-size: 2.5rem;
@@ -275,147 +303,79 @@
   .left-text h2 {
     font-size: 2.2rem;
   }
-  .service-block {
-    margin-bottom: 12px;
-  }
-  .service-caption {
-    margin-top: 15%;
-  }
-  .service-img {
-    width: 85%;
-    margin-top: -10%;
-  }
 }
 
-@media (max-width: 580px) {
-  .servicePage {
-    flex-direction: column;
-    min-height: 80vh;
-  }
-  .servicePage.expanded {
-    min-height: fit-content;
-  }
-  .left-side,
-  .right-side {
-    width: 98%;
-  }
-  .left-side {
-    height: 58%;
-  }
-  .right-side {
-    height: 42%;
-    margin-left: 0;
-  }
-  .right-side.expanded {
-    min-height: fit-content;
-    margin-top: -5%;
-  }
-  .cards-container {
-    width: 100%;
-    overflow-x: auto;
-    display: flex;
-    gap: 16px;
-    padding: 0 10px;
-  }
-  .service-block {
-    min-width: 50%;
-    border-radius: 20px;
-    padding: 25px 18px;
-    margin-top: 8%;
-    height: 65%;
-  }
-  .service-block.expanded {
-    min-width: 63%;
-    border-radius: 20px;
-    padding: 15px;
-    transition: height 0.5s ease;
+@media (max-width: 704px) {
+  .service-img {
+    width: 88%;
+    bottom: -1%;
   }
   .left-text {
-    padding-top: 4%;
+    padding-top: 5%;
   }
-  .left-text h1,
+  .left-text h1 {
+    font-size: 1.8rem;
+  }
   .left-text h2 {
-    margin-top: 0;
+    font-size: 1.7rem;
   }
   .left-side p {
-    margin-top: 2%;
-    margin-left: 42%;
+    margin-top: 4%;
   }
-  .service-img {
-    width: 51%;
-    margin-top: -81%;
-    margin-left: -4%;
+  .service-block {
+    border-radius: 32px;
   }
-  .service-block .service-caption {
-    display: none;
+  .service-block.expanded {
+    border-radius: 39px !important;
+  }
+  .service-block.expanded h3 {
+    font-size: 26px;
+  }
+  .service-description {
+    font-size: 18px;
   }
 }
 
-@media (max-width: 480px) {
-  .service-img {
+@media (max-width: 435px) {
+  .accordion-card {
+    padding-top: 4%;
+  }
+  .accordion-header h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 405px) {
+  .mobile-top-img {
+    position: absolute;
     width: 55%;
-    margin-left: -6%;
+    left: -3%;
+    top: -2%;
   }
-  .left-side {
-    height: 62%;
+  .mobile-top-text {
+    margin-top: 3%;
+    padding-top: 6%;
+    padding-left: 44%;
+    padding-right: 5%;
   }
-  .left-text h1 {
+  .mobile-top-text h1 {
     font-size: 2rem;
   }
-  .left-text h2 {
-    font-size: 1.5rem;
+  .mobile-top-text h2 {
+    font-size: 1.8rem;
   }
-  .left-side p {
+  .mobile-top-section p {
     font-size: 1.1rem;
-    margin-left: 45%;
-  }
-  .service-block {
-    min-width: fit-content;
-    margin-top: 100px;
-  }
-  .service-block h3 {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .service-block.expanded {
-    padding: 0.8rem;
-    min-width: 75%;
-    min-height: fit-content;
-  }
-  .right-side.expanded .service-block:not(.expanded) {
-    height: 55%;
-    transition: height 0.5s ease;
+    margin-top: 6%;
+    margin-left: 0%;
   }
 }
 
 @media (max-width: 365px) {
-  .left-side {
-    height: 65%;
+  .accordion-card {
+    padding-top: 6%;
   }
-  .left-text {
-    padding-top: 0%;
-    margin-top: 16%;
-    padding-right: 0;
-  }
-  .left-text h1 {
-    float: right;
-    margin-left: 40%;
-  }
-  .left-side p {
-    margin-left: 0;
-    margin-top: 10%;
-  }
-  .service-img {
-    width: 58%;
-    margin-left: -5%;
-    margin-top: -189%;
-  }
-  .service-block.expanded {
-    padding: 0.8rem;
-    min-width: 88%;
-    min-height: fit-content;
-  }
-  .service-block h3 {
-    margin-top: 3%;
+  .accordion-header h3 {
+    font-size: 18px;
   }
 }
