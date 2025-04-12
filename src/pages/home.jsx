@@ -8,27 +8,46 @@ import Footer from "../components/footer/footer";
 import ScrollingBanner from "../components/marquee/marquee";
 import BlogSection from "../components/blogs/blog";
 import FormWithBackground from "../components/Form/Form";
-// import ChatBot from "../components/ChatBot/ChatBot";
+
 const Home = () => {
   return (
     <div style={{ background: "#f5f5f5", width: "100vw", overflowX: "hidden" }}>
-      {/* <ChatBot /> */}
       <CurvedNavbar />
-      <div id="home">
+
+      {/* Landing Section */}
+      <div id="landing">
         <Landing />
       </div>
+
+      {/* Story Section */}
       <div id="about">
         <Story />
       </div>
-      <div id="services">
+
+      {/* Service Section */}
+      <div id="what-we-do">
         <Service />
       </div>
-      <div id="works">
+
+      {/* Approach Section */}
+      <div id="method">
         <Approch />
       </div>
-      <BlogSection />
-      <FormWithBackground />
+
+      {/* Blog Section */}
+      <div id="learn">
+        <BlogSection />
+      </div>
+
+      {/* Contact Form Section */}
+      <div id="contact">
+        <FormWithBackground />
+      </div>
+
+      {/* Footer Section */}
       <Footer />
+
+      {/* Scrolling Banner */}
       <ScrollingBanner />
     </div>
   );

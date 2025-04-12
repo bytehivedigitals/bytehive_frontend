@@ -249,3 +249,41 @@ body {
     border-bottom: none;
   }
 }
+@media (max-width: 768px) {
+  .custom-nav-links,
+  .custom-contact-link {
+    display: none;
+  }
+
+  .custom-menu-text {
+    display: inline-block !important;
+  }
+
+  .custom-right-side {
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  .custom-fullscreen-menu {
+    background: #0057ff;
+    color: white;
+    padding: 20px;
+  }
+
+  .custom-menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .custom-menu-items li {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .custom-menu-items li:last-child {
+    border-bottom: none;
+  }
+}
