@@ -65,7 +65,6 @@ function Story() {
         container.style.left = `${currentX}px`;
         container.style.transform = "translate(-50%, -50%)";
 
-        // Show text sliding up
         text.style.transform = `translateY(${(1 - outProgress) * 50}px)`;
       } else if (progress > 1.0) {
         container.style.position = "relative";
@@ -93,24 +92,36 @@ function Story() {
         </video>
       </div>
 
-      <div className="dot-headings">
-        <h2>
-          <span>Brand Strategy</span>
-          <span className="dot">•</span>
-          <span>Brand Culture</span>
-          <span className="dot">•</span>
-          <span>Brand Innovation</span>
-          <span className="dot">•</span>
-          <span>Brand Design</span>
-          <span className="dot">•</span>
-          <span>Brand Transformation</span>
-        </h2>
+      <div className="dot-headings scrolling-text-mobile">
+        <div className="scroll-inner">
+          <h2>
+            <span>Brand Strategy</span>
+            <span className="dot">•</span>
+            <span>Brand Culture</span>
+            <span className="dot">•</span>
+            <span>Brand Innovation</span>
+            <span className="dot">•</span>
+            <span>Brand Design</span>
+            <span className="dot">•</span>
+            <span>Brand Transformation</span>
+            <span className="dot">•</span>
+            {/* Repeat to avoid gaps */}
+            <span>Brand Strategy</span>
+            <span className="dot">•</span>
+            <span>Brand Culture</span>
+            <span className="dot">•</span>
+            <span>Brand Innovation</span>
+            <span className="dot">•</span>
+            <span>Brand Design</span>
+            <span className="dot">•</span>
+            <span>Brand Transformation</span>
+          </h2>
+        </div>
       </div>
 
       <div className="story-h1" ref={textRef}>
-        <h1>
+        <h1 className="animate-trend">
           LET'S
-          <div className="small-vid" ref={smallVidRef}></div>
           <span className="highlight">BRAND</span> YOUR FUTURE
         </h1>
       </div>

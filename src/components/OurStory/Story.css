@@ -1,3 +1,4 @@
+/* Main Styles */
 .story-main {
   position: relative;
   height: 300vh;
@@ -40,12 +41,29 @@
   font-weight: 500;
   color: #2b40f5;
   padding: 0 5vw;
-  word-wrap: break-word;
+  white-space: nowrap; /* Ensure all text stays in one line */
+  display: block;
 }
 
 .dot-headings .dot {
   margin: 0 8px;
   color: #2b40f5;
+}
+
+.dot-headings .scroll-inner {
+  display: inline-block;
+  animation: scroll-left 15s linear infinite;
+  white-space: nowrap;
+  padding-left: 0; /* Remove the initial gap */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .story-h1 {
@@ -99,11 +117,21 @@
   .dot-headings {
     font-size: 1.1rem;
     flex-wrap: wrap;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Hide anything outside the container */
+  }
+
+  .dot-headings .scroll-inner {
+    display: inline-block;
+    padding-left: 0; /* Remove the initial gap */
+    animation: scroll-left 15s linear infinite;
+    white-space: nowrap;
   }
 
   .story-h1 {
     font-size: 2rem;
-    margin-top: 20vh;
+    margin-top: 5vh;
     transform: translateY(0);
   }
 
@@ -111,5 +139,22 @@
     width: 40px;
     height: 40px;
     margin: 0 5px;
+  }
+}
+
+/* -------------------- MOBILE SCROLLING TEXT -------------------- */
+
+@media (max-width: 768px) {
+  .dot-headings .scroll-inner {
+    animation: scroll-left 15s linear infinite;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
 }
