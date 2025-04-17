@@ -13,43 +13,43 @@ const services = [
   {
     title: "BRAND IDENTITY CREATION",
     description:
-      "We help you create a unique brand identity that resonates with your audience and stands out in the market. From logos to brand guidelines, we ensure your brand tells a compelling story.",
+      "Crafting a distinctive brand identity that connects with your audience and leaves a lasting impression. From logos to guidelines, we bring your brand story to life.",
     bgImage: bgImage1,
   },
   {
     title: "WEB & MOBILE DESIGN",
     description:
-      "Our team designs responsive and user-friendly web and mobile interfaces to enhance user experience. We focus on creating designs that are both visually appealing and highly functional.",
+      "We design responsive, user-friendly web and mobile interfaces that combine stunning visuals with seamless functionality to elevate user experience",
     bgImage: bgImage2,
   },
   {
     title: "UI/UX DESIGN",
     description:
-      "We focus on creating intuitive and engaging user interfaces and experiences for your digital products. Our designs prioritize usability, accessibility, and user satisfaction.",
+      "We craft intuitive, engaging interfaces that prioritize usability, accessibility, and user satisfaction for your digital products.",
     bgImage: bgImage3,
   },
   {
     title: "CUSTOM SOFTWARE DEVELOPMENT",
     description:
-      "We develop custom software solutions tailored to your business needs, ensuring scalability and security. Our solutions are designed to grow with your business and adapt to changing requirements.",
+      "We create custom software solutions built for your business, ensuring scalability, security, and adaptability to evolve with your needs.",
     bgImage: bgImage4,
   },
   {
     title: "CLOUD COMPUTING",
     description:
-      "Our cloud solutions help you optimize your operations and reduce costs with scalable and secure cloud services. We provide end-to-end cloud migration, management, and optimization.",
+      "Our cloud solutions optimize operations and reduce costs with scalable, secure services. We handle everything from migration to management and optimization.",
     bgImage: bgImage5,
   },
   {
     title: "CYBERSECURITY",
     description:
-      "We provide comprehensive cybersecurity services to protect your data and systems from threats. Our proactive approach ensures your business stays secure in an ever-evolving digital landscape.",
+      "We offer comprehensive cybersecurity services to safeguard your data and systems, ensuring your business remains secure in a constantly changing digital world",
     bgImage: bgImage1,
   },
   {
     title: "IT CONSULTING",
     description:
-      "Our IT consulting services help you navigate the digital landscape and implement the best technology solutions. We offer strategic guidance to align technology with your business goals.",
+      "Our IT consulting services guide you through the digital landscape, providing strategic solutions that align technology with your business goals.",
     bgImage: bgImage2,
   },
 ];
@@ -141,41 +141,51 @@ function Service() {
   };
 
   return (
-    <div className={`servicePage ${isMobile ? "mobile" : ""} ${activeIndex !== null ? "expanded" : ""}`}>
+    <div
+      className={`servicePage ${isMobile ? "mobile" : ""} ${
+        activeIndex !== null ? "expanded" : ""
+      }`}
+    >
       {isMobile ? (
         // Mobile Layout
         <div className="mobile-layout">
-            <motion.div
-              className="mobile-top-section"
-              ref={leftRef}
-              initial="hidden"
-              animate={leftControls}
-              variants={leftVariants}
-            >
-              <div className="mobile-top-text">
-                <h1>EXPLORE OUR</h1>
-                <h2>SERVICES</h2>
-              </div>
-              <p>
-                At ByteHive, we craft digital solutions that drive impact. From modern websites to intelligent software, we turn ideas into secure, scalable, and creative tech experiences. Whether you're starting up, scaling, or rebranding — we’re here to bring your vision to life, one byte at a time.
-              </p>
-              <motion.img
-                src={Anim}
-                alt="Service Animation"
-                className="mobile-top-img"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={
-                  leftInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
-                }
-                transition={{ delay: 0.4, duration: 0.6 }}
-              />
-            </motion.div>
+          <motion.div
+            className="mobile-top-section"
+            ref={leftRef}
+            initial="hidden"
+            animate={leftControls}
+            variants={leftVariants}
+          >
+            <div className="mobile-top-text">
+              <h1>EXPLORE OUR</h1>
+              <h2>SERVICES</h2>
+            </div>
+            <p>
+              At ByteHive, we turn ideas into powerful digital
+              solutions.Delivering secure, scalable, and innovative experiences
+              that fuel growth
+            </p>
+            <motion.img
+              src={Anim}
+              alt="Service Animation"
+              className="mobile-top-img"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={
+                leftInView
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0, scale: 0.8 }
+              }
+              transition={{ delay: 0.4, duration: 0.6 }}
+            />
+          </motion.div>
           {/* Accordion Layout */}
           <div className="mobile-accordion">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`accordion-card ${activeIndex === index ? "expanded" : ""}`}
+                className={`accordion-card ${
+                  activeIndex === index ? "expanded" : ""
+                }`}
                 onClick={() => handleCardClick(index)}
                 style={
                   activeIndex === index
@@ -191,7 +201,9 @@ function Service() {
               >
                 <div className="accordion-header">
                   <h3>{service.title}</h3>
-                  <span className={`arrow ${activeIndex === index ? "rotate" : ""}`}>
+                  <span
+                    className={`arrow ${activeIndex === index ? "rotate" : ""}`}
+                  >
                     ▼
                   </span>
                 </div>
@@ -218,7 +230,9 @@ function Service() {
               <h2>SERVICES</h2>
             </div>
             <p>
-              At ByteHive, we craft digital solutions that drive impact. From modern websites to intelligent software, we turn ideas into secure, scalable, and creative tech experiences. Whether you're starting up, scaling, or rebranding — we’re here to bring your vision to life, one byte at a time.
+              At ByteHive, we turn ideas into powerful digital
+              solutions.Delivering secure, scalable, and innovative experiences
+              that fuel growth
             </p>
             <motion.img
               src={Anim}
@@ -226,12 +240,14 @@ function Service() {
               className="service-img"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={
-                leftInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+                leftInView
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0, scale: 0.8 }
               }
               transition={{ delay: 0.4, duration: 0.6 }}
             />
           </motion.div>
-  
+
           <motion.div
             className={`right-side ${activeIndex !== null ? "expanded" : ""}`}
             ref={rightRef}
