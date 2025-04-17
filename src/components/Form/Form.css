@@ -1,3 +1,6 @@
+/* Include the Funnel Display font family */
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@800&display=swap");
+
 /* Infinite scrolling heading styles */
 .overflow-hidden {
   overflow: hidden;
@@ -15,6 +18,8 @@
   position: absolute;
   white-space: nowrap;
   animation: scrollRightToLeft 15s linear infinite;
+  font-family: "Funnel Display", sans-serif;
+  font-weight: 800; /* ExtraBold weight */
   font-size: 9rem;
   margin-top: 50px;
   word-spacing: 5rem;
@@ -32,7 +37,8 @@
 }
 
 .form-p {
-  /* background-color: aqua; */
+  font-family: "Funnel Display", sans-serif;
+  font-weight: 200; /* ExtraBold weight */
   width: 55%;
   font-size: 2rem;
   margin-top: 100px;
@@ -40,12 +46,17 @@
   color: #2b40f5;
   text-align: justify;
 }
+
 .form-p p {
+  font-family: "Funnel Display", sans-serif;
+  font-weight: 200; /* ExtraBold weight */
   color: #2b40f5;
   text-align: justify;
 }
 
 .form-h2 {
+  font-family: "Funnel Display", sans-serif;
+  font-weight: 400; /* ExtraBold weight */
   font-size: 3rem;
   color: #2b40f5;
   margin-bottom: 5rem;
@@ -57,6 +68,7 @@ hr {
   border: 2px solid #0a22f7;
   margin: -4rem 0;
 }
+
 /* Form styles */
 .contact-container {
   max-width: 100%;
@@ -88,12 +100,16 @@ hr {
 }
 
 .form-group label {
-  font-weight: 600;
+  font-family: "Funnel Display", sans-serif;
+  font-weight: 200; /* ExtraBold weight */
+  font-size: 1.5rem;
   color: #2b40f5;
 }
 
 .form-group input,
 .form-group textarea {
+  font-family: "Funnel Display", sans-serif;
+  font-weight: 800; /* ExtraBold weight */
   padding: 0.7rem;
   border: 1.5px solid #2113e4;
   border-radius: 8px;
@@ -133,6 +149,7 @@ hr {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .success-message {
   background-color: #d4edda;
   color: #155724;
@@ -155,6 +172,7 @@ hr {
   opacity: 0.7;
 }
 
+/* Responsive design */
 @media (max-width: 1629px) {
   .contact-container {
     width: 100%;
@@ -174,7 +192,7 @@ hr {
   }
 }
 
-/* Responsive design */
+/* Smaller breakpoints */
 @media (max-width: 1200px) {
   .contact-container {
     width: 100%;

@@ -14,49 +14,49 @@ const cardData = [
     id: 1,
     title: "Discover",
     description:
-      "We begin by immersing ourselves in your business—gaining a clear understanding of your objectives, pain points, and industry landscape through focused consultations and strategic research.",
+      "We analyze your business to identify goals, challenges, and market dynamics, creating tailored solutions for growth",
     image: img,
   },
   {
     id: 2,
     title: "Plan",
     description:
-      "We translate insights into action by defining clear objectives, capturing comprehensive requirements, and crafting a strategic roadmap—accompanied by a transparent, results-driven proposal.",
+      "We turn insights into action with clear goals, detailed requirements, and a results-driven roadmap.",
     image: img1,
   },
   {
     id: 3,
     title: "Design",
     description:
-      "We transform ideas into intuitive visuals by crafting wireframes, interactive prototypes, and cohesive branding elements—refining every detail through collaborative client feedback.",
+      "We turn ideas into visuals with wireframes, prototypes, and branding, refining through client feedback.",
     image: img2,
   },
   {
     id: 4,
     title: "Develop",
     description:
-      "We bring designs to life through robust technical implementation, following agile methodologies with regular client collaboration to ensure alignment at every stage.",
+      "We bring designs to life with agile development, ensuring client alignment at every stage",
     image: img3,
   },
   {
     id: 5,
     title: "Test & Optimize",
     description:
-      "We ensure excellence through comprehensive quality assurance, resolving issues, and fine-tuning performance, security, and user experience across all platforms.",
+      "We ensure excellence with thorough QA, optimizing performance, security, and user experience across all platforms.",
     image: img4,
   },
   {
     id: 6,
     title: "Launch & Deploy",
     description:
-      "Seamlessly launch the final product across intended platforms, provide hands-on training and documentation, and support your go-to-market strategy with tailored marketing and SEO solutions.",
+      "Seamlessly launch, provide training, and support your go-to-market strategy with tailored marketing and SEO",
     image: img5,
   },
   {
     id: 7,
     title: "Support & Grow",
     description:
-      "Deliver continuous support through proactive maintenance, performance enhancements, and strategic scaling — fostering long-term partnerships and sustainable business growth.",
+      "Offer continuous support with maintenance, performance upgrades, and scaling for long-term growth.",
     image: img6,
   },
 ];
@@ -269,7 +269,10 @@ const Approch = () => {
           strategic partner in growth. By understanding your unique goals,
           challenges, and audience, we craft tailored solutions that blend
           innovation with functionality. */}
-          At ByteHive, we blend strategy, creativity, and collaboration to deliver impactful digital solutions. By understanding your goals and audience, we become your growth partner — crafting innovative, functional results that truly make a difference.
+          At ByteHive, we blend strategy, creativity, and collaboration to
+          deliver impactful digital solutions. By understanding your goals and
+          audience, we become your growth partner — crafting innovative,
+          functional results that truly make a difference.
         </p>
       </div>
     </div>

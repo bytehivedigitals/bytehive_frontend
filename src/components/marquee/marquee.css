@@ -1,3 +1,7 @@
+/* Include Funnel Display font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@800&display=swap");
+
+/* Scrolling Banner Wrapper */
 .scrolling-banner-wrapper {
   overflow: hidden;
   position: relative;
@@ -14,8 +18,10 @@
 
   background: url("../../assets/FTR2.jpg") no-repeat center;
   background-size: cover;
+  font-family: "Funnel Display", sans-serif; /* Apply Funnel Display ExtraBold 800 font */
 }
 
+/* Scrolling Banner */
 .scrolling-banner {
   display: flex;
   white-space: nowrap;
@@ -24,17 +30,19 @@
   position: relative;
 }
 
+/* Scrolling Content */
 .scrolling-content {
   display: inline-flex;
   gap: 24px;
   color: #f8fafc;
   font-size: clamp(1rem, 2.5vw, 1.5rem);
-  font-weight: 600;
+  font-weight: 800; /* Apply Funnel Display ExtraBold weight */
   text-transform: uppercase;
 
   animation: scroll-left 20s linear infinite;
 }
 
+/* Keyframes for Scrolling Animation */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
@@ -44,7 +52,7 @@
   }
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments for Scrolling Content */
 @media (max-width: 1024px) {
   .scrolling-content {
     font-size: 1.2rem;

@@ -1,5 +1,5 @@
 /* Import Google Font */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=FunnelDisplay:wght@800&display=swap");
 
 /* General Styles */
 .servicePage {
@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
+  font-family: "FunnelDisplay", sans-serif; /* Applied FunnelDisplay font globally */
 }
 
 .left-side {
@@ -25,7 +26,7 @@
 .left-text {
   text-align: right;
   padding-top: 3%;
-  font-family: "Poppins", sans-serif;
+  font-family: "FunnelDisplay", sans-serif; /* Applied FunnelDisplay font */
 }
 
 .left-text h1,
@@ -33,6 +34,7 @@
 .mobile-top-text h1,
 .mobile-top-text h2 {
   color: #ffffff;
+  font-weight: 800; /* Ensure text is ExtraBold */
 }
 
 .left-text h1 {
@@ -102,7 +104,7 @@
 
 .service-block h3 {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 800;
   color: #3a6ecf;
 }
 
@@ -128,7 +130,7 @@
 
 .service-description {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 800;
   color: inherit;
   margin-top: 20px;
 }
@@ -164,7 +166,7 @@
 }
 
 /* Mobile layout styles */
-.servicePage.mobile{
+.servicePage.mobile {
   height: fit-content !important;
 }
 
@@ -243,12 +245,11 @@
   margin: 0;
 }
 
-
 .accordion-card.expanded {
   min-height: 300px;
   padding: 7%;
   border: none;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .accordion-card.expanded .accordion-header h3 {
@@ -276,10 +277,10 @@
 
 /* Responsive Styles */
 @media (max-width: 925px) {
-  .service-img{
+  .service-img {
     width: 75%;
   }
-  .left-text{
+  .left-text {
     padding-top: 0;
   }
   .left-text h1 {
@@ -292,7 +293,7 @@
 
 @media (max-width: 815px) {
   .service-img {
-    width: 85%
+    width: 85%;
   }
   .left-text {
     padding-top: 3%;

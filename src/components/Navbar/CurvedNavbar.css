@@ -1,3 +1,17 @@
+/* Load the FunnelDisplay ExtraBold 800 font - update path as needed */
+@font-face {
+  font-family: "FunnelDisplay";
+  src: url("/fonts/FunnelDisplay-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+body {
+  padding-top: 0;
+  background-color: #dbdde9;
+  font-family: "FunnelDisplay", sans-serif;
+}
+
 .custom-navbar {
   position: fixed;
   top: 0;
@@ -10,19 +24,15 @@
   padding: 15px 30px;
   transition: all 0.3s ease-in-out;
   z-index: 9999;
-}
-
-/* Add padding to body or top container to prevent hiding content behind navbar */
-body {
-  padding-top: 0; /* Adjust to navbar height */
-  background-color: #dbdde9;
+  font-family: "FunnelDisplay", sans-serif;
 }
 
 .custom-logo {
   font-size: 40px;
-  font-weight: bold;
+  font-weight: 800;
   margin-top: 15px;
   transform: translateY(10px);
+  font-family: "FunnelDisplay", sans-serif;
 }
 
 .custom-logo-img {
@@ -34,9 +44,10 @@ body {
 
 .custom-logo-1 {
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 800;
   margin-top: 20px;
   transform: translateY(10px);
+  font-family: "FunnelDisplay", sans-serif;
 }
 
 .custom-logo-1 img {
@@ -58,6 +69,7 @@ body {
   transition: opacity 0.3s ease-in-out;
   margin-top: 20px;
   transform: translateY(10px);
+  font-family: "FunnelDisplay", sans-serif;
 }
 
 .custom-nav-links li {
@@ -71,6 +83,7 @@ body {
   color: #2b40f5;
   font-weight: 800;
   transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  font-family: "FunnelDisplay", sans-serif;
 }
 
 .custom-nav-links a::after {
@@ -109,10 +122,11 @@ body {
 .custom-contact-link,
 .custom-menu-text {
   font-size: 25px;
-  font-weight: 500;
+  font-weight: 800;
   text-decoration: none;
   color: #0057ff;
   cursor: pointer;
+  font-family: "FunnelDisplay", sans-serif;
 }
 
 .custom-contact-link:hover,
@@ -125,7 +139,6 @@ body {
   background: transparent;
 }
 
-/* Hide Navigation Links on Scroll */
 .custom-scrolled .custom-nav-links {
   opacity: 0;
   pointer-events: none;
@@ -147,6 +160,7 @@ body {
   z-index: 10000;
   animation: fadeIn 0.5s ease-in-out;
   overflow: hidden;
+  font-family: "FunnelDisplay", sans-serif;
 }
 
 .custom-menu-header {
@@ -175,7 +189,7 @@ body {
 
 .custom-menu-items li {
   font-size: 8vw;
-  font-weight: bold;
+  font-weight: 800;
   text-transform: uppercase;
   line-height: 1;
   color: rgba(255, 255, 255, 0.6);
@@ -222,39 +236,6 @@ body {
     display: none;
   }
 
-  .custom-right-side {
-    width: auto;
-  }
-
-  .custom-fullscreen-menu {
-    background: #0057ff;
-    color: white;
-    padding: 20px;
-  }
-
-  .custom-menu-items {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .custom-menu-items li {
-    font-size: 75px;
-    font-weight: bold;
-    padding: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .custom-menu-items li:last-child {
-    border-bottom: none;
-  }
-}
-@media (max-width: 768px) {
-  .custom-nav-links,
-  .custom-contact-link {
-    display: none;
-  }
-
   .custom-menu-text {
     display: inline-block !important;
   }
@@ -265,8 +246,6 @@ body {
   }
 
   .custom-fullscreen-menu {
-    background: #0057ff;
-    color: white;
     padding: 20px;
   }
 
@@ -278,7 +257,7 @@ body {
 
   .custom-menu-items li {
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 800;
     padding: 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }

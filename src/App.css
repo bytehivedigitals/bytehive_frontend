@@ -4,6 +4,11 @@
   padding: 2rem;
   text-align: center;
 }
+/* index.css or App.css */
+* {
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+}
 
 .logo {
   height: 6em;
