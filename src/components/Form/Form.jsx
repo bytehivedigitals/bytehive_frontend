@@ -28,13 +28,25 @@ const Form = () => {
     setSubmitStatus(null);
 
     // Initialize EmailJS with your User ID
-    emailjs.init("YOUR_USER_ID");
+    emailjs.init("TxUV9W3atW6y6Hd3t");
 
+    // Mapping formData to match template variables (snake_case)
+    const emailParams = {
+      first_name: formData.firstName,
+      last_name: formData.lastName,
+      company_name: formData.companyName,
+      company_email: formData.companyEmail,
+      company_website: formData.companyWebsite,
+      project_details: formData.projectDetails,
+      year: new Date().getFullYear(), // for {{year}} in footer
+    };
+
+    // Sending email using EmailJS
     emailjs
       .send(
-        "YOUR_SERVICE_ID", // Service ID
-        "YOUR_TEMPLATE_ID", // Template ID
-        formData // Form data
+        "service_m73nvyq", // Service ID
+        "template_k3r5vg8", // Template ID
+        emailParams // Mapped data for template
       )
       .then(
         (response) => {
