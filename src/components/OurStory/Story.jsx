@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./Story.css";
-import videoSource from "../../assets/oto final motion.mp4";
+import videoSource from "../../assets/ourstory.mp4";
 
 function Story() {
   const videoRef = useRef(null);
@@ -35,6 +35,7 @@ function Story() {
         container.style.position = "relative";
         headings.style.opacity = 1 - progress * 5;
         text.style.transform = `translateY(100px)`;
+        smallVid.style.opacity = 0;
       } else if (progress >= 0.2 && progress < 0.8) {
         video.style.transform = `scale(1.4)`;
         container.style.position = "fixed";
@@ -46,6 +47,7 @@ function Story() {
 
         headings.style.opacity = 0;
         text.style.transform = `translateY(100px)`;
+        smallVid.style.opacity = 0;
       } else if (progress >= 0.8 && progress <= 1.0) {
         const outProgress = (progress - 0.8) / 0.2;
         const scale = 1.4 - outProgress * 0.8;
@@ -66,6 +68,8 @@ function Story() {
         container.style.transform = "translate(-50%, -50%)";
 
         text.style.transform = `translateY(${(1 - outProgress) * 50}px)`;
+
+        smallVid.style.opacity = outProgress;
       } else if (progress > 1.0) {
         container.style.position = "relative";
         container.style.top = "auto";
@@ -73,6 +77,7 @@ function Story() {
         container.style.transform = "none";
         video.style.transform = `scale(0.6)`;
         text.style.transform = `translateY(0px)`;
+        smallVid.style.opacity = 1;
       }
     };
 
@@ -105,7 +110,6 @@ function Story() {
             <span className="dot">•</span>
             <span>Brand Transformation</span>
             <span className="dot">•</span>
-            {/* Repeat to avoid gaps */}
             <span>Brand Strategy</span>
             <span className="dot">•</span>
             <span>Brand Culture</span>
@@ -121,10 +125,12 @@ function Story() {
 
       <div className="story-h1" ref={textRef}>
         <h1 className="animate-trend">
-          LET'S
-          <span className="highlight">BRAND</span> YOUR FUTURE
+          LET'S <span className="highlight">BRAND</span> YOUR FUTURE
         </h1>
       </div>
+
+      {/* Small video placeholder (thumbnail) */}
+      <div className="small-vid" ref={smallVidRef}></div>
     </div>
   );
 }
