@@ -178,6 +178,69 @@ const Approch = () => {
 
   return (
     <div className="main-approch">
+      {/* Right section - moves to top in mobile */}
+      <div className={`right-section ${isMobile ? 'mobile-top' : ''}`}>
+        <div className="approch-txt">
+          <h1>OUR EXCELLENT</h1>
+          <h2>APPROACH</h2>
+        </div>
+        <p>
+          At ByteHive, we blend strategy, creativity, and collaboration to deliver impactful digital solutions. By understanding your goals and audience, we become your growth partner — crafting innovative, functional results that truly make a difference.
+        </p>
+      </div>
+
+      {/* Left section - moves below in mobile */}
+      <div className={`left-section ${isMobile ? 'mobile-below' : ''}`}>
+        <h5>Think big with us.</h5>
+        
+        {isMobile ? (
+          <div className="mobile-cards-list">
+            {cardData.map((card, index) => (
+              <div key={card.id} className="mobile-list-card">
+                <div className="card-number">{index + 1}</div>
+                <div className="card-image">
+                  <img src={card.image} alt={card.title} />
+                </div>
+                <div className="card-content">
+                  <h2>{card.title}</h2>
+                  <p>{card.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="card-stack" ref={cardStackRef}>
+            {cardData.map((card, index) => (
+              <div
+                key={card.id}
+                className={`card ${index <= stackedIndex ? "stacked" : ""}`}
+                ref={(el) => (cardsRef.current[index] = el)}
+                style={{
+                  zIndex: index,
+                  transform:
+                    index <= stackedIndex
+                      ? `translateY(${-(index * 80)}%)`
+                      : "translateY(0)",
+                }}
+              >
+                <div className="card-number">{index + 1}</div>
+                <div className="card-image">
+                  <img src={card.image} alt={`Card ${card.title}`} />
+                </div>
+                <div className="card-content">
+                  <h2>{card.title}</h2>
+                  <p>{card.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="main-approch">
       <div className="left-section">
         <h5>Think big with us.</h5>
         {isMobile ? (
