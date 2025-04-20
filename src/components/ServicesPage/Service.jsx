@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./Service.css";
-import Anim from "../../assets/service-anim.mp4";
+import Anim from "../../assets/service-anim.gif";
 import bgImage1 from "../../assets/serviceblock-bg-1.png";
 import bgImage2 from "../../assets/serviceblock-bg-2.png";
 import bgImage3 from "../../assets/serviceblock-bg-3.png";
 import bgImage4 from "../../assets/serviceblock-bg-4.png";
-import bgImage5 from "../../assets/serviceblock-bg-5.png";
 
 const services = [
   {
@@ -38,19 +37,19 @@ const services = [
     title: "CLOUD COMPUTING",
     description:
       "Our cloud solutions optimize operations and reduce costs with scalable, secure services. We handle everything from migration to management and optimization.",
-    bgImage: bgImage5,
+    bgImage: bgImage3,
   },
   {
     title: "CYBERSECURITY",
     description:
       "We offer comprehensive cybersecurity services to safeguard your data and systems, ensuring your business remains secure in a constantly changing digital world",
-    bgImage: bgImage1,
+    bgImage: bgImage2,
   },
   {
     title: "IT CONSULTING",
     description:
       "Our IT consulting services guide you through the digital landscape, providing strategic solutions that align technology with your business goals.",
-    bgImage: bgImage2,
+    bgImage: bgImage1,
   },
 ];
 
@@ -162,22 +161,10 @@ function Service() {
             </div>
             <p>
               At ByteHive, we turn ideas into powerful digital
-              solutions.Delivering secure, scalable, and innovative experiences
-              that fuel growth
+              solutions. Delivering secure, scalable, and innovative experiences
+              that fuel growth.
             </p>
-            <motion.video
-              src={Anim}
-              alt="Service Animation"
-              className="mobile-top-img"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={
-                leftInView
-                  ? { opacity: 1, scale: 1 }
-                  : { opacity: 0, scale: 0.8 }
-              }
-              transition={{ delay: 0.4, duration: 0.6 }}
-            />
-            {/* <motion.img
+            {/* <motion.video
               src={Anim}
               alt="Service Animation"
               className="mobile-top-img"
@@ -189,6 +176,18 @@ function Service() {
               }
               transition={{ delay: 0.4, duration: 0.6 }}
             /> */}
+            <motion.img
+              src={Anim}
+              alt="Service Animation"
+              className="mobile-top-img"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={
+                leftInView
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0, scale: 0.8 }
+              }
+              transition={{ delay: 0.4, duration: 0.6 }}
+            />
           </motion.div>
           {/* Accordion Layout */}
           <div className="mobile-accordion">
@@ -243,13 +242,21 @@ function Service() {
             </div>
             <p>
               At ByteHive, we turn ideas into powerful digital
-              solutions.Delivering secure, scalable, and innovative experiences
-              that fuel growth
+              solutions. Delivering secure, scalable, and innovative experiences
+              that fuel growth.
             </p>
-            <video autoPlay muted loop className="service-video">
-              <source src={Anim} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <motion.img
+              src={Anim}
+              alt="Service Animation"
+              className="service-img"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={
+                leftInView
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0, scale: 0.8 }
+              }
+              transition={{ delay: 0.4, duration: 0.6 }}
+            />
           </motion.div>
 
           <motion.div
