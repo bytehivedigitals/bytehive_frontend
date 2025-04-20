@@ -14,7 +14,7 @@ const cardData = [
     id: 1,
     title: "Discover",
     description:
-      "We analyze your business to identify goals, challenges, and market dynamics, creating tailored solutions for growth",
+      "We analyze your business to identify goals, challenges, and market dynamics, creating tailored solutions for growth.",
     image: img,
   },
   {
@@ -35,21 +35,21 @@ const cardData = [
     id: 4,
     title: "Develop",
     description:
-      "We bring designs to life with agile development, ensuring client alignment at every stage",
+      "We bring designs to life with agile development, ensuring client alignment at every stage.",
     image: img3,
   },
   {
     id: 5,
     title: "Test & Optimize",
     description:
-      "We ensure excellence with thorough QA, optimizing performance, security, and user experience across all platforms.",
+      "We ensure excellence with thorough QA, optimizing performance, security, and user experience.",
     image: img4,
   },
   {
     id: 6,
     title: "Launch & Deploy",
     description:
-      "Seamlessly launch, provide training, and support your go-to-market strategy with tailored marketing and SEO",
+      "Seamlessly launch, provide training, and support your go-to-market strategy with tailored marketing and SEO.",
     image: img5,
   },
   {
@@ -178,17 +178,7 @@ const Approch = () => {
 
   return (
     <div className="main-approch">
-      {/* Right section - moves to top in mobile */}
-      <div className={`right-section ${isMobile ? 'mobile-top' : ''}`}>
-        <div className="approch-txt">
-          <h1>OUR EXCELLENT</h1>
-          <h2>APPROACH</h2>
-        </div>
-        <p>
-          At ByteHive, we blend strategy, creativity, and collaboration to deliver impactful digital solutions. By understanding your goals and audience, we become your growth partner — crafting innovative, functional results that truly make a difference.
-        </p>
-      </div>
-
+      
       {/* Left section - moves below in mobile */}
       <div className={`left-section ${isMobile ? 'mobile-below' : ''}`}>
         <h5>Think big with us.</h5>
@@ -236,106 +226,15 @@ const Approch = () => {
           </div>
         )}
       </div>
-    </div>
-  );
 
-  return (
-    <div className="main-approch">
-      <div className="left-section">
-        <h5>Think big with us.</h5>
-        {isMobile ? (
-          <div className="mobile-carousel-container">
-            <div className="mobile-carousel">
-              <button
-                className="nav-button left"
-                onClick={handlePrevious}
-                disabled={currentCardIndex === 0}
-                aria-label="Previous card"
-              >
-                <FaArrowLeft size={35} />
-              </button>
-
-              <div className="card-stack-mobile">
-                {cardData.map((card, index) => (
-                  <div
-                    key={card.id}
-                    className={`mobile-card ${
-                      index === currentCardIndex ? "active" : ""
-                    }`}
-                    style={{
-                      transform: `translateX(${
-                        (index - currentCardIndex) * 100
-                      }%)`,
-                      opacity: index === currentCardIndex ? 1 : 0,
-                    }}
-                  >
-                    <div className="card-number">{index + 1}</div>
-                    <div className="card-image">
-                      <img src={card.image} alt={card.title} />
-                    </div>
-                    <div className="card-content">
-                      <h2>{card.title}</h2>
-                      <p>{card.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                className="nav-button right"
-                onClick={handleNext}
-                disabled={currentCardIndex === cardData.length - 1}
-                aria-label="Next card"
-              >
-                <FaArrowRight size={35} />
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div className="card-stack" ref={cardStackRef}>
-            {cardData.map((card, index) => (
-              <div
-                key={card.id}
-                className={`card ${index <= stackedIndex ? "stacked" : ""}`}
-                ref={(el) => (cardsRef.current[index] = el)}
-                style={{
-                  zIndex: index,
-                  transform:
-                    index <= stackedIndex
-                      ? `translateY(${-(index * 80)}%)`
-                      : "translateY(0)",
-                }}
-              >
-                <div className="card-number">{index + 1}</div>
-                <div className="card-image">
-                  <img src={card.image} alt={`Card ${card.title}`} />
-                </div>
-                <div className="card-content">
-                  <h2>{card.title}</h2>
-                  <p>{card.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-
-      <div className="right-section">
+      {/* Right section - moves to top in mobile */}
+      <div className={`right-section ${isMobile ? 'mobile-top' : ''}`}>
         <div className="approch-txt">
           <h1>OUR EXCELLENT</h1>
           <h2>APPROACH</h2>
         </div>
         <p>
-          {/* Strategic. Creative. Impactful. At ByteHive, our approach is rooted in
-          deep collaboration, design thinking, and a relentless pursuit of
-          excellence. We don’t just deliver digital services — we become your
-          strategic partner in growth. By understanding your unique goals,
-          challenges, and audience, we craft tailored solutions that blend
-          innovation with functionality. */}
-          At ByteHive, we blend strategy, creativity, and collaboration to
-          deliver impactful digital solutions. By understanding your goals and
-          audience, we become your growth partner — crafting innovative,
-          functional results that truly make a difference.
+          At ByteHive, we blend strategy, creativity, and collaboration to deliver impactful digital solutions. By understanding your goals and audience, we become your growth partner — crafting innovative, functional results that truly make a difference.
         </p>
       </div>
     </div>

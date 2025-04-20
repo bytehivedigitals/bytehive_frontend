@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./Service.css";
-import Anim from "../../assets/service-anim.gif";
+import Anim from "../../assets/service-anim.mp4";
 import bgImage1 from "../../assets/serviceblock-bg-1.png";
 import bgImage2 from "../../assets/serviceblock-bg-2.png";
 import bgImage3 from "../../assets/serviceblock-bg-3.png";
@@ -165,7 +165,7 @@ function Service() {
               solutions.Delivering secure, scalable, and innovative experiences
               that fuel growth
             </p>
-            <motion.img
+            <motion.video
               src={Anim}
               alt="Service Animation"
               className="mobile-top-img"
@@ -177,6 +177,18 @@ function Service() {
               }
               transition={{ delay: 0.4, duration: 0.6 }}
             />
+            {/* <motion.img
+              src={Anim}
+              alt="Service Animation"
+              className="mobile-top-img"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={
+                leftInView
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0, scale: 0.8 }
+              }
+              transition={{ delay: 0.4, duration: 0.6 }}
+            /> */}
           </motion.div>
           {/* Accordion Layout */}
           <div className="mobile-accordion">
@@ -234,18 +246,10 @@ function Service() {
               solutions.Delivering secure, scalable, and innovative experiences
               that fuel growth
             </p>
-            <motion.img
-              src={Anim}
-              alt="Service Animation"
-              className="service-img"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={
-                leftInView
-                  ? { opacity: 1, scale: 1 }
-                  : { opacity: 0, scale: 0.8 }
-              }
-              transition={{ delay: 0.4, duration: 0.6 }}
-            />
+            <video autoPlay muted loop className="service-video">
+              <source src={Anim} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </motion.div>
 
           <motion.div

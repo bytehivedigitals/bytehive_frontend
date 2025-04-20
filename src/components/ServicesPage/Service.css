@@ -17,7 +17,7 @@
 .left-side {
   width: 45%;
   height: 96%;
-  background: linear-gradient(213.73deg, #3a6ecf 23.69%, #113984 96.09%);
+  background: #2b40f5;
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -53,11 +53,14 @@
   font-family: "Calibri";
 }
 
-.service-img {
+.service-video {
   position: absolute;
   width: 68%;
   bottom: -2%;
   left: -3%;
+  height: auto;
+  background-color: transparent;
+  mix-blend-mode: multiply;
 }
 
 .right-side {
