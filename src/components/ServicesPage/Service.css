@@ -17,7 +17,7 @@
 .left-side {
   width: 45%;
   height: 96%;
-  background: linear-gradient(213.73deg, #3a6ecf 23.69%, #113984 96.09%);
+  background: #2b40f5;
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -25,7 +25,7 @@
 
 .left-text {
   text-align: right;
-  padding-top: 3%;
+  padding-top: 4%;
   font-family: "FunnelDisplay", sans-serif; /* Applied FunnelDisplay font */
 }
 
@@ -42,12 +42,12 @@
 }
 
 .left-text h2 {
-  font-size: 3rem;
+  font-size: 3.2rem;
 }
 
 .left-side p {
-  font-size: 1.2rem;
-  margin-top: 5%;
+  font-size: 1.3em;
+  margin-top: 8%;
   text-align: right;
   color: #ffffff;
   font-family: "Calibri";
@@ -55,7 +55,7 @@
 
 .service-img {
   position: absolute;
-  width: 68%;
+  width: 75%;
   bottom: -2%;
   left: -3%;
 }
@@ -165,123 +165,13 @@
   transform: scale(1.1);
 }
 
-/* Mobile layout styles */
-.servicePage.mobile {
-  height: fit-content !important;
-}
-
-.mobile-top-section {
-  height: 58%;
-  width: 98%;
-  margin: 2%;
-  background: linear-gradient(213.73deg, #3a6ecf 23.69%, #113984 96.09%);
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 2%;
-  position: relative;
-}
-
-.mobile-top-text {
-  text-align: right;
-  padding: 3% 2% 0 0;
-}
-
-.mobile-top-text h1 {
-  font-size: 2.5rem;
-}
-
-.mobile-top-text h2 {
-  font-size: 2.2rem;
-}
-
-.mobile-top-section p {
-  font-size: 1.2rem;
-  margin-top: 6%;
-  margin-left: 47%;
-  text-align: right;
-  color: #ffffff;
-  font-family: "Calibri";
-}
-
-.mobile-top-img {
-  position: absolute;
-  width: 53%;
-  left: -3%;
-  bottom: -2%;
-}
-
-.mobile-accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 16px;
-}
-
-.accordion-card {
-  border: 2px solid #1e3a8a;
-  border-radius: 20px;
-  padding: 3%;
-  background-color: #f0f4ff;
-  color: #1e3a8a;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  min-height: 85px;
-}
-
-.accordion-card:hover {
-  background-color: #2563eb;
-  color: white;
-}
-
-.accordion-header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.accordion-header h3 {
-  font-size: 20px;
-  margin: 0;
-}
-
-.accordion-card.expanded {
-  min-height: 300px;
-  padding: 7%;
-  border: none;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.accordion-card.expanded .accordion-header h3 {
-  font-size: 25px;
-}
-
-.accordion-description {
-  font-size: 1.1rem;
-  margin-top: 8%;
-}
-
-.arrow {
-  position: absolute;
-  top: 1%;
-  right: 1%;
-  transition: transform 0.3s ease;
-}
-
-.arrow.rotate {
-  position: absolute;
-  top: 1%;
-  right: -2%;
-  transform: rotate(180deg);
-}
-
 /* Responsive Styles */
 @media (max-width: 925px) {
   .service-img {
-    width: 75%;
+    width: 82%;
   }
   .left-text {
-    padding-top: 0;
+    padding-top: 2%;
   }
   .left-text h1 {
     font-size: 3rem;
@@ -289,20 +179,8 @@
   .left-text h2 {
     font-size: 2.7rem;
   }
-}
-
-@media (max-width: 815px) {
-  .service-img {
-    width: 85%;
-  }
-  .left-text {
-    padding-top: 3%;
-  }
-  .left-text h1 {
-    font-size: 2.5rem;
-  }
-  .left-text h2 {
-    font-size: 2.2rem;
+  .left-side p {
+    margin-top: 10%;
   }
 }
 
@@ -315,13 +193,13 @@
     padding-top: 5%;
   }
   .left-text h1 {
-    font-size: 1.8rem;
+    font-size: 2.8rem;
   }
   .left-text h2 {
-    font-size: 1.7rem;
+    font-size: 2.3rem;
   }
   .left-side p {
-    margin-top: 4%;
+    margin-top: 10%;
   }
   .service-block {
     border-radius: 32px;
@@ -334,6 +212,118 @@
   }
   .service-description {
     font-size: 18px;
+  }
+}
+
+@media (max-width: 580px) {
+  /* Mobile layout styles */
+  .servicePage.mobile {
+    height: fit-content !important;
+  }
+
+  .mobile-top-section {
+    height: 58%;
+    width: 98%;
+    margin: 2%;
+    background: #2b40f5;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2%;
+    position: relative;
+  }
+
+  .mobile-top-text {
+    text-align: right;
+    padding: 3% 2% 0 0;
+  }
+
+  .mobile-top-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .mobile-top-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .mobile-top-section p {
+    font-size: 1.2rem;
+    margin-top: 6%;
+    margin-left: 47%;
+    text-align: right;
+    color: #ffffff;
+    font-family: "Calibri";
+  }
+
+  .mobile-top-img {
+    position: absolute;
+    width: 53%;
+    left: -3%;
+    bottom: -2%;
+  }
+
+  .mobile-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .accordion-card {
+    border: 2px solid #2b40f5;
+    border-radius: 20px;
+    padding: 3%;
+    background-color: #f0f4ff;
+    color: #2b40f5;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-height: 85px;
+  }
+
+  .accordion-card:hover {
+    background-color: #2563eb;
+    color: white;
+  }
+
+  .accordion-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .accordion-header h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .accordion-card.expanded {
+    min-height: 300px;
+    padding: 7%;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .accordion-card.expanded .accordion-header h3 {
+    font-size: 25px;
+  }
+
+  .accordion-description {
+    font-size: 1.1rem;
+    margin-top: 8%;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    transition: transform 0.3s ease;
+  }
+
+  .arrow.rotate {
+    position: absolute;
+    top: 1%;
+    right: -2%;
+    transform: rotate(180deg);
   }
 }
 
