@@ -62,7 +62,9 @@ const Footer = () => {
           <div className="footer-item">
             <h4>Contact Us</h4>
             <p>Email: info@bytehive.in</p>
-            <p>Phone: +1 234 567 890</p>
+            <p>Phone: +91 9747913218</p>
+            <p>Phone: +91 7293217153</p>
+            <p>Phone: +91 7025864355</p>
           </div>
         </div>
 
@@ -74,10 +76,10 @@ const Footer = () => {
           <a href="#">
             <FaTwitter />
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/company/bytehive-llp/">
             <FaLinkedinIn />
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/bytehive_/">
             <FaInstagram />
           </a>
           <a href="#">
