@@ -97,7 +97,7 @@ const Form = () => {
             {/* Rest of your form content */}
             <div className="contact-container">
               <p className="form-p">
-                Let’s Start a Conversation Have a project in mind? Use the form
+                Let’s Start a Conversation. Have a project in mind? Use the form
                 below to tell us more * we’re ready to turn your ideas into
                 impactful digital solutions. For press inquiries, media
                 collaborations, or career opportunities, feel free to connect
