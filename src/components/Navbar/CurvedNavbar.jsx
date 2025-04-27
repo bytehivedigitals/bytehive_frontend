@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./CurvedNavbar.css";
-import logoImage from "../../assets/name__1_-removebg-preview.png"; // Replace with your logo path
+import logoImage from "../../assets/bytehive_name.png";
 
 const CustomNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
