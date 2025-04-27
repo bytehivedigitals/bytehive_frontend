@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./Service.css";
-import Anim from "../../assets/service_anim.webm";
+import Anim from "../../assets/Service_anim.webm";
 import bgImage1 from "../../assets/serviceblock-bg-1.png";
 import bgImage2 from "../../assets/serviceblock-bg-2.png";
 import bgImage3 from "../../assets/serviceblock-bg-3.png";
