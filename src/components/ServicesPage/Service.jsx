@@ -11,44 +11,44 @@ import bgImage4 from "../../assets/serviceblock-bg-4.png";
 const services = [
   {
     title: "BRAND IDENTITY CREATION",
-    description:
-      "Crafting a distinctive brand identity that connects with your audience and leaves a lasting impression. From logos to guidelines, we bring your brand story to life.",
+    caption: "Craft your brand's voice.",
+    description: "Crafting a distinctive brand identity that connects with your audience and leaves a lasting impression. From logos to guidelines, we bring your brand story to life.",
     bgImage: bgImage1,
   },
   {
     title: "WEB & MOBILE DESIGN",
-    description:
-      "We design responsive, user-friendly web and mobile interfaces that combine stunning visuals with seamless functionality to elevate user experience",
+    caption: "Designs that engage.",
+    description: "We design responsive, user-friendly web and mobile interfaces that combine stunning visuals with seamless functionality to elevate user experience",
     bgImage: bgImage2,
   },
   {
     title: "UI/UX DESIGN",
-    description:
-      "We craft intuitive, engaging interfaces that prioritize usability, accessibility, and user satisfaction for your digital products.",
+    caption: "Seamless user journeys.",
+    description: "We craft intuitive, engaging interfaces that prioritize usability, accessibility, and user satisfaction for your digital products.",
     bgImage: bgImage3,
   },
   {
     title: "CUSTOM SOFTWARE DEVELOPMENT",
-    description:
-      "We create custom software solutions built for your business, ensuring scalability, security, and adaptability to evolve with your needs.",
+    caption: "Solutions built for you.",
+    description: "We create custom software solutions built for your business, ensuring scalability, security, and adaptability to evolve with your needs.",
     bgImage: bgImage4,
   },
   {
     title: "CLOUD COMPUTING",
-    description:
-      "Our cloud solutions optimize operations and reduce costs with scalable, secure services. We handle everything from migration to management and optimization.",
+    caption: "Scale smarter, faster.",
+    description: "Our cloud solutions optimize operations and reduce costs with scalable, secure services. We handle everything from migration to management and optimization.",
     bgImage: bgImage3,
   },
   {
     title: "CYBERSECURITY",
-    description:
-      "We offer comprehensive cybersecurity services to safeguard your data and systems, ensuring your business remains secure in a constantly changing digital world",
+    caption: "Protect what matters.",
+    description: "We offer comprehensive cybersecurity services to safeguard your data and systems, ensuring your business remains secure in a constantly changing digital world",
     bgImage: bgImage2,
   },
   {
     title: "IT CONSULTING",
-    description:
-      "Our IT consulting services guide you through the digital landscape, providing strategic solutions that align technology with your business goals.",
+    caption: "Strategize. Transform. Grow.",
+    description: "Our IT consulting services guide you through the digital landscape, providing strategic solutions that align technology with your business goals.",
     bgImage: bgImage1,
   },
 ];
@@ -289,7 +289,7 @@ function Service() {
                     {service.title.split(" ").slice(2).join(" ")}
                   </h3>
                   {index !== activeIndex && (
-                    <p className="service-caption">Short Caption On Services</p>
+                    <p className="service-caption">{service.caption}</p>
                   )}
                   {index === activeIndex && (
                     <p className="service-description">{service.description}</p>
