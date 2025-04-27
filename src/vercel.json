@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "bytehive.in"
+        }
+      ],
+      "destination": "https://www.bytehive.in/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "bytehive.in"
+        }
+      ],
+      "destination": "https://www.bytehive.in/:path*",
+      "permanent": true
+    }
+  ]
+}
