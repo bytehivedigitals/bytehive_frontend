@@ -272,3 +272,28 @@
     margin-bottom: 3%;
   }
 }
+
+@media (max-height: 800px) {
+  .card-image img {
+    width: 65%;
+  }
+}
+
+@media (max-height: 750px) {
+  .card-image img {
+    width: 60%;
+  }
+  .card-content{
+    margin-top: -18%;
+  }
+}
+
+@media (max-height: 700px) {
+  .card-image img {
+    width: 50%;
+    margin-top: -2%;
+  }
+  .card-number{
+    width: 6%;
+  }
+}

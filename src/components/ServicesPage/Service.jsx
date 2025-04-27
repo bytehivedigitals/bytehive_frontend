@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./Service.css";
-import Anim from "../../assets/service-anim.gif";
+import Anim from "../../assets/Service_anim.webm";
 import bgImage1 from "../../assets/serviceblock-bg-1.png";
 import bgImage2 from "../../assets/serviceblock-bg-2.png";
 import bgImage3 from "../../assets/serviceblock-bg-3.png";
@@ -164,30 +164,10 @@ function Service() {
               solutions. Delivering secure, scalable, and innovative experiences
               that fuel growth.
             </p>
-            {/* <motion.video
-              src={Anim}
-              alt="Service Animation"
-              className="mobile-top-img"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={
-                leftInView
-                  ? { opacity: 1, scale: 1 }
-                  : { opacity: 0, scale: 0.8 }
-              }
-              transition={{ delay: 0.4, duration: 0.6 }}
-            /> */}
-            <motion.img
-              src={Anim}
-              alt="Service Animation"
-              className="mobile-top-img"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={
-                leftInView
-                  ? { opacity: 1, scale: 1 }
-                  : { opacity: 0, scale: 0.8 }
-              }
-              transition={{ delay: 0.4, duration: 0.6 }}
-            />
+            <video autoPlay muted loop className="mobile-top-img">
+              <source src={Anim} type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
           </motion.div>
           {/* Accordion Layout */}
           <div className="mobile-accordion">
@@ -245,18 +225,10 @@ function Service() {
               solutions. Delivering secure, scalable, and innovative experiences
               that fuel growth.
             </p>
-            <motion.img
-              src={Anim}
-              alt="Service Animation"
-              className="service-img"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={
-                leftInView
-                  ? { opacity: 1, scale: 1 }
-                  : { opacity: 0, scale: 0.8 }
-              }
-              transition={{ delay: 0.4, duration: 0.6 }}
-            />
+            <video autoPlay muted loop className="service-img">
+              <source src={Anim} type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
           </motion.div>
 
           <motion.div
