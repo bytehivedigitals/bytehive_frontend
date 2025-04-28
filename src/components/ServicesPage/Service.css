@@ -259,7 +259,7 @@
   .mobile-top-img {
     position: absolute;
     width: 53%;
-    left: -3%;
+    left: -1%;
     bottom: -2%;
   }
 
@@ -342,8 +342,8 @@
   .mobile-top-img {
     position: absolute;
     width: 55%;
-    left: -3%;
-    top: -2%;
+    left: -1%;
+    top: -4%;
   }
   .mobile-top-text {
     margin-top: 3%;
