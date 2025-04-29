@@ -27,6 +27,7 @@
 .left-text {
   text-align: right;
   padding-top: 4%;
+  padding-left: 2%;
   font-family: "FunnelDisplay", sans-serif; /* Applied FunnelDisplay font */
 }
 
@@ -192,16 +193,16 @@
     bottom: -1%;
   }
   .left-text {
-    padding-top: 5%;
+    padding-top: 5% !important;
   }
   .left-text h1 {
-    font-size: 2.8rem;
+    font-size: 2.8rem !important;
   }
   .left-text h2 {
-    font-size: 2.3rem;
+    font-size: 2.3rem !important;
   }
   .left-side p {
-    margin-top: 10%;
+    margin-top: 10% !important;
   }
   .service-block {
     border-radius: 32px;

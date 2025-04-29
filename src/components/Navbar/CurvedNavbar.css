@@ -268,4 +268,8 @@ body {
   .custom-menu-items li:last-child {
     border-bottom: none;
   }
+
+  .custom-navbar.custom-scrolled {
+    padding: 0 2% !important;
+  }
 }
