@@ -3,10 +3,10 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./Service.css";
 import Anim from "../../assets/Service_anim.webm";
-import bgImage1 from "../../assets/serviceblock-bg-1.png";
-import bgImage2 from "../../assets/serviceblock-bg-2.png";
-import bgImage3 from "../../assets/serviceblock-bg-3.png";
-import bgImage4 from "../../assets/serviceblock-bg-4.png";
+import bgImage1 from "../../assets/serviceblock-bg-1.webp";
+import bgImage2 from "../../assets/serviceblock-bg-2.webp";
+import bgImage3 from "../../assets/serviceblock-bg-3.webp";
+import bgImage4 from "../../assets/serviceblock-bg-4.webp";
 
 const services = [
   {

@@ -7,11 +7,11 @@ import Approch from "../components/Approch/Approch";
 import Footer from "../components/footer/footer";
 import ScrollingBanner from "../components/marquee/marquee";
 import BlogSection from "../components/blogs/blog";
-import FormWithBackground from "../components/Form/Form";
+import FormWithBackground from "../components/Form/Form2";
 
 const Home = () => {
   return (
-    <div style={{ background: "#f5f5f5", width: "100vw", overflowX: "hidden" }}>
+    <div style={{ background: "#dbdde9", width: "100vw", overflowX: "hidden" }}>
       <CurvedNavbar />
 
       {/* Landing Section */}

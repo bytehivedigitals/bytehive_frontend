@@ -284,16 +284,19 @@
     width: 60%;
   }
   .card-content{
-    margin-top: -18%;
+    margin-top: -16%;
   }
 }
 
 @media (max-height: 700px) {
   .card-image img {
-    width: 50%;
-    margin-top: -2%;
+    width: 57%;
+    margin-top: -4%;
   }
   .card-number{
     width: 6%;
+  }
+  .card-content {
+    margin-top: -19%;
   }
 }
