@@ -1,7 +1,7 @@
 import React from "react";
 import "../Landingpage/Landing.css";
 import { FaArrowDown } from "react-icons/fa";
-import bgVideo from "../../assets/blue_logo2.mp4";
+import bgVideo from "../../assets/logo_anim.webm";
 
 function Landing() {
   return (
