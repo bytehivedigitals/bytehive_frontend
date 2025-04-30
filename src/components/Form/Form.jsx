@@ -12,7 +12,8 @@ const Form = () => {
     projectDetails: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,7 +26,8 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus(null);
+    setSubmitSuccess(false);
+    setSubmitError(null);
 
     // Initialize EmailJS with your User ID
     emailjs.init("TxUV9W3atW6y6Hd3t");
@@ -51,7 +53,7 @@ const Form = () => {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          setSubmitStatus("success");
+          setSubmitSuccess(true);
           setFormData({
             firstName: "",
             lastName: "",
@@ -63,7 +65,8 @@ const Form = () => {
         },
         (error) => {
           console.log("FAILED...", error);
-          setSubmitStatus("error");
+          setSubmitSuccess(false);
+          setSubmitError("Something went wrong. Please try again later.");
         }
       )
       .finally(() => {
@@ -72,140 +75,113 @@ const Form = () => {
   };
 
   return (
-    <div id="main">
-      <div>
-        <div>
-          <div>
-            <div className="overflow-hidden">
-              <div>
-                <div>
-                  <div>
-                    {/* First child div */}
-                    <div></div>
+    <div className="form-container">
+        <div className="form-left-section">
+            <h1>Let’s Start a Conversation!</h1>
+            <p className="form-p">
+                Reach out to our team for any inquiries or collaborations.
+            </p>
+        </div>
 
-                    {/* Second child div - This is where your heading goes */}
-                    <div className="rotating-heading-container">
-                      <div className="rotating-heading">
-                        CONTACT CONTACT CONTACT CONTACT CONTACT CONTACT
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Rest of your form content */}
-            <div className="contact-container">
-              <p className="form-p">
-                Let’s Start a Conversation. Have a project in mind? Use the form
-                below to tell us more * we’re ready to turn your ideas into
-                impactful digital solutions. For press inquiries, media
-                collaborations, or career opportunities, feel free to connect
-                with us directly via email.
-              </p>
-              <h2 className="form-h2">Start Your Project with ByteHive</h2>
-              <hr />
-
-              {submitStatus === "success" && (
+        <div className="form-right-section">
+            <h2 className="form-h2">Start Your Project with ByteHive</h2>
+            <hr />
+            {submitSuccess === true && (
                 <div className="success-message">
-                  Thank you! Your submission has been received.
+                    Thank you! We'll be reaching out to you soon.
                 </div>
-              )}
-              {submitStatus === "error" && (
+            )}
+            {submitError && (
                 <div className="error-message">
-                  Oops! Something went wrong. Please try again.
+                    <p> Oops! Something went wrong. Please try again.</p>
                 </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="contact-form">
+            )}
+            <form onSubmit={handleSubmit} className="contact-form">
                 <div className="form-row">
-                  <div className="form-group">
+                    <div className="form-group">
                     <label htmlFor="firstName">First Name*</label>
                     <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      required
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        required
                     />
-                  </div>
+                    </div>
 
-                  <div className="form-group">
+                    <div className="form-group">
                     <label htmlFor="lastName">Last Name*</label>
                     <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      required
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        required
                     />
-                  </div>
+                    </div>
                 </div>
 
                 <div className="form-row">
-                  <div className="form-group">
+                    <div className="form-group">
                     <label htmlFor="companyName">Company Name</label>
                     <input
-                      type="text"
-                      id="companyName"
-                      name="companyName"
-                      value={formData.companyName}
-                      onChange={handleChange}
+                        type="text"
+                        id="companyName"
+                        name="companyName"
+                        value={formData.companyName}
+                        onChange={handleChange}
                     />
-                  </div>
+                    </div>
 
-                  <div className="form-group">
+                    <div className="form-group">
                     <label htmlFor="companyEmail">Company Email*</label>
                     <input
-                      type="email"
-                      id="companyEmail"
-                      name="companyEmail"
-                      value={formData.companyEmail}
-                      onChange={handleChange}
-                      required
+                        type="email"
+                        id="companyEmail"
+                        name="companyEmail"
+                        value={formData.companyEmail}
+                        onChange={handleChange}
+                        required
                     />
-                  </div>
+                    </div>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="companyWebsite">Company Website</label>
-                  <input
-                    type="url"
-                    id="companyWebsite"
-                    name="companyWebsite"
-                    value={formData.companyWebsite}
-                    onChange={handleChange}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="projectDetails">
+                    <label htmlFor="projectDetails">
                     Tell us about the project (scope, timeline, budget):*
-                  </label>
-                  <textarea
+                    </label>
+                    <textarea
                     id="projectDetails"
                     name="projectDetails"
                     value={formData.projectDetails}
                     onChange={handleChange}
                     rows="5"
                     required
-                  ></textarea>
+                    ></textarea>
                 </div>
-
+                
                 <button
-                  type="submit"
-                  className="submit-button"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Sending..." : "Submit"}
+                    type="submit"
+                    className={`submit-button ${
+                        submitSuccess ? "submit-success" : 
+                        submitError ? "submit-error" : ""
+                    }`}
+                    disabled={isSubmitting || submitSuccess}
+                    >
+                    {submitSuccess ? (
+                        <span className="success-check">✓</span>
+                    ) : submitError ? (
+                        "Failed"
+                    ) : isSubmitting ? (
+                        "Sending..."
+                    ) : (
+                        "Submit"
+                    )}
                 </button>
-              </form>
-            </div>
-          </div>
+            </form>
         </div>
-      </div>
     </div>
   );
 };
