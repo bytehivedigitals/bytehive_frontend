@@ -10,164 +10,354 @@
 /* Main Styles */
 .story-main {
   position: relative;
-  height: 300vh;
-  background-color: #dbdde9;
-  overflow-x: hidden;
-  font-family: "FunnelDisplay", sans-serif;
-}
-
-.story-h3 {
-  text-align: left;
-  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-  margin-top: 50px;
-  font-weight: 800;
-  font-family: "FunnelDisplay", sans-serif;
-  color: #2b40f5;
-  transition: opacity 0.5s ease;
-  padding: 0 5vw;
-}
-
-.story-video {
+  overflow-inline:0;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 320vh; /* Increased to accommodate all animations */
+  background-color: #dbdde9;
+}
+
+.story-h1{
+  font-size: 15rem;
+  color: #2b40f5;
+  position: relative;
+  height: 200px;
+  width: 70%;
+}
+.story-h1 h1{
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  font-size: 10rem;
+}
+
+.video-container {
+  position: sticky;
+  top: 15vh;
+  width: 100%;
+  transition: transform 0.3s ease-out;
+  z-index: 2;
+  margin-top: 100px;
+
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+  margin-bottom: -200px;
+
+}
+
+.dotHeadings {
+  position: relative;
+  z-index: 1;
+  margin-left: 350px;
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+  color: #2b40f5;
+}
+
+.text-container {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 5;
-}
+  min-height: 100vh;
+  z-index: 3;
+  margin-top: 1000px;
+  margin-left: -350px;
 
-.story-video video {
-  width: 100%;
-  height: auto;
-  transform: scale(0.8);
-  transition: transform 0.6s ease;
-  object-fit: cover;
 }
-
-.dot-headings {
-  text-align: center;
-  margin: 40px 0;
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  font-weight: 500;
-  font-family: "FunnelDisplay", sans-serif;
+.h2One, .h2Two {
+  font-size: 12rem;
   color: #2b40f5;
-  padding: 0 5vw;
   white-space: nowrap;
+  float: left;
+  margin-left: 510px;
+}
+
+.h2Three {
+  font-size: 12rem;
+  color: #2b40f5;
+  text-align: center;
+  margin-top: 2rem;
+  margin-left: 300px;
+  position: relative;
+  z-index: 3;
+}
+
+
+.video-final-position {
+  position: relative;
+  width: 35%;
+  margin: 30px 0;
+  transition: opacity 0.5s ease-out;
+  z-index: 3;
+}
+
+.video-final-position video {
+  width: 100%;
   display: block;
 }
+ /* media quries */
 
-.dot-headings .dot {
-  margin: 0 8px;
-  color: #2b40f5;
-}
 
-.dot-headings .scroll-inner {
-  display: inline-block;
-  animation: scroll-left 15s linear infinite;
-  white-space: nowrap;
-  padding-left: 0;
-}
+  
+/* -------------------- MOBILE SCROLLING TEXT -------------------- */
 
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.story-h1 {
-  text-align: center;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
-  font-family: "FunnelDisplay", sans-serif;
-  transform: translateY(100px);
-  transition: transform 1s ease-in-out;
-  color: #2b40f5;
-  z-index: 10;
-  pointer-events: none;
-  margin-top: 40vh;
-  padding: 0 5vw;
-  word-break: break-word;
-}
-
-.story-h1 .highlight {
-  color: #2b40f5;
-  margin: 0 10px;
-}
-
-.small-vid {
-  width: 60px;
-  height: 60px;
-  background-color: transparent;
-  display: inline-block;
-  margin: 0 8px;
-}
-
-/* -------------------- MOBILE & TABLET RESPONSIVE -------------------- */
-
-@media (max-width: 768px) {
+/* Media Query for 1200px and below */
+@media (max-width: 1200px) {
   .story-main {
-    height: auto;
-  }
-
-  .story-h3 {
-    text-align: left;
-    font-size: 2rem;
-    margin-top: 30px;
-  }
-
-  .story-video {
-    height: auto;
-  }
-
-  .story-video video {
-    transform: scale(1);
-  }
-
-  .dot-headings {
-    font-size: 1.1rem;
-    flex-wrap: wrap;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .dot-headings .scroll-inner {
-    display: inline-block;
-    padding-left: 0;
-    animation: scroll-left 15s linear infinite;
-    white-space: nowrap;
+    min-height: 200vh; /* Reduced scroll distance for smaller screens */
   }
 
   .story-h1 {
-    font-size: 2rem;
-    margin-top: 5vh;
-    transform: translateY(0);
+    width: 90%; /* More horizontal space for text */
   }
 
-  .small-vid {
-    width: 40px;
-    height: 40px;
-    margin: 0 5px;
+  .story-h1 h1 {
+    font-size: 7rem; /* Smaller heading */
+    left: 40%; /* Adjusted centering */
+  }
+
+  .video-container {
+    top: 10vh; /* Lower sticky position */
+    margin-top: 100px;
+  }
+
+  .video-container video {
+    margin-bottom: -20px; /* Less overlap with content below */
+  }
+
+  .dotHeadings {
+    margin-left: 100px; /* Less indentation */
+    
+  }
+  .dotHeadings h2 {
+    font-size: 2rem; /* Smaller text */
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+
+
+  }
+
+  .text-container {
+    margin-top: 700px; /* Less vertical space needed */
+    margin-left: -200px; /* Adjusted alignment */
+  }
+
+  .h2One,
+  .h2Two,
+  .h2Three {
+    font-size: 7rem; /* Smaller text */
+    margin-top: 100px;
+
+  }
+
+  .h2One,
+  .h2Two {
+    margin-left: 320px; /* Less offset */
+    margin-top: 200px;
+  }
+
+  .h2Three {
+    margin-left: 150px; /* Adjusted centering */
+    margin-top: 0px;
   }
 }
-
-/* -------------------- MOBILE SCROLLING TEXT -------------------- */
-
-@media (max-width: 768px) {
-  .dot-headings .scroll-inner {
-    animation: scroll-left 15s linear infinite;
+  /* Media Query for 992px and below */
+@media (max-width: 992px) {
+  .story-main {
+    width: 100%; /* Full width */
+    min-height: 100px; /* Less scroll space needed */
+    background-color: #dbdde9;
   }
 
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+  .story-h1 {
+    width: 100%; /* Use more horizontal space */
+    height: auto; /* Flexible height */
+    margin: 0 auto; /* Center align */
+  }
+
+  .story-h1 h1 {
+    font-size: 5rem; /* Smaller heading */
+    left: 0;
+    transform: none; /* Reset centering */
+    text-align: center; /* Center text */
+    padding: 20px 0; /* Add spacing */
+  }
+
+  .video-container {
+    top: 5vh; /* Lower sticky position */
+    margin-top: 30px;
+  }
+
+  .video-container video {
+    margin-bottom: 2500px; /* Reduce overlap */
+  }
+
+  .dotHeadings {
+    margin-left: 100px; /* Less indentation */
+    font-size: 1.5rem; /* Smaller text */
+  }
+
+  .dotHeadings h2 span {
+    display: inline-block; /* Prevent line breaks */
+    margin: 0 5px; /* Tighten spacing */
+  }
+
+  .text-container {
+     /* Less vertical space */
+    margin-left: -100px; /* Reset offset */
+    align-items: flex-start; /* Left-align text */
+    padding-left: 50px; /* Add breathing room */
+  }
+
+  .h2One,
+  .h2Two,
+  .h2Three {
+    font-size: 5rem; /* Much smaller text */
+    white-space: normal; /* Allow line breaks */
+    margin-left: 0; /* Reset offset */
+    line-height: 1.2; /* Improve readability */
+    margin-left: 225px;
+    margin-top: 300px;
+  }
+
+  .h2Three {
+    margin-top: 2rem; /* Reduce spacing */
+    text-align: left; /* Left-align */
+    margin-left: 300px; /* Reset offset */
+  }
+}
+/* Media Query for 768px and below (Mobile & Tablet Portrait) */
+@media (max-width: 798px) {
+  .story-main {
+    min-height: 100vh !important; /* Single viewport height */
+    overflow: hidden; /* Prevent horizontal scroll */
+    padding: 20px 0; /* Add breathing room */
+  }
+
+  .story-h1 {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 30px !important;
+  }
+
+  .story-h1 h1 {
+    font-size: 3.5rem !important; /* Much smaller heading */
+    position: static !important; /* Disable absolute positioning */
+    text-align: center !important;
+    transform: none !important;
+    padding: 0 15px !important;
+  }
+
+  .video-container {
+    position: relative !important; /* Disable sticky */
+    top: auto !important;
+    transform: none !important; /* Disable scaling */
+    width: 100% !important;
+    margin: 30px 0 !important;
+    transition: none !important; /* Disable animations */
+  }
+
+  .video-container video {
+    margin-bottom: 0 !important;
+    border-radius: 8px; /* Optional: Add rounded corners */
+  }
+
+  .dotHeadings {
+    margin: 100px 0 !important;
+    padding: 0 20px !important;
+    transform: none !important; /* Disable scroll effects */
+    text-align: center !important;
+  }
+
+  .dotHeadings h2 {
+    font-size: 1.2rem !important; /* Smaller text */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px; /* Replace dots with spacing */
+  }
+
+  .dotHeadings .dot {
+    display: none; /* Hide dots on mobile */
+  }
+
+  .text-container {
+    margin-top: -400px !important;
+    padding: 0 20px !important;
+    margin-left: 20px;
+  }
+
+  .h2One, 
+  .h2Two, 
+  .h2Three {
+    font-size: 6rem !important;
+    margin-left: 30px !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
+    
+  }
+
+  .h2One, .h2Two {
+    margin-left: 50px !important;
+    float: left !important;
+    font-size: 0rem;
+  }
+
+  .h2Three {
+    margin-top: 0.1rem !important;
+    text-align: center !important;
+  }
+}
+@media (max-width: 684px) {
+  .text-container{
+    margin-top: -600px !important;
+  }
+  .h2One, .h2Two {
+    font-size: 5rem !important;
+  }
+  .h2Three {
+    font-size: 5rem !important; 
+  }
+}
+@media (max-width: 684px) {
+  .text-container{
+    margin-top: -600px !important;
+  }
+  .h2One, .h2Two {
+    font-size: 4rem !important;
+  }
+  .h2Three {
+    font-size: 4rem !important; 
+  }
+}
+@media (max-width: 512px){
+  .story-main {
+    min-height: 50vh !important; /* Single viewport height */
+    overflow: hidden; /* Prevent horizontal scroll */
+    padding: 20px 0; /* Add breathing room */
+  }
+  .text-container{
+    margin-top: -600px !important;
+    margin-left: -10px;
+  }
+  .h2One, .h2Two {
+    font-size: 3.5rem !important;
+  }
+  .h2Three {
+    font-size: 4rem !important; 
+  }
+}
+@media (max-width: 512px){
+  .text-container{
+    margin-top: -600px !important;
+    margin-left: -20px;
+  }
+  .h2One, .h2Two {
+    font-size: 3rem !important;
+  }
+  .h2Three {
+    font-size: 3.5rem !important; 
   }
 }
