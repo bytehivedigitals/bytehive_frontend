@@ -253,3 +253,9 @@ button:disabled.submit-success {
         padding: 1.5rem;
     }
 }
+
+@media (max-height: 700px) {
+    .form-container {
+        height: 110vh;
+    }
+}

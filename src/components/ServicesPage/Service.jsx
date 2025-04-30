@@ -79,12 +79,12 @@ function Service() {
   // Intersection Observer hooks
   const [leftRef, leftInView] = useInView({
     threshold: 0.1,
-    triggerOnce: false,
+    triggerOnce: true,
   });
 
   const [rightRef, rightInView] = useInView({
     threshold: 0.1,
-    triggerOnce: false,
+    triggerOnce: true,
   });
 
   // Animate when in view
@@ -104,9 +104,9 @@ function Service() {
 
   // Animation variants
   const leftVariants = {
-    hidden: { x: -100, opacity: 0 },
+    hidden: { y: 200, opacity: 0 },
     visible: {
-      x: 0,
+      y: 0,
       opacity: 1,
       transition: {
         duration: 0.8,
@@ -116,9 +116,9 @@ function Service() {
   };
 
   const rightVariants = {
-    hidden: { x: 100, opacity: 0 },
+    hidden: { y: 200, opacity: 0 },
     visible: {
-      x: 0,
+      y: 0,
       opacity: 1,
       transition: {
         duration: 0.8,
@@ -170,7 +170,13 @@ function Service() {
             </video>
           </motion.div>
           {/* Accordion Layout */}
-          <div className="mobile-accordion">
+          <motion.div
+            className="mobile-accordion"
+            ref={rightRef}
+            initial="hidden"
+            animate={rightControls}
+            variants={rightVariants}
+          >
             {services.map((service, index) => (
               <div
                 key={index}
@@ -204,7 +210,7 @@ function Service() {
                 )}
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       ) : (
         // Desktop Layout
