@@ -7,7 +7,7 @@ import Approch from "../components/Approch/Approch";
 import Footer from "../components/footer/footer";
 import ScrollingBanner from "../components/marquee/marquee";
 import BlogSection from "../components/blogs/blog";
-import FormWithBackground from "../components/Form/Form2";
+import FormWithBackground from "../components/Form/Form";
 
 const Home = () => {
   return (
