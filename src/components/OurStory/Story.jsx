@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Story.css';
-import vedioStory from '../../assets/ourStory.mp4';
+import vedioStory from '../../assets/ourstory.mp4';
 
 function Story() {
   const [videoScale, setVideoScale] = useState(0.3);
