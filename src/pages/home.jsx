@@ -11,7 +11,7 @@ import FormWithBackground from "../components/Form/Form2";
 
 const Home = () => {
   return (
-    <div style={{ background: "#dbdde9", width: "100vw", overflowX: "hidden" }}>
+    <div style={{ background: "#dbdde9", width: "100vw", }}>
       <CurvedNavbar />
 
       {/* Landing Section */}
