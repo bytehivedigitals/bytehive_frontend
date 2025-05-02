@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import "./Form.css";
+import broucher from "../../assets/bytehive brochure.pdf"; // Import your brochure file"
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -81,6 +82,16 @@ const Form = () => {
             <p className="form-p">
                 Reach out to our team for any inquiries or collaborations.
             </p>
+            {/* Brochure Download Button */}
+            <a
+              href={broucher} // Replace with the actual path to your brochure
+              download
+              className="brochure-download-button"
+            >
+              <button type="button" className="download-button">
+                Download Brochure
+              </button>
+            </a>
         </div>
 
         <div className="form-right-section">

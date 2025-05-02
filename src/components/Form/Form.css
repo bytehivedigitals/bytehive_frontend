@@ -177,6 +177,22 @@ hr {
     background-color: #cccccc;
     cursor: not-allowed;
 }
+.download-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block;
+  }
+  
+  .download-button:hover {
+    background-color: #564496;
+  }
 
 /* Success Message */
 .success-message {
