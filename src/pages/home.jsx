@@ -8,10 +8,11 @@ import Footer from "../components/footer/footer";
 import ScrollingBanner from "../components/marquee/marquee";
 import BlogSection from "../components/blogs/blog";
 import FormWithBackground from "../components/Form/Form";
+import WhatsAppButton from "../components/whatsppbot/WhatsAppButton";
 
 const Home = () => {
   return (
-    <div style={{ background: "#dbdde9", width: "100vw", }}>
+    <div style={{ background: "#dbdde9", width: "100vw" }}>
       <CurvedNavbar />
 
       {/* Landing Section */}
@@ -49,6 +50,7 @@ const Home = () => {
 
       {/* Scrolling Banner */}
       <ScrollingBanner />
+      <WhatsAppButton />
     </div>
   );
 };
