@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa"; // ← Import WhatsApp icon
 const WhatsAppButton = () => {
   return (
     <a
-      href="https://wa.me/919747913218?text=Hello%20I%20am%20interested%20in%20your%20services"
+      href="https://wa.me/919747913218?text=Hello%2C%20I'm%20interested%20in%20learning%20more%20about%20ByteHive's%20services.%20Could%20you%20please%20share%20more%20details%20on%20your%20offerings%3F"
       target="_blank"
       rel="noopener noreferrer"
     >
