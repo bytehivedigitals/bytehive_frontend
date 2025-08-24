@@ -1,12 +1,3 @@
-/* FunnelDisplay ExtraBold800 Font (You must import this properly in your project) */
-@font-face {
-    font-family: "FunnelDisplay";
-    src: url("/fonts/FunnelDisplay-ExtraBold800.woff2") format("woff2"),
-      url("/fonts/FunnelDisplay-ExtraBold800.woff") format("woff");
-    font-weight: 800;
-    font-style: normal;
-  }
-  
   /* Main Styles */
   .story-main {
     position: relative;
