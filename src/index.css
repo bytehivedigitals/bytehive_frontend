@@ -12,18 +12,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-@font-face {
-  font-family: "MyCustomFont";
-  src: url("./assets/fonts/Aeonik-Medium.woff2") format("woff2"),
-    url("./assets/fonts/Aeonik-Bold.woff") format("woff"),
-    url("./assets/fonts/fa-brands-400.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-* {
-  font-family: "MyCustomFont", sans-serif;
-}
 
 a {
   font-weight: 500;
